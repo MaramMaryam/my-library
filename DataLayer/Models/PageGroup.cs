@@ -16,5 +16,12 @@ namespace DataLayer
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         [MaxLength(150)]
         public string GroupTitle { get; set; }
+
+        //Navigation property
+        public virtual List<Page> Pages { get; set; }
+        public PageGroup()
+        {
+            
+        }
     }
 }
