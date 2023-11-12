@@ -52,14 +52,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyCmsContext.cs" />
+    <Compile Include="Migrations\202311120753505_Initial-Database.cs" />
+    <Compile Include="Migrations\202311120753505_Initial-Database.designer.cs">
+      <DependentUpon>202311120753505_Initial-Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
     <Compile Include="Models\PageGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IPageGroupRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202311120753505_Initial-Database.resx">
+      <DependentUpon>202311120753505_Initial-Database.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

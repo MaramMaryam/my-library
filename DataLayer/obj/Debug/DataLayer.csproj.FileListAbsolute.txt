@@ -10,3 +10,5 @@ D:\learning\my-library\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.ca
 D:\learning\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\learning\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\my-library\DataLayer\obj\Debug\DataLayer.pdb
+D:\learning\my-library\DataLayer\obj\Debug\DataLayer.Migrations.InitialDatabase.resources
+D:\learning\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
