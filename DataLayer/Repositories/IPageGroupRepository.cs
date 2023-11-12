@@ -8,13 +8,12 @@ namespace DataLayer
 {
     public interface IPageGroupRepository
     {
-        IEnumerable<PageGroup> GetAll();
+        IEnumerable<PageGroup> GetAllGroups();
         PageGroup GetGroupById(int groupId);
         bool InsertGroup(PageGroup pageGroup);
         bool UpdateGroup(PageGroup pageGroup);
         bool DeleteGroup(PageGroup pageGroup);
         bool DeleteGroup(int groupId);
         void save();
-
     }
 }
