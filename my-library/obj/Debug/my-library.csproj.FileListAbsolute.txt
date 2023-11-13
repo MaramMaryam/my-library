@@ -161,3 +161,5 @@ D:\learning\my-library\my-library\obj\Debug\my-library.csproj.CoreCompileInputs.
 D:\learning\my-library\my-library\obj\Debug\my-library.csproj.CopyComplete
 D:\learning\my-library\my-library\obj\Debug\my-library.dll
 D:\learning\my-library\my-library\obj\Debug\my-library.pdb
+D:\learning\my-library\my-library\bin\EntityFramework.SqlServer.dll
+D:\learning\my-library\my-library\bin\EntityFramework.SqlServer.xml

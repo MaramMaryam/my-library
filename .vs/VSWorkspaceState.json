@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DataLayer",
+    "\\DataLayer\\Context",
+    "\\DataLayer\\Models",
+    "\\my-library"
   ],
+  "SelectedNode": "\\my-library\\my-library.sln",
   "PreviewInSolutionExplorer": false
 }
