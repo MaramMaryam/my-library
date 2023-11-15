@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,13 +13,20 @@ namespace my_library.Areas.Admin.Controllers
 {
     public class PagesController : Controller
     {
+        private IPageRepository pageRepository;
+        private IPageGroupRepository pageGroupRepository;
         private MyCmsContext db = new MyCmsContext();
 
+        public PagesController()
+        {
+            pageRepository = new PageRepository(db);
+            pageGroupRepository = new PageGroupRepository(db);
+        }
         // GET: Admin/Pages
         public ActionResult Index()
         {
-            var pages = db.Pages.Include(p => p.PageGroup);
-            return View(pages.ToList());
+            //var pages = db.Pages.Include(p => p.PageGroup);
+            return View(pageRepository.GetAllPage());
         }
 
         // GET: Admin/Pages/Details/5
@@ -39,7 +47,7 @@ namespace my_library.Areas.Admin.Controllers
         // GET: Admin/Pages/Create
         public ActionResult Create()
         {
-            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle");
+            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle");
             return View();
         }
 
@@ -48,13 +56,23 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page)
+        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUp)
         {
             if (ModelState.IsValid)
             {
-                db.Pages.Add(page);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                page.Visit = 0;
+                page.CreateDate = DateTime.Now;
+                //db.Pages.Add(page);
+                //db.SaveChanges();
+                if(imgUp != null)
+                {
+                    page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUp.FileName);
+                    imgUp.SaveAs(Server.MapPath("PageImages" + page.ImageName));
+
+                }
+                pageRepository.InsertPage(page);
+                pageRepository.save();
+                return RedirectToAction("/Index");
             }
 
             ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
@@ -124,7 +142,7 @@ namespace my_library.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                pageRepository.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202311120753505_Initial-Database.designer.cs">
       <DependentUpon>202311120753505_Initial-Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311151128294_Init-page.cs" />
+    <Compile Include="Migrations\202311151128294_Init-page.designer.cs">
+      <DependentUpon>202311151128294_Init-page.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202311120753505_Initial-Database.resx">
       <DependentUpon>202311120753505_Initial-Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311151128294_Init-page.resx">
+      <DependentUpon>202311151128294_Init-page.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

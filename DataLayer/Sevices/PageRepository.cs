@@ -9,8 +9,8 @@ namespace DataLayer
 {
     public class PageRepository : IPageRepository
     {
-        //MyCmsContext db = new MyCmsContext();
-        private MyCmsContext db;
+        MyCmsContext db = new MyCmsContext();
+        //private MyCmsContext db;
         public PageRepository(MyCmsContext context)
         {
             this.db = context;
@@ -65,6 +65,10 @@ namespace DataLayer
         public void save()
         {
             db.SaveChanges();
+        }
+        public void Dispose()
+        {
+            db.Dispose();
         }
     }
 }
