@@ -4,10 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>@*Index*@</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal" onclick='CreateGroup()'>افزودن</a>
 </p>
 <table class="table">
     <tr>
@@ -17,17 +18,73 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.GroupTitle)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GroupID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GroupID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GroupID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupTitle)
+            </td>
+            <td>
+                <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal" onclick='DetailGroup(@item.GroupID)'>جزئیات</a>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GroupID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.GroupID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GroupID })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<!-- Button trigger modal -->
+@*<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#MyModal">
+        Launch demo modal
+    </button>*@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="bodyModal">
+                
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script>
+        function CreateGroup() {
+            $.ajax({
+                url: "Create",
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $('myModal').modal('show');
+                $('#exampleModalLabel').html('افزودن گروه جدید');
+                $('#bodyModal').html(result)
+            })
+        }
+    </script>
+
+    <script>
+        function DetailGroup(id) {
+            $.ajax({
+                url: "Details/" + id,
+                type: "Get",
+                data: {}
+            }).done(function (result) {
+                $('myModal').modal('show');
+                $('#exampleModalLabel').html('جزئیات');
+                $('#bodyModal').html(result)
+            })
+        }
+    </script>
+}

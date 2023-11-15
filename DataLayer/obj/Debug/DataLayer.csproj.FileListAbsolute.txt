@@ -12,3 +12,17 @@ D:\learning\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\my-library\DataLayer\obj\Debug\DataLayer.pdb
 D:\learning\my-library\DataLayer\obj\Debug\DataLayer.Migrations.InitialDatabase.resources
 D:\learning\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
+E:\myjob\nafis\lib\DataLayer\bin\Debug\DataLayer.dll.config
+E:\myjob\nafis\lib\DataLayer\bin\Debug\DataLayer.dll
+E:\myjob\nafis\lib\DataLayer\bin\Debug\DataLayer.pdb
+E:\myjob\nafis\lib\DataLayer\bin\Debug\EntityFramework.dll
+E:\myjob\nafis\lib\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\myjob\nafis\lib\DataLayer\bin\Debug\EntityFramework.xml
+E:\myjob\nafis\lib\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\myjob\nafis\lib\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+E:\myjob\nafis\lib\DataLayer\obj\Debug\DataLayer.Migrations.InitialDatabase.resources
+E:\myjob\nafis\lib\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
+E:\myjob\nafis\lib\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+E:\myjob\nafis\lib\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+E:\myjob\nafis\lib\DataLayer\obj\Debug\DataLayer.dll
+E:\myjob\nafis\lib\DataLayer\obj\Debug\DataLayer.pdb

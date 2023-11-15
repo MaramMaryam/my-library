@@ -163,3 +163,10 @@ D:\learning\my-library\my-library\obj\Debug\my-library.dll
 D:\learning\my-library\my-library\obj\Debug\my-library.pdb
 D:\learning\my-library\my-library\bin\EntityFramework.SqlServer.dll
 D:\learning\my-library\my-library\bin\EntityFramework.SqlServer.xml
+E:\myjob\nafis\lib\my-library\bin\DataLayer.dll
+E:\myjob\nafis\lib\my-library\bin\EntityFramework.dll
+E:\myjob\nafis\lib\my-library\bin\EntityFramework.SqlServer.dll
+E:\myjob\nafis\lib\my-library\bin\DataLayer.pdb
+E:\myjob\nafis\lib\my-library\bin\DataLayer.dll.config
+E:\myjob\nafis\lib\my-library\bin\EntityFramework.xml
+E:\myjob\nafis\lib\my-library\bin\EntityFramework.SqlServer.xml
