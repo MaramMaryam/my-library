@@ -75,7 +75,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(pageGroup);
+            return PartialView(pageGroup);
         }
 
         // POST: Admin/PageGroups/Edit/5
@@ -106,7 +106,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(pageGroup);
+            return PartialView(pageGroup);
         }
 
         // POST: Admin/PageGroups/Delete/5
