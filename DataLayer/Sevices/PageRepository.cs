@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class PageGroupRepositorry : IPageRepository
+    public class PageRepository : IPageRepository
     {
-        MyCmsContext db = new MyCmsContext();
+        //MyCmsContext db = new MyCmsContext();
+        private MyCmsContext db;
+        public PageRepository(MyCmsContext context)
+        {
+            this.db = context;
+        }
         public IEnumerable<Page> GetAllPage()
         {
             return db.Pages;

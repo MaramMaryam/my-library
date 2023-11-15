@@ -10,121 +10,121 @@ using DataLayer;
 
 namespace my_library.Areas.Admin.Controllers
 {
-    public class PageGroupsController : Controller
+    public class PagesController : Controller
     {
-        private IPageGroupRepository pageGroupRepository;
-        MyCmsContext db = new MyCmsContext();
-        public PageGroupsController()
-        {
-            pageGroupRepository = new PageGroupRepository(db);
-        }
+        private MyCmsContext db = new MyCmsContext();
 
-        // GET: Admin/PageGroups
+        // GET: Admin/Pages
         public ActionResult Index()
         {
-            return View(pageGroupRepository.GetAllGroups());
+            var pages = db.Pages.Include(p => p.PageGroup);
+            return View(pages.ToList());
         }
 
-        // GET: Admin/PageGroups/Details/5
+        // GET: Admin/Pages/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = pageGroupRepository.GetGroupById(id.Value);
-            if (pageGroup == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-            return View(pageGroup);
+            return View(page);
         }
 
-        // GET: Admin/PageGroups/Create
+        // GET: Admin/Pages/Create
         public ActionResult Create()
         {
-            return PartialView();
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle");
+            return View();
         }
 
-        // POST: Admin/PageGroups/Create
+        // POST: Admin/Pages/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GroupID,GroupTitle")] PageGroup pageGroup)
+        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page)
         {
             if (ModelState.IsValid)
             {
-               pageGroupRepository.InsertGroup(pageGroup);
-                pageGroupRepository.save();
-                return RedirectToAction("/Index");
+                db.Pages.Add(page);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
-            return View(pageGroup);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            return View(page);
         }
 
-        // GET: Admin/PageGroups/Edit/5
+        // GET: Admin/Pages/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //PageGroup pageGroup = db.PageGroups.Find(id);
-            PageGroup pageGroup = pageGroupRepository.GetGroupById(id.Value);
-            if (pageGroup == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-            return PartialView(pageGroup);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            return View(page);
         }
 
-        // POST: Admin/PageGroups/Edit/5
+        // POST: Admin/Pages/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GroupID,GroupTitle")] PageGroup pageGroup)
+        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page)
         {
             if (ModelState.IsValid)
             {
-                pageGroupRepository.UpdateGroup(pageGroup);
-                pageGroupRepository.save();
-                return RedirectToAction("/Index");
+                db.Entry(page).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            return View(pageGroup);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            return View(page);
         }
 
-        // GET: Admin/PageGroups/Delete/5
+        // GET: Admin/Pages/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = pageGroupRepository.GetGroupById(id.Value);
-            if (pageGroup == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-            return PartialView(pageGroup);
+            return View(page);
         }
 
-        // POST: Admin/PageGroups/Delete/5
+        // POST: Admin/Pages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            pageGroupRepository.DeleteGroup(id);
-            pageGroupRepository.save();
-            return RedirectToAction("/Index");
+            Page page = db.Pages.Find(id);
+            db.Pages.Remove(page);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                pageGroupRepository.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
