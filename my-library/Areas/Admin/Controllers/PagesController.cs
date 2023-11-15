@@ -25,7 +25,7 @@ namespace my_library.Areas.Admin.Controllers
         // GET: Admin/Pages
         public ActionResult Index()
         {
-            //var pages = db.Pages.Include(p => p.PageGroup);
+            var pages = db.Pages.Include(p => p.PageGroup);
             return View(pageRepository.GetAllPage());
         }
 
@@ -67,12 +67,12 @@ namespace my_library.Areas.Admin.Controllers
                 if(imgUp != null)
                 {
                     page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUp.FileName);
-                    imgUp.SaveAs(Server.MapPath("PageImages" + page.ImageName));
+                    imgUp.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
 
                 }
                 pageRepository.InsertPage(page);
                 pageRepository.save();
-                return RedirectToAction("/Index");
+                return RedirectToAction("Index");
             }
 
             ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
