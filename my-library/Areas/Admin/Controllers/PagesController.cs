@@ -64,7 +64,7 @@ namespace my_library.Areas.Admin.Controllers
                 page.CreateDate = DateTime.Now;
                 //db.Pages.Add(page);
                 //db.SaveChanges();
-                if(imgUp != null)
+                if (imgUp != null)
                 {
                     page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUp.FileName);
                     imgUp.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
@@ -86,12 +86,12 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
+            Page page = pageRepository.GePageById(id.Value);
             if (page == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle", page.GroupID);
             return View(page);
         }
 
@@ -100,12 +100,24 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page)
+        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUp)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(page).State = EntityState.Modified;
-                db.SaveChanges();
+                if (imgUp != null)
+                {
+                    if (page.ImageName != null)
+                    {
+                        System.IO.File.Delete(Server.MapPath("/PageImages/" + page.ImageName));
+                    }
+                    page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUp.FileName);
+                    imgUp.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
+
+                }
+                //db.Entry(page).State = EntityState.Modified;
+                //db.SaveChanges();
+                pageRepository.UpdatePage(page);
+                pageRepository.save();
                 return RedirectToAction("Index");
             }
             ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
