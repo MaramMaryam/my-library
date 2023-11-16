@@ -31,6 +31,7 @@ namespace DataLayer
         [Display(Name = "اسلایدر")]
         public bool ShowInSlider { get; set; }
         [Display(Name = "تاریخ ایجاد")]
+        [DisplayFormat(DataFormatString = " {0: yyyy/dd}")]
         public DateTime CreateDate { get; set;}
 
         public virtual PageGroup PageGroup { get; set; }
