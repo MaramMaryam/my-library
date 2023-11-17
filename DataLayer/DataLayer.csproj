@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202311151128294_Init-page.designer.cs">
       <DependentUpon>202311151128294_Init-page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311170823432_edit-page.cs" />
+    <Compile Include="Migrations\202311170823432_edit-page.designer.cs">
+      <DependentUpon>202311170823432_edit-page.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -81,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311151128294_Init-page.resx">
       <DependentUpon>202311151128294_Init-page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311170823432_edit-page.resx">
+      <DependentUpon>202311170823432_edit-page.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

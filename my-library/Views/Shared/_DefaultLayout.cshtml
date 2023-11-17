@@ -1,0 +1,406 @@
+﻿@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <div>
+            @RenderBody()
+        </div>
+    </body>
+    </html>*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> قالب تک صفحه ای amplify :: دریافت شده از وب روبیک</title>
+
+    <link rel="stylesheet" href="/Content/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/css/jquery-ui.css">
+    <link rel="stylesheet" href="/Content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Content/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Content/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/Content/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/Content/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/Content/css/aos.css">
+    <link rel="stylesheet" href="/Content/css/style.css">
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div class="site-wrap">
+        <!-- menu -->
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <div class="site-logo"><a href="index.html">Amplify</a></div>
+                    <div>
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                <li><a href="#home-section" class="nav-link">صفحه نخست</a></li>
+                                <li><a href="#work-section" class="nav-link">درباره ما</a></li>
+                                <li><a href="#process-section" class="nav-link">فرایند</a></li>
+                                <li><a href="#services-section" class="nav-link">سرویس ها</a></li>
+                                <li><a href="#services-section" class="nav-link">کتابخانه</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ml-auto">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block">
+                                <li class="cta">
+                                    <a href="#contact-section" class="nav-link">
+                                        <span class="rounded border border-primary">تماس با ما</span>
+                                    </a>
+                                    <span class=""> @DateTime.Now.ToShamsi() </span>
+                                </li>
+                            </ul>
+                        </nav>
+                        <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header content -->
+        <div class="intro-section" id="home-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 mr-auto" data-aos="fade-up">
+                        <h1>کار ها را به ما بسپارید</h1>
+                        <p class="mb-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                        <p><a href="#" class="btn btn-outline-light py-3 px-5">شروع همکاری</a></p>
+                    </div>
+                    <div class="col-lg-2 ml-auto" data-aos="fade-up" data-aos-delay="100">
+                        <figure class="img-absolute">
+                            <img src="/Content/pics/person_1.jpg" alt="Image" class="img-fluid">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="site-section section-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 mr-auto mb-5">
+                        <div class="mb-5">
+                            <span class="section-sub-title d-block">درباره ما</span>
+                            <h2 class="section-title">لورم ایپسوم</h2>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="counter d-flex align-items-start mb-5" data-aos="fade-up" data-aos-delay="">
+                                    <div class="icon-wrap"><span class="flaticon-reload text-primary"></span></div>
+                                    <div class="counter-text">
+                                        <strong>260</strong>
+                                        <span>بارگذاری سریع</span>
+                                    </div>
+                                </div>
+                                <div class="counter d-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="icon-wrap"><span class="flaticon-download text-primary"></span></div>
+                                    <div class="counter-text">
+                                        <strong>2,500</strong>
+                                        <span>تعداد دانلودها </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter d-flex align-items-start mb-5" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="icon-wrap"><span class="flaticon-monitor text-primary"></span></div>
+                                    <div class="counter-text">
+                                        <strong>87</strong>
+                                        <span>تعداد افراد</span>
+                                    </div>
+                                </div>
+                                <div class="counter d-flex align-items-start" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="icon-wrap"><span class="flaticon-chat text-primary"></span></div>
+                                    <div class="counter-text">
+                                        <strong>920</strong>
+                                        <span>چت روم ها</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="image-absolute-box">
+                            <div class="box" data-aos="fade-up">
+                                <div class="icon-wrap"><span class="flaticon-vector"></span></div>
+                                <h3>کلید اصلی داشتن خلاقیت است</h3>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                            </div>
+                            <img src="/Content/pics/about_1.jpg" alt="Image" class="img-fluid">
+                        </div>
+                    </div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <!-- about section and carousel -->
+        <div class="site-section section-2" id="work-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-5">
+                        <span class="section-sub-title d-block">برترین فعالیت ها</span>
+                        <h2 class="section-title">درباره ما</h2>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel nonloop-block-13">
+                <a class="work-thumb" href="pics/about_1.jpg" data-fancybox="gallery">
+                    <div class="work-text">
+                        <h3>نام فعالیت</h3>
+                        <span class="category">سایت</span>
+                    </div>
+                    <img src="/Content/pics/about_1.jpg" alt="Image" class="img-fluid">
+                </a>
+                <a class="work-thumb" href="/Content/pics/slide_1.jpg" data-fancybox="gallery">
+                    <div class="work-text">
+                        <h3>نام فعالیت</h3>
+                        <span class="category">سایت</span>
+                    </div>
+                    <img src="/Content/pics/slide_1.jpg" alt="Image" class="img-fluid">
+                </a>
+                <a class="work-thumb" href="pics/slide_2.jpg" data-fancybox="gallery">
+                    <div class="work-text">
+                        <h3>نام فعالیت</h3>
+                        <span class="category">سایت</span>
+                    </div>
+                    <img src="/Content/pics/slide_2.jpg" alt="Image" class="img-fluid">
+                </a>
+                <a class="work-thumb" href="pics/slide_3.jpg" data-fancybox="gallery">
+                    <div class="work-text">
+                        <h3>نام فعالیت</h3>
+                        <span class="category">سایت</span>
+                    </div>
+                    <img src="/Content/pics/slide_3.jpg" alt="Image" class="img-fluid">
+                </a>
+                <a class="work-thumb" href="pics/slide_4.jpg" data-fancybox="gallery">
+                    <div class="work-text">
+                        <h3>نام فعالیت</h3>
+                        <span class="category">سایت</span>
+                    </div>
+                    <img src="/Content/pics/slide_4.jpg" alt="Image" class="img-fluid">
+                </a>
+            </div>
+        </div>
+        <!-- process section -->
+        <div class="site-section section-2" id="process-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-5">
+                        <span class="section-sub-title d-block">فرایند کار ما</span>
+                        <h2 class="section-title">فرایند ما</h2>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="">
+                        <div class="process p-3">
+                            <span class="number">01</span>
+                            <div>
+                                <span class="flaticon-glasses display-4 text-primary mb-4 d-inline-block"></span>
+                                <h3>جستجو</h3>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="process p-3">
+                            <span class="number">02</span>
+                            <div>
+                                <span class="flaticon-vector display-4 text-primary mb-4 d-inline-block"></span>
+                                <h3>ساخت</h3>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="process p-3">
+                            <span class="number">03</span>
+                            <div>
+                                <span class="flaticon-monitor display-4 text-primary mb-4 d-inline-block"></span>
+                                <h3>پردازش</h3>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- services section and carousel -->
+        <div class="site-section bg-light" id="services-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-5">
+                        <span class="section-sub-title d-block">سرویس ها</span>
+                        <h2 class="section-title">سرویس ها</h2>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel nonloop-block-14">
+                <div class="service">
+                    <div>
+                        <span class="flaticon-reload display-4 text-primary mb-4 d-inline-block"></span>
+                        <h3>بارگذاری مجدد</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div>
+                        <span class="flaticon-download display-4 text-primary mb-4 d-inline-block"></span>
+                        <h3>دانلود ویدیو</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div>
+                        <span class="flaticon-monitor display-4 text-primary mb-4 d-inline-block"></span>
+                        <h3>توسعه وب</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div>
+                        <span class="flaticon-chat display-4 text-primary mb-4 d-inline-block"></span>
+                        <h3>24/7 پشتیبانی</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div>
+                        <span class="flaticon-glasses display-4 text-primary mb-4 d-inline-block"></span>
+                        <h3>جستجو</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div>
+                        <span class="flaticon-vector display-4 text-primary mb-4 d-inline-block"></span>
+                        <h3>گرافیک</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- contact form -->
+        <div class="site-section" id="contact-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        <h2 class="section-title mb-3">انتقادات و پیشنهادات</h2>
+                        <p class="mb-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                        <form method="post" data-aos="fade">
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="text" class="form-control" placeholder="نام ">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="نام خانوادگی">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="موضوع">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="email" class="form-control" placeholder="پست الکترونیک">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="" cols="30" rows="10" placeholder="متن پیام"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="ارسال">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>درباره Amplify</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    </div>
+                    <div class="col-md-3 ml-auto">
+                        <h3>Links</h3>
+                        <ul class="list-unstyled footer-links">
+                            <li><a href="#">صفحه نخست</a></li>
+                            <li><a href="#">درباره ما</a></li>
+                            <li><a href="#">فرایند</a></li>
+                            <li><a href="#">سرویس ها</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>اشتراک </h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                        <form action="#">
+                            <div class="d-flex mb-5">
+                                <input type="text" class="form-control rounded-0" placeholder="پست الکترونیک">
+                                <input type="submit" class="btn btn-primary rounded-0" value="اشتراک">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <div class="border-top pt-5">
+                            <p>
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is translated with <i class="icon-heart" aria-hidden="true"></i> by <a href="http:://www.webrubik.com" target="_blank">webrubik.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div> <!-- .site-wrap -->
+
+
+    <script src="/Content/js/jquery-3.1.1.min.js"></script>
+    <script src="/Content/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/Content/js/jquery-ui.js"></script>
+    <script src="/Content/js/popper.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/owl.carousel.min.js"></script>
+    <script src="/Content/js/jquery.stellar.min.js"></script>
+    <script src="/Content/js/jquery.countdown.min.js"></script>
+    <script src="/Content/js/bootstrap-datepicker.min.js"></script>
+    <script src="/Content/js/jquery.easing.1.3.js"></script>
+    <script src="/Content/js/aos.js"></script>
+    <script src="/Content/js/jquery.fancybox.min.js"></script>
+    <script src="/Content/js/jquery.sticky.js"></script>
+    <script src="/Content/js/script.js"></script>
+
+</body><!-- This template has been downloaded from Webrubik.com -->
+</html>
+@*@RenderBody()*@
+
+
+

@@ -4,12 +4,12 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+@*<h2>Delete</h2>*@
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>آیا از حذف این کتاب مطمئن هستید؟</h3>
 <div>
-    <h4>Page</h4>
-    <hr />
+    @*<h4>Page</h4>
+    <hr />*@
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
@@ -48,7 +48,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImageName)
+            @*@Html.DisplayFor(model => model.ImageName)*@
+            <img src="~/PageImages/@Model.ImageName" class="img-thumbnail" style="max-width: 150px" />
         </dd>
 
         <dt>
@@ -74,7 +75,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("بازگشت", "Index")
         </div>
     }
 </div>

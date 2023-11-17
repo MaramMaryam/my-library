@@ -131,7 +131,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
+            Page page = pageRepository.GePageById(id.Value);
             if (page == null)
             {
                 return HttpNotFound();
@@ -144,9 +144,16 @@ namespace my_library.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Page page = db.Pages.Find(id);
-            db.Pages.Remove(page);
-            db.SaveChanges();
+            var page = pageRepository.GePageById(id);
+            if (page.ImageName != null)
+            {
+                System.IO.File.Delete(Server.MapPath("/PageImages/" + page.ImageName));
+            }
+            pageRepository.DeletePage(page);
+            pageRepository.save();
+            //Page page = db.Pages.Find(id);
+            //db.Pages.Remove(page);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
