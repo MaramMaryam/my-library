@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> قالب تک صفحه ای amplify :: دریافت شده از وب روبیک</title>
+    <title>لندینگ پیج</title>
 
     <link rel="stylesheet" href="/Content/fonts/icomoon/style.css">
     <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
@@ -46,7 +46,7 @@
         <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
             <div class="container-fluid">
                 <div class="d-flex align-items-center">
-                    <div class="site-logo"><a href="index.html">Amplify</a></div>
+                    <div class="site-logo"><a href="index.html">NafisLib</a></div>
                     <div>
                         <nav class="site-navigation position-relative text-right" role="navigation">
                             <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
@@ -55,7 +55,7 @@
                                 <li><a href="#process-section" class="nav-link">فرایند</a></li>
                                 <li><a href="#services-section" class="nav-link">سرویس ها</a></li>
                                 @*<li><a href="#services-section" class="nav-link">کتابخانه</a></li>*@
-                                <li class="nav-link"> @Html.ActionLink("کتابخانه", "Index") </li> 
+                                <li class="nav-link"> @Html.ActionLink("کتابخانه", "ShowGroups", "Books") </li>
 
                             </ul>
                         </nav>
@@ -78,16 +78,18 @@
         </header>
         <!-- header content -->
         <div class="intro-section" id="home-section">
-            <div class="container">
+            <div class="container ">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 mr-auto" data-aos="fade-up">
-                        <h1>کار ها را به ما بسپارید</h1>
-                        <p class="mb-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                    <div class="col-lg-5 mr-auto" data-aos="fade-up">
+                        <h2 class="mb-5 text-white font-weight-bold">هدر دادن ذهن به مراتب وحشتناک تر از به هدر دادن پول است</h2>
+                        <p>
+                            شعار صندوق پول دانشگاه یونایتدنگرو
+                        </p>
                         <p><a href="#" class="btn btn-outline-light py-3 px-5">شروع همکاری</a></p>
                     </div>
                     <div class="col-lg-2 ml-auto" data-aos="fade-up" data-aos-delay="100">
                         <figure class="img-absolute">
-                            <img src="/Content/pics/person_1.jpg" alt="Image" class="img-fluid">
+                            <img src="/Content/pics/book_1.jpg" alt="Image" class="img-fluid">
                         </figure>
                     </div>
                 </div>
@@ -142,7 +144,7 @@
                         <div class="image-absolute-box">
                             <div class="box" data-aos="fade-up">
                                 <div class="icon-wrap"><span class="flaticon-vector"></span></div>
-                                <h3>کلید اصلی داشتن خلاقیت است</h3>
+                                <h3>کتاب، کلید اصلی موفقیت</h3>
                                 <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
                             </div>
                             <img src="/Content/pics/about_1.jpg" alt="Image" class="img-fluid">
