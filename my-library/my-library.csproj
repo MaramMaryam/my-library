@@ -213,6 +213,7 @@
     <Content Include="Content\LibLayout\js\jQuery.js" />
     <Content Include="Content\LibLayout\js\owl.carousel.js" />
     <Content Include="Content\LibLayout\js\popper.js" />
+    <Content Include="Content\LibLayout\StyleSheet1.css" />
     <Content Include="Content\pics\about_1.jpg" />
     <Content Include="Content\pics\person_1.jpg" />
     <Content Include="Content\pics\person_2.jpg" />
