@@ -191,6 +191,28 @@
     <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="Content\js\popper.min.js" />
     <Content Include="Content\js\script.js" />
+    <Content Include="Content\LibLayout\css\bootstrap-icons.css" />
+    <Content Include="Content\LibLayout\css\bootstrap.css" />
+    <Content Include="Content\LibLayout\css\owl.carousel.css" />
+    <Content Include="Content\LibLayout\css\owl.theme.default.css" />
+    <Content Include="Content\LibLayout\img\blog\btstrap.jpg" />
+    <Content Include="Content\LibLayout\img\blog\buisiness.jpg" />
+    <Content Include="Content\LibLayout\img\blog\cook.jpg" />
+    <Content Include="Content\LibLayout\img\blog\CSS-Contact-Us-Form.png" />
+    <Content Include="Content\LibLayout\img\blog\ecom.jpg" />
+    <Content Include="Content\LibLayout\img\blog\Piks.jpg" />
+    <Content Include="Content\LibLayout\img\blog\podcast.jpg" />
+    <Content Include="Content\LibLayout\img\blog\shop.jpg" />
+    <Content Include="Content\LibLayout\img\blog\youtube.jpg" />
+    <Content Include="Content\LibLayout\img\logo.png" />
+    <Content Include="Content\LibLayout\img\slider\Woo_Package_New_Bnr1.png" />
+    <Content Include="Content\LibLayout\img\slider\Woo_Package_New_Bnr2.png" />
+    <Content Include="Content\LibLayout\img\userAvatar.png" />
+    <Content Include="Content\LibLayout\js\bootstrap.js" />
+    <Content Include="Content\LibLayout\js\index.js" />
+    <Content Include="Content\LibLayout\js\jQuery.js" />
+    <Content Include="Content\LibLayout\js\owl.carousel.js" />
+    <Content Include="Content\LibLayout\js\popper.js" />
     <Content Include="Content\pics\about_1.jpg" />
     <Content Include="Content\pics\person_1.jpg" />
     <Content Include="Content\pics\person_2.jpg" />
@@ -306,6 +328,9 @@
     <Content Include="Content\fonts\Vazir.ttf" />
     <Content Include="Content\fonts\Vazir.woff" />
     <Content Include="Content\fonts\Vazir.woff2" />
+    <Content Include="Content\LibLayout\fonts\bootstrap-icons.woff" />
+    <Content Include="Content\LibLayout\fonts\bootstrap-icons.woff2" />
+    <Content Include="Content\LibLayout\fonts\Vazir-Light-FD.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\fontawesome.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -334,6 +359,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
     <Content Include="Views\Books\ShowGroups.cshtml" />
+    <Content Include="Views\Shared\_LibLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
