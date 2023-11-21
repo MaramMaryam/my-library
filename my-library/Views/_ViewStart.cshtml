@@ -1,9 +1,26 @@
 ﻿@*@{
         Layout = "~/Views/Shared/_Layout.cshtml";
     }*@
-@{
-    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
-}
+@*@{
+        Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+        //LibLayout = "~Books/_LibLayout.cshtml";
+    }*@
 @{
     Layout = "~/Views/Shared/_LibLayout.cshtml";
 }
+
+@*@{
+    string CurrentName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
+    dynamic Layout;
+    switch (CurrentName)
+    {
+        case "Books":
+            Layout = "~/Views/Shared/_LibLayout.cshtml";
+            break;
+        default:
+            //Admin layout
+            Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+            break;
+    }
+}*@
+

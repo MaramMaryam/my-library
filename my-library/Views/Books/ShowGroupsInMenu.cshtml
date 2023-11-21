@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DataLayer.PageGroup>
+@*@model IEnumerable<DataLayer.ShowGroupViewModel>*@
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    دسته بندی ها
+</a>
+<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    @*<li><a class="dropdown-item" href="#">مجله فرهنگی</a></li>*@
+    @foreach (var item in Model)
+    {
+        <li><a class="dropdown-item" href="#">@item.GroupTitle</a></li>
+    }
+
+    <li>
+        <hr class="dropdown-divider">
+    </li>
+    <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>
+</ul>

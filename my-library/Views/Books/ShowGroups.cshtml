@@ -1,1 +1,53 @@
-﻿
+﻿@*@{
+        ViewBag.Title = "ShowGroups";
+        Layout = "~/Views/Shared/_LibLayout.cshtml";
+    }*@
+
+@*<h2>ShowGroups</h2>*@
+
+@model IEnumerable<DataLayer.ShowGroupViewModel>
+@*@{
+        Layout = "/Shared/_LibLayout.cshtml";
+    }*@
+
+<section class="my-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-box mb-3">
+                    <p class="m-0 p-0">دسته بندی ها مطالب بروز شده</p>
+                    <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="top-slider owl-carousel owl-theme top-slider-wrap">
+                    @foreach (var item in Model)
+                    {
+                        <div class="slider-item bg-white rounded p-4">
+                            <figure class="position-relative">
+                                <img src="/Content/LibLayout/img/groups/book_1.jpg" alt="" class="w-100 rounded">
+                                @*<figcaption class="tp_top position-absolute p-4">
+                                    <span class="font-weight-bold text-info"> @DateTime.Now.GetDateTimeFormats() </span>
+                                </figcaption>*@
+                                <figcaption class="tp_bottom position-absolute p-4">
+                                    <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                                </figcaption>
+                            </figure>
+                            <div class="item-cat">
+                                <div class="d-flex">
+                                    <i class="bi bi-play-circle"></i>
+                                    <span class="d-block p-2 text-info">@item.PageCount بروز شده</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h6 class="overflow-hidden px-2"> @item.GroupTitle </h6>
+                            </a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>

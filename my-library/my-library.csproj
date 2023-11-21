@@ -130,6 +130,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\PageGroupsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
+    <Compile Include="Areas\Lib\LibAreaRegistration.cs" />
     <Compile Include="Classes\PersianConvertorDate.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -213,6 +214,7 @@
     <Content Include="Content\LibLayout\js\jQuery.js" />
     <Content Include="Content\LibLayout\js\owl.carousel.js" />
     <Content Include="Content\LibLayout\js\popper.js" />
+    <Content Include="Content\LibLayout\StyleSheet1.css" />
     <Content Include="Content\pics\about_1.jpg" />
     <Content Include="Content\pics\person_1.jpg" />
     <Content Include="Content\pics\person_2.jpg" />
@@ -331,6 +333,7 @@
     <Content Include="Content\LibLayout\fonts\bootstrap-icons.woff" />
     <Content Include="Content\LibLayout\fonts\bootstrap-icons.woff2" />
     <Content Include="Content\LibLayout\fonts\Vazir-Light-FD.woff" />
+    <Content Include="Areas\Lib\Views\web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\fontawesome.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -358,12 +361,16 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
-    <Content Include="Views\Books\ShowGroups.cshtml" />
     <Content Include="Views\Shared\_LibLayout.cshtml" />
+    <Content Include="Views\Books\ShowGroups.cshtml" />
+    <Content Include="Views\Books\ShowGroupsInMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Lib\Controllers\" />
+    <Folder Include="Areas\Lib\Data\" />
+    <Folder Include="Areas\Lib\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="PageImages\" />
   </ItemGroup>
