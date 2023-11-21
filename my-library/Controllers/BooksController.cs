@@ -11,9 +11,11 @@ namespace my_library.Controllers
     {
         MyCmsContext db = new MyCmsContext();
         private IPageGroupRepository pageGroupRepository;
+        private IPageRepository pageRepository;
         public BooksController()
         {
             pageGroupRepository = new PageGroupRepository(db);
+            pageRepository = new PageRepository(db);
         }
         
         // GET: Books
@@ -24,6 +26,11 @@ namespace my_library.Controllers
         public ActionResult ShowGroupsInMenu()
         {
             return PartialView(pageGroupRepository.GetAllGroups());
+        }
+
+        public ActionResult ShowTopBooks()
+        {
+            return PartialView(pageRepository.ShowTopBooks());
         }
     }
 }

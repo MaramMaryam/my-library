@@ -364,6 +364,7 @@
     <Content Include="Views\Shared\_LibLayout.cshtml" />
     <Content Include="Views\Books\ShowGroups.cshtml" />
     <Content Include="Views\Books\ShowGroupsInMenu.cshtml" />
+    <Content Include="Views\Books\ShowTopBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

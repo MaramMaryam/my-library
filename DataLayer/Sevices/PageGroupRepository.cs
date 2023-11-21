@@ -67,6 +67,18 @@ namespace DataLayer
             db.SaveChanges();
         }
 
+     
+
+        public IEnumerable<ShowGroupViewModel> GetGroupsForView()
+        {
+            return db.PageGroups.Select(g => new ShowGroupViewModel()
+            {
+                GroupID = g.GroupID,
+                GroupTitle = g.GroupTitle,
+                PageCount = g.Pages.Count 
+            });
+
+        }  
         public void Dispose()
         {
             db.Dispose();

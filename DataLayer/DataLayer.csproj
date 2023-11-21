@@ -74,6 +74,7 @@
     <Compile Include="Repositories\IPageRepository.cs" />
     <Compile Include="Sevices\PageGroupRepository.cs" />
     <Compile Include="Sevices\PageRepository.cs" />
+    <Compile Include="ViewModels\ShowGroupViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -70,6 +70,11 @@ namespace DataLayer
         {
             db.Dispose();
         }
+
+        public IEnumerable<Page> ShowTopBooks(int take = 3)
+        {
+            return db.Pages.OrderByDescending(p => p.Visit).Take(take);
+        }
     }
 }
 

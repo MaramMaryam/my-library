@@ -15,6 +15,6 @@ namespace DataLayer
         bool DeletePage(Page page);
         bool DeletePage(int pageId);
         void save();
-
+        IEnumerable<Page> ShowTopBooks(int take = 3);
     }
 }
