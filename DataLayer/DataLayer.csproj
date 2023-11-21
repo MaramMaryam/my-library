@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202311170823432_edit-page.designer.cs">
       <DependentUpon>202311170823432_edit-page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311210602524_Reinitialize db.cs" />
+    <Compile Include="Migrations\202311210602524_Reinitialize db.designer.cs">
+      <DependentUpon>202311210602524_Reinitialize db.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -90,8 +94,13 @@
     <EmbeddedResource Include="Migrations\202311170823432_edit-page.resx">
       <DependentUpon>202311170823432_edit-page.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311210602524_Reinitialize db.resx">
+      <DependentUpon>202311210602524_Reinitialize db.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="PageGroupImages\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

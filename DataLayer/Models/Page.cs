@@ -24,6 +24,13 @@ namespace DataLayer
         [DataType(DataType.MultilineText)]
 
         public string ShortDescription { get; set; }
+        [Display(Name = "متن")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [MaxLength(500)]
+        [DataType(DataType.MultilineText)]
+
+        public string LongDescription { get; set; }
+
         [Display(Name = "بازدید")]
         public int Visit { get; set; }
         [Display(Name = "تصویر")]

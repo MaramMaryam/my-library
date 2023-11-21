@@ -47,7 +47,7 @@ namespace my_library.Areas.Admin.Controllers
         // GET: Admin/Pages/Create
         public ActionResult Create()
         {
-            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle");
+            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle", "ImageName");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUp)
+        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,ShortDescription,LongDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUp)
         {
             if (ModelState.IsValid)
             {
@@ -75,7 +75,7 @@ namespace my_library.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", "ImageName", page.GroupID);
             return View(page);
         }
 
@@ -91,7 +91,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle", page.GroupID);
+            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle", "ImageName", page.GroupID);
             return View(page);
         }
 
@@ -100,7 +100,7 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,ShortDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUp)
+        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,ShortDescription,LongDescription,Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUp)
         {
             if (ModelState.IsValid)
             {
@@ -120,7 +120,7 @@ namespace my_library.Areas.Admin.Controllers
                 pageRepository.save();
                 return RedirectToAction("Index");
             }
-            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", "ImageName", page.GroupID);
             return View(page);
         }
 

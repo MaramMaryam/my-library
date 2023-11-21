@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using DataLayer;
 
 namespace my_library.Areas.Admin.Controllers
@@ -33,17 +35,34 @@ namespace my_library.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             PageGroup pageGroup = pageGroupRepository.GetGroupById(id.Value);
+                //db.PageGroups.Find(id);
+                //pageGroupRepository.GetGroupById(id.Value);
+                //
+
             if (pageGroup == null)
             {
                 return HttpNotFound();
             }
-            return View(pageGroup);
+            return PartialView(pageGroup);
         }
-
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Page page = db.Pages.Find(id);
+        //    if (page == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(page);
+        //}
         // GET: Admin/PageGroups/Create
         public ActionResult Create()
         {
-            return PartialView();
+            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAllGroups(), "GroupID", "GroupTitle", "ImageGrpName");
+            return View();
         }
 
         // POST: Admin/PageGroups/Create
@@ -51,15 +70,21 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GroupID,GroupTitle")] PageGroup pageGroup)
+        public ActionResult Create([Bind(Include = "GroupID,GroupTitle,ImageGrpName")] PageGroup pageGroup, HttpPostedFileBase imgGRP)
         {
             if (ModelState.IsValid)
             {
-               pageGroupRepository.InsertGroup(pageGroup);
+                if (imgGRP != null)
+                {
+                    pageGroup.ImageGrpName = Guid.NewGuid() + Path.GetExtension(imgGRP.FileName);
+                    imgGRP.SaveAs(Server.MapPath("/PageImages/" + pageGroup.ImageGrpName));
+
+                }
+                pageGroupRepository.InsertGroup(pageGroup);
                 pageGroupRepository.save();
                 return RedirectToAction("/Index");
             }
-
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", "ImageGrpName", pageGroup.GroupID);
             return View(pageGroup);
         }
 
@@ -84,7 +109,7 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GroupID,GroupTitle")] PageGroup pageGroup)
+        public ActionResult Edit([Bind(Include = "GroupID,GroupTitle,ImageGrpName")] PageGroup pageGroup)
         {
             if (ModelState.IsValid)
             {

@@ -10,6 +10,7 @@ namespace DataLayer
     {
         public int GroupID { get; set; }
         public string GroupTitle { get; set; }
+        public string ImageGrpName { get; set; }
         public int PageCount { get; set; }
 
     }
