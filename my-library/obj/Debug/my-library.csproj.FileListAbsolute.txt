@@ -166,3 +166,5 @@ E:\myjob\nafis\lib\my-library\bin\EntityFramework.dll
 E:\myjob\nafis\lib\my-library\bin\DataLayer.pdb
 E:\myjob\nafis\lib\my-library\bin\DataLayer.dll.config
 E:\myjob\nafis\lib\my-library\bin\EntityFramework.xml
+E:\myjob\nafis\lib\my-library\bin\EntityFramework.SqlServer.dll
+E:\myjob\nafis\lib\my-library\bin\EntityFramework.SqlServer.xml
