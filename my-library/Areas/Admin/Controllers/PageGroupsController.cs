@@ -43,7 +43,7 @@ namespace my_library.Areas.Admin.Controllers
         // GET: Admin/PageGroups/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         // POST: Admin/PageGroups/Create
@@ -60,7 +60,7 @@ namespace my_library.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            return PartialView(pageGroup);
+            return View(pageGroup);
         }
 
         // GET: Admin/PageGroups/Edit/5
