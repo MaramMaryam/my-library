@@ -13,11 +13,16 @@ namespace my_library.Areas.Admin.Controllers
     public class PageGroupsController : Controller
     {
         private MyCmsContext db = new MyCmsContext();
+        private IPageGroupRepository pageGroupRepository;
+        public PageGroupsController()
+        {
+            pageGroupRepository = new PageGroupRepository();
+        }
 
         // GET: Admin/PageGroups
         public ActionResult Index()
         {
-            return View(db.PageGroups.ToList());
+            return View(pageGroupRepository.GetAll());
         }
 
         // GET: Admin/PageGroups/Details/5

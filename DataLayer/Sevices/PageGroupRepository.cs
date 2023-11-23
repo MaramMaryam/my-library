@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal class PageGroupRepository : IPageGroupRepository
+    public class PageGroupRepository : IPageGroupRepository
     {
         MyCmsContext db = new MyCmsContext();
         public IEnumerable<PageGroup> GetAll()
