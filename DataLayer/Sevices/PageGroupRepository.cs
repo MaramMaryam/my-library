@@ -84,5 +84,10 @@ namespace DataLayer
         {
             db.SaveChanges();
         }
+
+        public void Dispose()
+        {
+            db.Dispose();
+        }
     }
 }

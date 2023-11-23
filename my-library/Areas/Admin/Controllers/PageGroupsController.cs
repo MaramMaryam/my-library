@@ -32,7 +32,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = db.PageGroups.Find(id);
+            PageGroup pageGroup = pageGroupRepository.GetById(id.Value);
             if (pageGroup == null)
             {
                 return HttpNotFound();
@@ -55,8 +55,8 @@ namespace my_library.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PageGroups.Add(pageGroup);
-                db.SaveChanges();
+                pageGroupRepository.InsertPageGroup(pageGroup);
+                pageGroupRepository.save();
                 return RedirectToAction("Index");
             }
 
@@ -70,7 +70,8 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = db.PageGroups.Find(id);
+            PageGroup pageGroup = pageGroupRepository.GetById(id.Value);
+
             if (pageGroup == null)
             {
                 return HttpNotFound();
@@ -87,8 +88,8 @@ namespace my_library.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pageGroup).State = EntityState.Modified;
-                db.SaveChanges();
+                pageGroupRepository.UpdatePageGroup(pageGroup);
+                pageGroupRepository.save();
                 return RedirectToAction("Index");
             }
             return View(pageGroup);
@@ -101,7 +102,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = db.PageGroups.Find(id);
+            PageGroup pageGroup = pageGroupRepository.GetById(id.Value);
             if (pageGroup == null)
             {
                 return HttpNotFound();
@@ -114,9 +115,11 @@ namespace my_library.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PageGroup pageGroup = db.PageGroups.Find(id);
-            db.PageGroups.Remove(pageGroup);
-            db.SaveChanges();
+            pageGroupRepository.DeletePageGroup(id);
+            pageGroupRepository.save();
+            //PageGroup pageGroup = db.PageGroups.Find(id);
+            //db.PageGroups.Remove(pageGroup);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -124,7 +127,7 @@ namespace my_library.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                pageGroupRepository.Dispose();
             }
             base.Dispose(disposing);
         }
