@@ -60,7 +60,7 @@ namespace my_library.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(pageGroup);
+            return PartialView(pageGroup);
         }
 
         // GET: Admin/PageGroups/Edit/5
