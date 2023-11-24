@@ -4,11 +4,8 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>PageGroup</h4>
-    <hr />
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.GroupTitle)
@@ -28,7 +25,12 @@
 
     </dl>
 </div>
-<p>
+<div class="form-actions no-color text-end pt-2">
+    <button class="btn btn-outline-secondary">
+        @Html.ActionLink("بازگشت", "/Index")
+    </button>
+</div>
+@*<p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.GroupID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @Html.ActionLink("بازگشت", "/Index")
+</p>*@

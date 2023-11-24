@@ -37,7 +37,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(pageGroup);
+            return PartialView(pageGroup);
         }
 
         // GET: Admin/PageGroups/Create
