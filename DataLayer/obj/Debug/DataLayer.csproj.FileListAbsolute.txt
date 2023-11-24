@@ -38,3 +38,4 @@ E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.CoreCo
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.dll
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.pdb
+E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources

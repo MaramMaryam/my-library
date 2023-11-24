@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202311211840179_InitialDB.designer.cs">
       <DependentUpon>202311211840179_InitialDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311240840190_re-init.cs" />
+    <Compile Include="Migrations\202311240840190_re-init.designer.cs">
+      <DependentUpon>202311240840190_re-init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202311211840179_InitialDB.resx">
       <DependentUpon>202311211840179_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311240840190_re-init.resx">
+      <DependentUpon>202311240840190_re-init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

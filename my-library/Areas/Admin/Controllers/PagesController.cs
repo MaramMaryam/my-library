@@ -10,116 +10,115 @@ using DataLayer;
 
 namespace my_library.Areas.Admin.Controllers
 {
-    public class PageGroupsController : Controller
+    public class PagesController : Controller
     {
-        private IPageGroupRepository pageGroupRepository;
-        MyCmsContext db = new MyCmsContext();
-        public PageGroupsController()
-        {
-            pageGroupRepository = new PageGroupRepository();
-        }
+        private MyCmsContext db = new MyCmsContext();
 
-        // GET: Admin/PageGroups
+        // GET: Admin/Pages
         public ActionResult Index()
         {
-            return View(pageGroupRepository.GetAll());
+            var pages = db.Pages.Include(p => p.PageGroup);
+            return View(pages.ToList());
         }
 
-        // GET: Admin/PageGroups/Details/5
+        // GET: Admin/Pages/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = pageGroupRepository.GetById(id.Value);
-            if (pageGroup == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-            return PartialView(pageGroup);
+            return View(page);
         }
 
-        // GET: Admin/PageGroups/Create
+        // GET: Admin/Pages/Create
         public ActionResult Create()
         {
-            return PartialView();
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle");
+            return View();
         }
 
-        // POST: Admin/PageGroups/Create
+        // POST: Admin/Pages/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GroupID,GroupTitle,GroupImgName")] PageGroup pageGroup)
+        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page)
         {
             if (ModelState.IsValid)
             {
-                pageGroupRepository.InsertPageGroup(pageGroup);
-                pageGroupRepository.save();
+                page.Visit = 0;
+                page.CreateDate = DateTime.Now;
+                db.Pages.Add(page);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(pageGroup);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            return View(page);
         }
 
-        // GET: Admin/PageGroups/Edit/5
+        // GET: Admin/Pages/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = pageGroupRepository.GetById(id.Value);
-
-            if (pageGroup == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-            return PartialView(pageGroup);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            return View(page);
         }
 
-        // POST: Admin/PageGroups/Edit/5
+        // POST: Admin/Pages/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GroupID,GroupTitle,GroupImgName")] PageGroup pageGroup)
+        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page)
         {
             if (ModelState.IsValid)
             {
-                pageGroupRepository.UpdatePageGroup(pageGroup);
-                pageGroupRepository.save();
+                db.Entry(page).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(pageGroup);
+            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            return View(page);
         }
 
-        // GET: Admin/PageGroups/Delete/5
+        // GET: Admin/Pages/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = pageGroupRepository.GetById(id.Value);
-            if (pageGroup == null)
+            Page page = db.Pages.Find(id);
+            if (page == null)
             {
                 return HttpNotFound();
             }
-            return PartialView(pageGroup);
+            return View(page);
         }
 
-        // POST: Admin/PageGroups/Delete/5
+        // POST: Admin/Pages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            pageGroupRepository.DeletePageGroup(id);
-            pageGroupRepository.save();
-            //PageGroup pageGroup = db.PageGroups.Find(id);
-            //db.PageGroups.Remove(pageGroup);
-            //db.SaveChanges();
+            Page page = db.Pages.Find(id);
+            db.Pages.Remove(page);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -127,7 +126,6 @@ namespace my_library.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                pageGroupRepository.Dispose();
                 db.Dispose();
             }
             base.Dispose(disposing);
