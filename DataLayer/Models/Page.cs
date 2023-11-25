@@ -38,7 +38,7 @@ namespace DataLayer
         [Display(Name = "بازدید")]
         public int Visit { get; set; }
         [Display(Name = "تصویر")]
-        public int ImageName { get; set; }
+        public string ImageName { get; set; }
         [Display(Name = "اسلایدر")]
         public bool ShowInSlider { get; set; }
         [Display(Name = "تاریخ ایجاد")]

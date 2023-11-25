@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using DataLayer;
 
 namespace my_library.Areas.Admin.Controllers
@@ -16,7 +18,7 @@ namespace my_library.Areas.Admin.Controllers
         MyCmsContext db = new MyCmsContext();
         public PageGroupsController()
         {
-            pageGroupRepository = new PageGroupRepository();
+            pageGroupRepository = new PageGroupRepository(db);
         }
 
         // GET: Admin/PageGroups
@@ -51,10 +53,17 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GroupID,GroupTitle,GroupImgName")] PageGroup pageGroup)
+        public ActionResult Create([Bind(Include = "GroupID,GroupTitle,GroupImgName")] PageGroup pageGroup, HttpPostedFileBase imgUpPageGroup)
         {
             if (ModelState.IsValid)
             {
+
+                if (imgUpPageGroup != null)
+                {
+                    pageGroup.GroupImgName = Guid.NewGuid() + Path.GetExtension(imgUpPageGroup.FileName);
+                    imgUpPageGroup.SaveAs(Server.MapPath("/PageGroupImages/" + pageGroup.GroupImgName));
+                }
+
                 pageGroupRepository.InsertPageGroup(pageGroup);
                 pageGroupRepository.save();
                 return RedirectToAction("Index");

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -54,14 +55,23 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page, HttpPostedFileBase imgUpPage)
+        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text,Visit,ImageName," +
+            "ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page, HttpPostedFileBase imgUpPage)
         {
             if (ModelState.IsValid)
             {
                 page.Visit = 0;
                 page.CreateDate = DateTime.Now;
-                db.Pages.Add(page);
-                db.SaveChanges();
+
+                if (imgUpPage != null)
+                {
+                    page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUpPage.FileName);
+                    imgUpPage.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
+                }
+                pageRepository.InserPage(page);
+                pageRepository.save();
+                //db.Pages.Add(page);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -132,6 +142,8 @@ namespace my_library.Areas.Admin.Controllers
         {
             if (disposing)
             {
+                pageGroupRepository.Dispose();
+                pageRepository.Dispose();
                 db.Dispose();
             }
             base.Dispose(disposing);
