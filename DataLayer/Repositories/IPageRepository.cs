@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal interface IPageRepository
+    public interface IPageRepository
     {
         IEnumerable<Page> GetAll();
         Page GetById(int pageId);
