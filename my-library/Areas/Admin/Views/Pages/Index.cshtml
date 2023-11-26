@@ -4,13 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-responsive">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
         </th>
@@ -20,21 +22,19 @@
         <th>
             @Html.DisplayNameFor(model => model.Author)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.AuthorID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShortDescription)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Text)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Visit)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageName)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.ShowInSlider)
         </th>
@@ -55,52 +55,56 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuthorID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShortDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Visit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShowInSlider)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BorrowPersonID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsBorrow)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BorrowedDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PageID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PageID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PageID })
-            </td>
-        </tr>
+        <tbody class="align-items-center" style="vertical-align:middle">
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.ImageName)*@
+                    <img src="~/PageImages/@item.ImageName" class="img-thumbnail" style="max-width:120px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.AuthorID)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ShortDescription)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visit)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowInSlider)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BorrowPersonID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsBorrow)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BorrowedDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PageID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PageID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PageID })
+                </td>
+            </tr>
+        </tbody>
     }
 
 </table>
