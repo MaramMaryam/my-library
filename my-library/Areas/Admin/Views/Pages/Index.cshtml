@@ -87,7 +87,8 @@
                     @Html.DisplayFor(modelItem => item.ShowInSlider)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CreateDate)
+                    @*@Html.DisplayFor(modelItem => item.CreateDate)*@
+                    @item.CreateDate.ToShamsi()
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.BorrowPersonID)
