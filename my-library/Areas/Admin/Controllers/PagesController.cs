@@ -86,12 +86,12 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
+            Page page = pageRepository.GetById(id.Value);
             if (page == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle", page.GroupID);
             return View(page);
         }
 
@@ -100,12 +100,26 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page)
+        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text," +
+            "Visit,ImageName,ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page, HttpPostedFileBase imgUpPage)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(page).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(page).State = EntityState.Modified;
+                //db.SaveChanges();
+
+                if(imgUpPage != null)
+                {
+                    if(page.ImageName != null)
+                    {
+                        System.IO.File.Delete(Server.MapPath("/PageImages/" + page.ImageName));
+                    }
+                    page.ImageName=Guid.NewGuid()+Path.GetExtension(imgUpPage.FileName);
+                    imgUpPage.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
+                }
+
+                pageRepository.UpdatePage(page);
+                pageRepository.save();
                 return RedirectToAction("Index");
             }
             ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
