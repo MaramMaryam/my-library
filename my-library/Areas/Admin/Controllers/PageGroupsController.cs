@@ -66,7 +66,7 @@ namespace my_library.Areas.Admin.Controllers
 
                 pageGroupRepository.InsertPageGroup(pageGroup);
                 pageGroupRepository.save();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
 
             return View(pageGroup);
@@ -93,13 +93,24 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GroupID,GroupTitle,GroupImgName")] PageGroup pageGroup)
+        public ActionResult Edit([Bind(Include = "GroupID,GroupTitle,GroupImgName")] PageGroup pageGroup, HttpPostedFileBase imgUpPageGroup)
         {
             if (ModelState.IsValid)
             {
+
+                if (imgUpPageGroup != null)
+                {
+                    if (pageGroup.GroupImgName != null)
+                    {
+                        System.IO.File.Delete(Server.MapPath("/PageGroupImages/" + pageGroup.GroupImgName));
+                    }
+                    pageGroup.GroupImgName = Guid.NewGuid() + Path.GetExtension(imgUpPageGroup.FileName);
+                    imgUpPageGroup.SaveAs(Server.MapPath("/PageGroupImages/" + pageGroup.GroupImgName));
+                }
+
                 pageGroupRepository.UpdatePageGroup(pageGroup);
                 pageGroupRepository.save();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(pageGroup);
         }
@@ -129,7 +140,7 @@ namespace my_library.Areas.Admin.Controllers
             //PageGroup pageGroup = db.PageGroups.Find(id);
             //db.PageGroups.Remove(pageGroup);
             //db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         protected override void Dispose(bool disposing)

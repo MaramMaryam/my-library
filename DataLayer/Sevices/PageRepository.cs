@@ -32,16 +32,17 @@ namespace DataLayer
             {
                 db.Pages.Add(page);
                 return true;
-                    }
+            }
             catch (Exception) { return false; }
         }
         public bool UpdatePage(Page page)
         {
-            try{
+            try
+            {
                 db.Entry(page).State = EntityState.Modified;
                 return true;
             }
-            catch(Exception){ return false; }
+            catch (Exception) { return false; }
         }
         public bool DeletePage(Page page)
         {
