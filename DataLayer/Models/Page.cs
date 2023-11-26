@@ -42,6 +42,7 @@ namespace DataLayer
         [Display(Name = "اسلایدر")]
         public bool ShowInSlider { get; set; }
         [Display(Name = "تاریخ ایجاد")]
+        [DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
         public DateTime CreateDate { get; set; }
         //public int BorrowCount { get; set; }
         //[Display(Name = "تعداد امانت برده شده")]
@@ -53,6 +54,8 @@ namespace DataLayer
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         public bool IsBorrow { get; set; }
         [Display(Name = "تاریخ امانت")]
+        [DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
+
         public string BorrowedDate { get; set; }
 
         public virtual PageGroup PageGroup { get; set; }
