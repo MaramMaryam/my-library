@@ -17,11 +17,12 @@
 
         <dt>
             @Html.DisplayNameFor(model => model.GroupImgName)
+            <img src="~/PageGroupImages/@Model.GroupImgName" class="img-thumbnail" style="max-width: 150px" />
         </dt>
 
-        <dd>
+        @*<dd>
             @Html.DisplayFor(model => model.GroupImgName)
-        </dd>
+        </dd>*@
 
     </dl>
 

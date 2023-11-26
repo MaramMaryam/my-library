@@ -135,11 +135,17 @@ namespace my_library.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            pageGroupRepository.DeletePageGroup(id);
-            pageGroupRepository.save();
+        
             //PageGroup pageGroup = db.PageGroups.Find(id);
             //db.PageGroups.Remove(pageGroup);
             //db.SaveChanges();
+            var pageGroup = pageGroupRepository.GetById(id);
+            if (pageGroup.GroupImgName != null)
+            {
+                System.IO.File.Delete(Server.MapPath("/PageGroupImages/" + pageGroup.GroupImgName));
+            }
+            pageGroupRepository.DeletePageGroup(id);
+            pageGroupRepository.save();
             return RedirectToAction("/Index");
         }
 
