@@ -142,10 +142,16 @@ namespace my_library.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                pageGroupRepository.Dispose();
                 pageRepository.Dispose();
+                pageGroupRepository.Dispose();
                 db.Dispose();
             }
+            //if (disposing)
+            //{
+            //    pageGroupRepository.Dispose();
+            //    pageRepository.Dispose();
+            //    db.Dispose();
+            //}
             base.Dispose(disposing);
         }
     }

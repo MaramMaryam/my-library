@@ -39,3 +39,4 @@ E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyCo
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.dll
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.pdb
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
+E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addimgpagegroup.resources
