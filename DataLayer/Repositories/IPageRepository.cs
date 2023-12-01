@@ -18,5 +18,6 @@ namespace DataLayer
 
         IEnumerable<Page> TopBooks(int take = 4);
         IEnumerable<Page> PagesInSlider();
+        IEnumerable<Page> LastBooks(int take = 3);
     }
 }

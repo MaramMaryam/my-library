@@ -26,5 +26,9 @@ namespace my_library.Controllers
         {
             return PartialView(pageRepository.TopBooks());
         }
+        public ActionResult LatesBooks()
+        {
+            return PartialView(pageRepository.LastBooks());
+        }
     }
 }

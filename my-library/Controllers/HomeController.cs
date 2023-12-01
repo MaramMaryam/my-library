@@ -39,5 +39,9 @@ namespace my_library.Controllers
         {
             return PartialView(pageRepository.PagesInSlider());
         }
+        //public ActionResult LatestBooks()
+        //{
+        //    return PartialView();
+        //}
     }
 }
