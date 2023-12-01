@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,18 @@ namespace my_library.Controllers
 {
     public class BooksController : Controller
     {
-        // GET: Books
-        public ActionResult ShowGroups()
+        MyCmsContext db = new MyCmsContext();
+        private IPageGroupRepository pageGroupRepository;
+        private IPageRepository pageRepository;
+        public BooksController()
         {
-            return PartialView();
+            pageGroupRepository = new PageGroupRepository(db);
+            pageRepository = new PageRepository(db);
+        }
+        // GET: Books
+        public ActionResult ShowGroupsInMenu()
+        {
+            return PartialView(pageGroupRepository.GetGroupsForView());
         }
     }
 }

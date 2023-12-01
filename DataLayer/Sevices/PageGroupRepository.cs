@@ -91,9 +91,24 @@ namespace DataLayer
             db.SaveChanges();
         }
 
+        public IEnumerable<ShowGroupsViewModel> GetGroupsForView()
+        {
+            return db.PageGroups.Select(g => new ShowGroupsViewModel()
+            {
+                GroupID = g.GroupID,
+
+                GroupTitle = g.GroupTitle,
+
+                PageCount = g.Pages.Count
+
+            });
+        }
+
         public void Dispose()
         {
             db.Dispose();
         }
+
+        
     }
 }
