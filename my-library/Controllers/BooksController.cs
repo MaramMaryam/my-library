@@ -22,5 +22,9 @@ namespace my_library.Controllers
         {
             return PartialView(pageGroupRepository.GetGroupsForView());
         }
+        public ActionResult TopBooks()
+        {
+            return PartialView(pageRepository.TopBooks());
+        }
     }
 }

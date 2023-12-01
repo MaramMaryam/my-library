@@ -1,0 +1,124 @@
+﻿@model IEnumerable<DataLayer.Page>
+
+
+<section class="my-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-box mb-3">
+                    @*<p class="m-0 p-0">مطالب بروز شده</p>*@
+                    <p class="m-0 p-0"> پر بازدیدترین کتابها </p>
+                    <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="top-slider owl-carousel owl-theme top-slider-wrap">
+                    @foreach (var item in Model)
+                    {
+                        <div class="slider-item bg-white rounded p-4">
+                            <figure class="position-relative">
+                                <img src="~/PageImages/@item.ImageName" alt="" class="w-100 rounded">
+                                <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                </figcaption>
+                                <figcaption class="tp_bottom position-absolute p-4">
+                                    <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                                </figcaption>
+                            </figure>
+                            <div class="item-cat">
+                                <div class="d-flex">
+                                    <i class="bi bi-play-circle"></i>
+                                    <span class="d-block p-2 text-info">بروز شده</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h6 class="overflow-hidden px-2"> @item.Title </h6>
+                            </a>
+                        </div>
+                    }
+
+                    @*<div class="slider-item bg-white rounded p-4">
+                            <figure class="position-relative">
+                                <img src="~/Content/Template/img/blog/ecom.jpg" alt="" class="w-100 rounded">
+                                <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                </figcaption>
+                                <figcaption class="tp_bottom position-absolute p-4">
+                                    <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                                </figcaption>
+                            </figure>
+                            <div class="item-cat">
+                                <div class="d-flex">
+                                    <i class="bi bi-play-circle"></i>
+                                    <span class="d-block p-2 text-info">بروز شده</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h6 class="overflow-hidden px-2">آموزش نصب قالب woo وردپرس</h6>
+                            </a>
+                        </div>
+                        <div class="slider-item bg-white rounded p-4">
+                            <figure class="position-relative">
+                                <img src="~/Content/Template/img/blog/podcast.jpg" alt="" class="w-100 rounded">
+                                <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                </figcaption>
+                                <figcaption class="tp_bottom position-absolute p-4">
+                                    <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                                </figcaption>
+                            </figure>
+                            <div class="item-cat">
+                                <div class="d-flex">
+                                    <i class="bi bi-play-circle"></i>
+                                    <span class="d-block p-2 text-info">بروز شده</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h6 class="overflow-hidden px-2">رادیو آموزشی هرروز با شما</h6>
+                            </a>
+                        </div>
+                        <div class="slider-item bg-white rounded p-4">
+                            <figure class="position-relative">
+                                <img src="~/Content/Template/img/blog/btstrap.jpg" alt="" class="w-100 rounded">
+                                <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                </figcaption>
+                                <figcaption class="tp_bottom position-absolute p-4">
+                                    <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                                </figcaption>
+                            </figure>
+                            <div class="item-cat">
+                                <div class="d-flex">
+                                    <i class="bi bi-play-circle"></i>
+                                    <span class="d-block p-2 text-info">بروز شده</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h6 class="overflow-hidden px-2">دانلود و شروع کار با بوت استرپ</h6>
+                            </a>
+                        </div>
+                        <div class="slider-item bg-white rounded p-4">
+                            <figure class="position-relative">
+                                <img src="~/Content/Template/img/blog/buisiness.jpg" alt="" class="w-100 rounded">
+                                <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                </figcaption>
+                                <figcaption class="tp_bottom position-absolute p-4">
+                                    <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                                </figcaption>
+                            </figure>
+                            <div class="item-cat">
+                                <div class="d-flex">
+                                    <i class="bi bi-play-circle"></i>
+                                    <span class="d-block p-2 text-info">بروز شده</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h6 class="overflow-hidden px-2">اکانت های معتبر اینستاگرام</h6>
+                            </a>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
