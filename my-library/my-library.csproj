@@ -231,6 +231,7 @@
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
     <Content Include="Views\Books\ShowGroupsInMenu.cshtml" />
     <Content Include="Views\Books\TopBooks.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

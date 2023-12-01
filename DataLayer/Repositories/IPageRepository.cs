@@ -17,5 +17,6 @@ namespace DataLayer
         void save();
 
         IEnumerable<Page> TopBooks(int take = 4);
+        IEnumerable<Page> PagesInSlider();
     }
 }

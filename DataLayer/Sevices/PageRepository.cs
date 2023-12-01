@@ -71,6 +71,11 @@ namespace DataLayer
             return db.Pages.OrderByDescending(p => p.Visit).Take(take);
         }
 
+        public IEnumerable<Page> PagesInSlider()
+        {
+            return db.Pages.Where(p => p.ShowInSlider == true);
+        }
+
         public void Dispose()
         {
             db.Dispose();
