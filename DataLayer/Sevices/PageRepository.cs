@@ -81,11 +81,13 @@ namespace DataLayer
             return db.Pages.OrderByDescending(p => p.CreateDate).Take(take);
         }
 
+        public IEnumerable<Page> ShowPageByGroupId(int groupId)
+        {
+            return db.Pages.Where(p => p.GroupID == groupId);
+        }
         public void Dispose()
         {
             db.Dispose();
         }
-
-     
     }
 }

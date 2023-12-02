@@ -35,5 +35,11 @@ namespace my_library.Controllers
         {
             return View(pageRepository.GetAll());
         }
+        [Route("Group/{id}/{title}")]
+        public ActionResult ShowBooksByGroupId(int id, string title)
+        {
+            ViewBag.name = title;
+            return View(pageRepository.ShowPageByGroupId(id));
+        }
     }
 }
