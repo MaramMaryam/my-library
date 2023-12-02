@@ -46,10 +46,16 @@
                                      id="navbarSupportedContent">
                                     <ul class="navbar-nav mb-2 mb-lg-0">
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">خانه</a>
+                                            <a class="nav-link active" aria-current="page" href="/">خانه</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">مقالات</a>
+                                        </li>
+
+                                        @Html.Action("ShowGroupsInMenu", "Books")
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="Books/ArchiveBooks" tabindex="-1"
+                                               aria-disabled="true">آرشیو کتابخانه</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#" tabindex="-1"
@@ -59,21 +65,20 @@
                                             <a class="nav-link" href="#" tabindex="-1"
                                                aria-disabled="true">درباره</a>
                                         </li>
-                                        @Html.Action("ShowGroupsInMenu", "Books")
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                                               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                دسته بندی ها
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="#">مجله فرهنگی</a></li>
-                                                <li><a class="dropdown-item" href="#">مطالب ویدئویی</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>
-                                            </ul>
-                                        </li>
+                                        @*<li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    دسته بندی ها
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <li><a class="dropdown-item" href="#">مجله فرهنگی</a></li>
+                                                    <li><a class="dropdown-item" href="#">مطالب ویدئویی</a></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>
+                                                </ul>
+                                            </li>*@
                                     </ul>
                                 </div>
                             </nav>
@@ -405,7 +410,18 @@
                 </div>
             </div>
         </section>*@
-    <section class="my-5 ">
+
+
+
+
+
+
+
+
+
+
+
+    <!--<section class="my-5 ">
         <div class="container bg-white py-3 rounded grided-box px-4 pt-4">
             <div class="row">
                 <div class="col-12">
@@ -515,11 +531,12 @@
         </div>
         </div>
     </section>
+
     <section class="mb-5">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center">-->
                 @*@RenderBody()*@
-                <div class="col-12">
+                <!--<div class="col-12">
                     <div class="title-box mb-3">
                         <p class="m-0 p-0">آخرین مطالب سایت</p>
                         <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
@@ -584,7 +601,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <footer class="bg-white py-4 text-center">
         <div class="container">
             <div class="row">

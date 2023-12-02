@@ -233,6 +233,7 @@
     <Content Include="Views\Books\TopBooks.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Books\LatesBooks.cshtml" />
+    <Content Include="Views\Books\ArchiveBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

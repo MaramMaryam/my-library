@@ -30,5 +30,10 @@ namespace my_library.Controllers
         {
             return PartialView(pageRepository.LastBooks());
         }
+        [Route("Books/ArchiveBooks")]
+        public ActionResult ArchiveBooks()
+        {
+            return View(pageRepository.GetAll());
+        }
     }
 }
