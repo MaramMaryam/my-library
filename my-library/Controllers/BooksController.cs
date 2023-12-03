@@ -41,5 +41,18 @@ namespace my_library.Controllers
             ViewBag.name = title;
             return View(pageRepository.ShowPageByGroupId(id));
         }
+        [Route("Books/{id}")]
+        public ActionResult ShowBooks(int id)
+        {
+            var books = pageRepository.GetById(id);
+            if (books == null)
+            {
+                return HttpNotFound();
+            }
+            books.Visit += 1;
+            pageRepository.UpdatePage(books);
+            pageRepository.save();
+            return View(books);
+        }
     }
 }
