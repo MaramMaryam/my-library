@@ -4,7 +4,21 @@
     ViewBag.Title = "ShowBooks";
 }
 
-<h2>ShowBooks</h2>
+
+<div class="breadcrumb-wrap p-3 bg-white my-4 rounded">
+    <nav>
+        <ol class="d-flex">
+            <li><a href="/">خانه</a></li>
+            <li><a href="/Books/ArchiveBooks">  کتابها </a></li>
+            <li><a href="/Books/ArchiveBooks">  @Model.PageGroup.GroupTitle </a></li>
+            <li>  @Model.Title </li>
+            
+        </ol>
+    </nav>
+</div>
+
+
+@*<h2>ShowBooks</h2>
 
 <div>
     <h4>Page</h4>
@@ -119,4 +133,4 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PageID }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</p>*@
