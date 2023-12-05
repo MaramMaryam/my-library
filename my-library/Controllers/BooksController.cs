@@ -68,6 +68,7 @@ namespace my_library.Controllers
                 Name = name
             };
             pageCommentRepository.AddComment(addComment);
+            pageCommentRepository.save();
             return null;
         }
     }

@@ -10,5 +10,6 @@ namespace DataLayer
     {
         IEnumerable<PageComment> GetCommentByBooksId(int id);
         bool AddComment(PageComment comment);
+        void save();
     }
 }

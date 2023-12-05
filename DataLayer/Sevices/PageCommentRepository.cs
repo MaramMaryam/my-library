@@ -18,15 +18,20 @@ namespace DataLayer
             try
             {
                 db.PageComments.Add(comment);
-                db.SaveChanges();
+                //db.SaveChanges();
                 return true;
             }
-            catch (Exception ex) { return false; }
+            catch (Exception) { return false; }
         }
 
         public IEnumerable<PageComment> GetCommentByBooksId(int pageId)
         {
             return db.PageComments.Where(c => c.PageID == pageId);
+        }
+
+        public void save()
+        {
+            db.SaveChanges();
         }
     }
 }

@@ -194,7 +194,7 @@
     function addComment()
     {
         $.ajax({
-            url: "/Books/AddComment/" + @Model.PageID,
+            url: "/Books/" + @Model.PageID,
             type: "Get",
             data: {
                 name: $("#txtName").val(),
