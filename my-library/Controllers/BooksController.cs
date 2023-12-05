@@ -12,10 +12,12 @@ namespace my_library.Controllers
         MyCmsContext db = new MyCmsContext();
         private IPageGroupRepository pageGroupRepository;
         private IPageRepository pageRepository;
+        private IPageCommentRepository pageCommentRepository;
         public BooksController()
         {
             pageGroupRepository = new PageGroupRepository(db);
             pageRepository = new PageRepository(db);
+            pageCommentRepository = new PageCommentRepository(db);
         }
         // GET: Books
         public ActionResult ShowGroupsInMenu()
@@ -65,6 +67,7 @@ namespace my_library.Controllers
                 Email = email,
                 Name = name
             };
+            pageCommentRepository.AddComment(addComment);
             return null;
         }
     }

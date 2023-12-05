@@ -130,15 +130,17 @@
                                         <h6 class=" pb-3 border-bottom mb-3"><i class="bi bi-chat-right-text"></i> در بهبود مقاله شریک باشید</h6>
                                         <div class="row">
                                             <div class="col-12 mb-2">
-                                                <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل شما (الزامی)">
+                                                <input type="email" id="txtEmail" 
+                                                       aria-describedby="emailHelp" placeholder="ایمیل شما (الزامی)"
+                                                       >
                                             </div>
                                             <div class="col-12 mb-2">
-                                                <input type="text" id="exampleInput" placeholder="نام شما">
+                                                <input type="text" id="txtName" placeholder="نام شما">
                                             </div>
                                         </div>
-                                        <div class="col-12"><textarea class=" w-100" rows="5"></textarea></div>
+                                        <div class="col-12"><textarea id="txtComment" class=" w-100" rows="5"></textarea></div>
                                         <div class="text-start">
-                                            <button type="submit">ارسال</button>
+                                            <button type="button" onclick="addComment()">ارسال</button>
                                         </div>
                                     </form>
                                 </div>
@@ -187,6 +189,27 @@
         </div>
     </div>
 </section>
+
+<script>
+    function addComment()
+    {
+        $.ajax({
+            url: "/Books/AddComment/" + @Model.PageID,
+            type: "Get",
+            data: {
+                name: $("#txtName").val(),
+                email: $("#txtEmail").val(),
+                comment: $("#txtComment").val(),
+            }
+        }).done(function () {
+            $("#txtName").val("");
+            $("#txtEmail").val("");
+            $("#txtComment").val("");
+        });
+    }
+</script>
+
+
 
 
 @*<h2>ShowBooks</h2>
