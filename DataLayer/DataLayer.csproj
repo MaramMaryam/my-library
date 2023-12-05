@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202311251705581_add-img-pagegroup.designer.cs">
       <DependentUpon>202311251705581_add-img-pagegroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312050233544_chnge type of date.cs" />
+    <Compile Include="Migrations\202312050233544_chnge type of date.designer.cs">
+      <DependentUpon>202312050233544_chnge type of date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311251705581_add-img-pagegroup.resx">
       <DependentUpon>202311251705581_add-img-pagegroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312050233544_chnge type of date.resx">
+      <DependentUpon>202312050233544_chnge type of date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

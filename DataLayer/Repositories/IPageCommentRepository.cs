@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal interface IPageCommentRepository
+    public interface IPageCommentRepository
     {
+        IEnumerable<PageComment> GetCommentByBooksId(int id);
+        bool AddComment(PageComment comment);
     }
 }

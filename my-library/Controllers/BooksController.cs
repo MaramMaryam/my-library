@@ -54,5 +54,18 @@ namespace my_library.Controllers
             pageRepository.save();
             return View(books);
         }
+
+        public ActionResult AddComment(int id, string name, string email, string comment)
+        {
+            PageComment addComment = new PageComment()
+            {
+                CreateDate = DateTime.Now,
+                PageID = id,
+                Comment = comment,
+                Email = email,
+                Name = name
+            };
+            return null;
+        }
     }
 }

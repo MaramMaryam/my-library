@@ -35,7 +35,7 @@ namespace DataLayer
         public string Comment { get; set; }
 
         [Display(Name = "تاریخ ثبت")]
-        public string CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         public virtual Page Page { get; set; }
         public PageComment()
