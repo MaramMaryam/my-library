@@ -9,7 +9,7 @@ namespace DataLayer
     public interface IPageCommentRepository
     {
         IEnumerable<PageComment> GetCommentByBooksId(int id);
-        bool AddComment(PageComment comment);
+        bool InsertComment(PageComment comment);
         void save();
     }
 }

@@ -13,7 +13,7 @@ namespace DataLayer
         {
             this.db = context;
         }
-        public bool AddComment(PageComment comment)
+        public bool InsertComment(PageComment comment)
         {
             try
             {
@@ -22,16 +22,20 @@ namespace DataLayer
                 return true;
             }
             catch (Exception) { return false; }
+        } 
+        public void save()
+        {
+            db.SaveChanges();
         }
-
         public IEnumerable<PageComment> GetCommentByBooksId(int pageId)
         {
             return db.PageComments.Where(c => c.PageID == pageId);
         }
 
-        public void save()
+       
+        public void Dispose()
         {
-            db.SaveChanges();
+            db.Dispose();
         }
     }
 }

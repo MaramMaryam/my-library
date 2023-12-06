@@ -57,6 +57,7 @@ namespace my_library.Controllers
             return View(books);
         }
 
+        //[Route("Books/{id}")]
         public ActionResult AddComment(int id, string name, string email, string comment)
         {
             PageComment addComment = new PageComment()
@@ -67,9 +68,22 @@ namespace my_library.Controllers
                 Email = email,
                 Name = name
             };
-            pageCommentRepository.AddComment(addComment);
-            pageCommentRepository.save();
+            pageCommentRepository.InsertComment(addComment);
+            //pageCommentRepository.save();
             return null;
         }
+        public ActionResult ShowComments(int id)
+        {
+            return PartialView(pageCommentRepository.GetCommentByBooksId(id));
+        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        pageCommentRepository.Dispose();
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DataLayer.PageComment>
+
+@foreach (var item in Model)
+{
+    <div class="cm-parent rounded bg-light p-3 mb-3">
+        <div class="row">
+            <div class="col-1">
+                <img src="~/Content/Template/img/userAvatar.png" alt="">
+            </div>
+            <div class="col-11">
+                <p>
+                    <span class="d-inline-block text-primary ps-2">@item.Name :</span>
+                    @item.Comment
+                </p>
+                <div class="text-start">
+                    <span class="d-inline-block mt-2 py-1 text-info px-2">
+                        <i class="bi bi-calendar2-event"></i> @item.CreateDate.ToShamsi()
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
