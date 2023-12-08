@@ -43,3 +43,4 @@ E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.ad
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.chngetypeofdate.resources
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.changenameofcomment.resources
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.updateNaminpagecommmentmodel.resources
+E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addTags.resources

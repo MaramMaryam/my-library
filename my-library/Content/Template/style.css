@@ -422,3 +422,14 @@ footer ul.social-bx a {
 		padding-right: 8px;
 	}
 }
+
+.keyword {
+	display: inline-block;
+	padding: 2px 5px;
+	margin: 2px 0;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	background-color: #eee;
+	color: #555;
+	font-style: italic;
+}

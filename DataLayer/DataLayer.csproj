@@ -76,6 +76,10 @@
     <Compile Include="Migrations\202312080747155_update Nam in pagecommment model.designer.cs">
       <DependentUpon>202312080747155_update Nam in pagecommment model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312080819432_add-Tags.cs" />
+    <Compile Include="Migrations\202312080819432_add-Tags.designer.cs">
+      <DependentUpon>202312080819432_add-Tags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312080747155_update Nam in pagecommment model.resx">
       <DependentUpon>202312080747155_update Nam in pagecommment model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312080819432_add-Tags.resx">
+      <DependentUpon>202312080819432_add-Tags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

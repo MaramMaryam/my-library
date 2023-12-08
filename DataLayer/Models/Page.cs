@@ -55,8 +55,11 @@ namespace DataLayer
         public bool IsBorrow { get; set; }
         [Display(Name = "تاریخ امانت")]
         [DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
-
         public string BorrowedDate { get; set; }
+
+        [Display(Name = "کلمات کلیدی")]
+        public string Tags { get; set; }
+
 
         public virtual PageGroup PageGroup { get; set; }
         public virtual List<PageComment> PageComments { get; set; }
