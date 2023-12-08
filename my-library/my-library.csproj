@@ -133,6 +133,7 @@
     <Compile Include="Classes\PersianConvertorDate.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,6 +238,7 @@
     <Content Include="Views\Books\ShowBooksByGroupId.cshtml" />
     <Content Include="Views\Books\ShowBooks.cshtml" />
     <Content Include="Views\Books\ShowComments.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

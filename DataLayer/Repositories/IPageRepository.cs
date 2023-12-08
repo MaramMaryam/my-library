@@ -20,5 +20,6 @@ namespace DataLayer
         IEnumerable<Page> PagesInSlider();
         IEnumerable<Page> LastBooks(int take = 3);
         IEnumerable<Page> ShowPageByGroupId(int groupId);
+        IEnumerable<Page> SearchPage(string search);
     }
 }
