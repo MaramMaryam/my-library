@@ -16,10 +16,10 @@ namespace my_library.Controllers
             pageRepository = new PageRepository(db);
         }
         // GET: Search
-        public ActionResult Index(string id)
+        public ActionResult Index(string q)
         {
-            ViewBag.Name = id;
-            return View(pageRepository.SearchPage(id));
+            ViewBag.Name = q;
+            return View(pageRepository.SearchPage(q));
         }
     }
 }
