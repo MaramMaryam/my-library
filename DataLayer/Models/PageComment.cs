@@ -12,7 +12,7 @@ namespace DataLayer
         [Key]
         public int CommentID { get; set; }
 
-        [Display(Name = "")]
+        [Display(Name = "کتاب")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         public int PageID { get; set; }
 
