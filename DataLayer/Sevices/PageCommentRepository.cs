@@ -13,29 +13,49 @@ namespace DataLayer
         {
             this.db = context;
         }
-        public bool InsertComment(PageComment comment)
+
+        public bool AddComment(PageComment comment)
         {
             try
             {
                 db.PageComments.Add(comment);
-                //db.SaveChanges();
+                db.SaveChanges();
                 return true;
             }
-            catch (Exception) { return false; }
-        } 
-        public void save()
-        {
-            db.SaveChanges();
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
+
         public IEnumerable<PageComment> GetCommentByBooksId(int pageId)
         {
             return db.PageComments.Where(c => c.PageID == pageId);
         }
 
-       
-        public void Dispose()
-        {
-            db.Dispose();
-        }
+        //public void save()
+        //{
+        //    db.SaveChanges();
+        //}
+        //public IEnumerable<PageComment> GetCommentByBooksId(int pageId)
+        //{
+        //    return db.PageComments.Where(c => c.PageID == pageId);
+        //}
+        //public bool AddComment(PageComment comment)
+        //{
+        //    try
+        //    {
+        //        db.PageComments.Add(comment);
+        //        db.SaveChanges();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        return false;
+        //    }
+        //}
+
     }
 }

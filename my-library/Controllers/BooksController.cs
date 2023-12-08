@@ -57,20 +57,19 @@ namespace my_library.Controllers
             return View(books);
         }
 
-        //[Route("Books/{id}")]
         public ActionResult AddComment(int id, string name, string email, string comment)
         {
-            PageComment addComment = new PageComment()
+            PageComment addcomment = new PageComment()
             {
                 CreateDate = DateTime.Now,
                 PageID = id,
-                Comment = comment,
+                Name = name,
                 Email = email,
-                Name = name
+                Comment = comment
             };
-            pageCommentRepository.InsertComment(addComment);
+            pageCommentRepository.AddComment(addcomment);
             //pageCommentRepository.save();
-            return null;
+            return PartialView("ShowComments", pageCommentRepository.GetCommentByBooksId(id));
         }
         public ActionResult ShowComments(int id)
         {

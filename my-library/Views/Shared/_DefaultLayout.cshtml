@@ -535,8 +535,8 @@
     <section class="mb-5">
         <div class="container">
             <div class="row justify-content-center">-->
-                @*@RenderBody()*@
-                <!--<div class="col-12">
+    @*@RenderBody()*@
+    <!--<div class="col-12">
                     <div class="title-box mb-3">
                         <p class="m-0 p-0">آخرین مطالب سایت</p>
                         <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
@@ -630,5 +630,8 @@
     <script src="~/Content/Template/js/owl.carousel.js"></script>
     <script src="~/Content/Template/js/index.js"></script>
     <script src="https://seo90.ir/downloads/category/html-theme/"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

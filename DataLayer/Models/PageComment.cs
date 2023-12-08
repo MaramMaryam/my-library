@@ -17,7 +17,7 @@ namespace DataLayer
         public int PageID { get; set; }
 
         [Display(Name = "نام")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         [MaxLength(150)]
         public string Name { get; set; }
 

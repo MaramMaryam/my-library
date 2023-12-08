@@ -39,7 +39,7 @@
                                         <li><i class="bi bi-clock p-1"></i>&nbsp; @Model.CreateDate.ToShamsi() </li>
                                     </ul>
                                     <div class="text-start">
-                                        <span><i class="bi bi-chat"></i> @Model.Visit دیدگاه</span>
+                                        <span><i class="bi bi-chat"></i> @Model.PageComments.Count دیدگاه</span>
                                     </div>
                                 </div>
                                 <div class="border rounded p-3 single-excerpt-box">
@@ -62,91 +62,76 @@
                         <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
                     </div>
                     <div class="rounded bg-white p-3 mt-3">
-                        <div class="comments-box">
+                        <div class="comments-box" id="commentList">
                             @Html.Action("ShowComments")
-                            @*<div class="cm-parent rounded bg-light p-3 mb-3">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <img src="~/Content/Template/img/userAvatar.png" alt="">
-                                    </div>
-                                    <div class="col-11">
-                                        <p><span class="d-inline-block text-primary ps-2">جواهری :</span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                        <div class="text-start">
-                                            <span class="d-inline-block mt-2 py-1 text-info px-2">
-                                                <i class="bi bi-calendar2-event"></i> 23 مرداد
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*@
-                            <div class="cm-chlid me-5 border border-dark-50 rounded p-3 mb-3">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <img src="~/Content/Template/img/userAvatar.png" alt="">
-                                    </div>
-                                    <div class="col-11">
-                                        <p><span class="d-inline-block text-primary ps-2">مدیر سایت :</span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                        <div class="text-start">
-                                            <span class="d-inline-block mt-2 py-1 text-info px-2">
-                                                <i class="bi bi-calendar2-event"></i> 23 مرداد
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @*<div class="cm-parent rounded bg-light p-3 mb-3">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <img src="~/Content/Template/img/userAvatar.png" alt="">
-                                    </div>
-                                    <div class="col-11">
-                                        <p><span class="d-inline-block text-primary ps-2">Farzad :</span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                        <div class="text-start">
-                                            <span class="d-inline-block mt-2 py-1 text-info px-2">
-                                                <i class="bi bi-calendar2-event"></i> 23 مرداد
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cm-chlid me-5 border border-dark-50 rounded p-3 mb-3">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <img src="~/Content/Template/img/userAvatar.png" alt="">
-                                    </div>
-                                    <div class="col-11">
-                                        <p><span class="d-inline-block text-primary ps-2">امید :</span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                        <div class="text-start">
-                                            <span class="d-inline-block mt-2 py-1 text-info px-2">
-                                                <i class="bi bi-calendar2-event"></i> 23 مرداد
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*@
-                        </div>
 
+                            @*<div class="cm-parent rounded bg-light p-3 mb-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <img src="~/Content/Template/img/userAvatar.png" alt="">
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class="d-inline-block text-primary ps-2">جواهری :</span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            <div class="text-start">
+                                                <span class="d-inline-block mt-2 py-1 text-info px-2">
+                                                    <i class="bi bi-calendar2-event"></i> 23 مرداد
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                            @*<div class="cm-parent rounded bg-light p-3 mb-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <img src="~/Content/Template/img/userAvatar.png" alt="">
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class="d-inline-block text-primary ps-2">Farzad :</span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            <div class="text-start">
+                                                <span class="d-inline-block mt-2 py-1 text-info px-2">
+                                                    <i class="bi bi-calendar2-event"></i> 23 مرداد
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cm-chlid me-5 border border-dark-50 rounded p-3 mb-3">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <img src="~/Content/Template/img/userAvatar.png" alt="">
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class="d-inline-block text-primary ps-2">امید :</span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                            <div class="text-start">
+                                                <span class="d-inline-block mt-2 py-1 text-info px-2">
+                                                    <i class="bi bi-calendar2-event"></i> 23 مرداد
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+                        </div>
 
                         <div class="comment-form-rules mb-3 mt-5">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <form class="comment-form">
+                                    <form class="comment-form" action="" method="post">
                                         <h6 class=" pb-3 border-bottom mb-3"><i class="bi bi-chat-right-text"></i> در بهبود مقاله شریک باشید</h6>
                                         <div class="row">
                                             <div class="col-12 mb-2">
-                                                <input type="email" name="txtEmail" id="txtEmail"
+                                                <input type="email" name="email" id="txtEmail"
                                                        aria-describedby="emailHelp" placeholder="ایمیل شما (الزامی)">
                                             </div>
                                             <div class="col-12 mb-2">
-                                                <input type="text" name="txtName" id="txtName" placeholder="نام شما">
+                                                <input type="text" name="name" id="txtName" placeholder="نام شما">
                                             </div>
 
-
-
                                         </div>
-                                        <div class="col-12"><textarea name="txtComment" id="txtComment" class=" w-100" rows="5"></textarea></div>
+                                        <div class="col-12"><textarea name="comment" id="txtComment" class=" w-100" rows="5"></textarea></div>
                                         <div class="text-start">
-                                            <button type="button" onclick="addComment()">ارسال</button>
+                                            <button type="button" value="" onclick="addComment()">ارسال</button>
+                                            @*<input value="ارسال" type="button" onclick="addComment()">*@
                                         </div>
                                     </form>
                                 </div>
@@ -196,8 +181,26 @@
     </div>
 </section>
 
+
+<script>
+    function addComment() {
+        $.ajax({
+            url: "/Books/AddComment/" + @Model.PageID,
+            type: "Get",
+            data: { name: $("#txtName").val(),name: $("#txtName").val(), email: $("#txtEmail").val(), comment: $("#txtComment").val() }
+        }).done(function(result) {
+
+            $("#commentList").html(result);
+            $("#txtName").val("");
+            $("#txtEmail").val("");
+            $("#txtComment").val("");
+
+        });
+    }
+</script>
+
 @*@section scripts
-    {*@
+    {
     <script>
     function addComment()
     {
@@ -212,14 +215,15 @@
                 //email: $("#txtEmail").val(),
                 //comment: $("#txtComment").val(),
             }
-        }).done(function () {
+        }).done(function (result) {
+            $("#commentList").html(result);
             $("#txtName").val("");
             $("#txtEmail").val("");
             $("#txtComment").val("");
         });
     }
-    </script>
-@*  *@}
+    </script>*@
+}
 
 
 

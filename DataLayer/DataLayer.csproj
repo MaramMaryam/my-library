@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202312050233544_chnge type of date.designer.cs">
       <DependentUpon>202312050233544_chnge type of date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312080554031_change name of comment.cs" />
+    <Compile Include="Migrations\202312080554031_change name of comment.designer.cs">
+      <DependentUpon>202312080554031_change name of comment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312050233544_chnge type of date.resx">
       <DependentUpon>202312050233544_chnge type of date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312080554031_change name of comment.resx">
+      <DependentUpon>202312080554031_change name of comment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

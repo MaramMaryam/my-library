@@ -1,0 +1,8 @@
+﻿Build started...
+1>------ Build started: Project: DataLayer, Configuration: Debug Any CPU ------
+1>  DataLayer -> E:\myjob\nafis\New folder\my-library\DataLayer\bin\Debug\DataLayer.dll
+2>------ Build started: Project: my-library, Configuration: Debug Any CPU ------
+2>E:\myjob\nafis\New folder\my-library\my-library\Controllers\HomeController.cs(13,38,13,57): warning CS0169: The field 'HomeController.pageGroupRepository' is never used
+2>  my-library -> E:\myjob\nafis\New folder\my-library\my-library\bin\my-library.dll
+========== Build: 2 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build started at 9:38 AM and took 02.765 seconds ==========
