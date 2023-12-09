@@ -56,19 +56,25 @@
 
                                         @Html.Action("ShowGroupsInMenu", "Books")
 
-                                        @*<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                دسته بندی ها
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">مجله فرهنگی</a></li>
-                                <li><a class="dropdown-item" href="#">مطالب ویدئویی</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>
-                            </ul>
-                        </li>*@
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    مدیریت
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <li><a class="dropdown-item" href="/Admin/PageGroups/Index"> مدیریت گروه های کتاب </a></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="/Admin/Pages/Index"> مدیریت کتابها </a></li>
+                                                    @*<li>
+                                                            <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>*@
+                                                </ul>
+                                            </li>
+                                        }
 
 
                                         <li class="nav-item">
@@ -108,7 +114,7 @@
         </div>
     </header>
     <main class="mt-5">
-        
+
         @RenderBody()
     </main>
     @*<div class="col-12">
@@ -655,8 +661,8 @@
     <script src="~/Content/Template/js/owl.carousel.js"></script>
     <script src="~/Content/Template/js/index.js"></script>
     <script src="https://seo90.ir/downloads/category/html-theme/"></script>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
 </body>
 </html>
