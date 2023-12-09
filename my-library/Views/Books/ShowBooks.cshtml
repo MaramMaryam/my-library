@@ -51,15 +51,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-single rounded bg-white p-3 mt-3">
-                        <span class="d-block py-2 text-info">  کلمات کلیدی: </span>
-                        @foreach (var item in Model.Tags.Split('،'))
-                        {
-                            <span class="keywords keyword">
-                                <a class="" href="/Search?q=@item"> @item </a>
-                            </span>
-                        }
-                    </div>
+
+
+                    @if (Model.Tags != null)
+                    {
+                        <div class="content-single rounded bg-white p-3 mt-3">
+                            <span class="d-block py-2 text-info">  کلمات کلیدی: </span>
+
+                            @foreach (var item in Model.Tags.Split(','))
+                            {
+                                <span class="keywords keyword">
+                                    <a class="" href="/Search?q=@item"> @item </a>
+                                </span>
+                            }
+                        </div>
+                    }
+
                     <div class="content-single rounded bg-white p-3 mt-3">
                         <p>
                             @Model.Text
