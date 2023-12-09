@@ -44,3 +44,4 @@ E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.ch
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.changenameofcomment.resources
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.updateNaminpagecommmentmodel.resources
 E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addTags.resources
+E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.add_adminLogins.resources

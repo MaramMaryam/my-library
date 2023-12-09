@@ -131,6 +131,7 @@
     <Compile Include="Areas\Admin\Controllers\PageGroupsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Classes\PersianConvertorDate.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -239,6 +240,7 @@
     <Content Include="Views\Books\ShowBooks.cshtml" />
     <Content Include="Views\Books\ShowComments.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
