@@ -20,5 +20,23 @@ namespace my_library
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel login)
+        {
+            if (ModelState.IsValid)
+            {
+                if (loginRepository.IsExitUser(login.UserName, login.Password))
+                {
+
+                }
+                else 
+                {
+                    ModelState.AddModelError("UserName", "کاربری یافت نشد");
+                }
+            }
+
+            return View(login);
+        }
     }
 }
