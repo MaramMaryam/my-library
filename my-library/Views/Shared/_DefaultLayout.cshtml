@@ -85,8 +85,16 @@
                         </div>
                         <div class="col-md-3 col-4 text-start">
                             <div class="top-account">
-                                <a href="#" class="text-dark"><i class="bi bi-person"></i></a>
-                                <a href="#" class="text-dark"><i class="bi bi-gem"></i></a>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a href="#" class="text-dark"> @User.Identity.Name خوش آمدید </a> 
+                                    <a href="/Account/SignOut" class="text-dark"> خروج </a>
+                                }
+                                else
+                                {
+                                    <a href="/Account/Login" class="text-dark"><i class="bi bi-person"></i></a>
+                                    @*<a href="#" class="text-dark"><i class="bi bi-gem"></i></a>*@
+                                }
                                 <span> امروز: @DateTime.Now.ToShamsi() </span>
                             </div>
                         </div>

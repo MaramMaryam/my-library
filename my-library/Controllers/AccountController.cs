@@ -41,5 +41,10 @@ namespace my_library
 
             return View(login);
         }
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+            return Redirect("/");
+        }
     }
 }
