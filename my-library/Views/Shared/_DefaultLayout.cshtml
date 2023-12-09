@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="~/Content/Template/css/bootstrap-icons.css">
     <link rel="stylesheet" href="~/Content/Template/css/owl.carousel.css">
     <link rel="stylesheet" href="~/Content/Template/css/owl.theme.default.css">
-    <link rel="stylesheet" href="~/Content/Site.css">
+    @*<link rel="stylesheet" href="~/Content/Site.css">*@
     <link rel="stylesheet" href="~/Content/Template/style.css">
     <title>قالب وبلاگ سئو 90</title>
 </head>
@@ -57,18 +57,18 @@
                                         @Html.Action("ShowGroupsInMenu", "Books")
 
                                         @*<li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    دسته بندی ها
-                                                </a>
-                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                    <li><a class="dropdown-item" href="#">مجله فرهنگی</a></li>
-                                                    <li><a class="dropdown-item" href="#">مطالب ویدئویی</a></li>
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>
-                                                </ul>
-                                            </li>*@
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                دسته بندی ها
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">مجله فرهنگی</a></li>
+                                <li><a class="dropdown-item" href="#">مطالب ویدئویی</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>
+                            </ul>
+                        </li>*@
 
 
                                         <li class="nav-item">
@@ -108,6 +108,7 @@
         </div>
     </header>
     <main class="mt-5">
+        
         @RenderBody()
     </main>
     @*<div class="col-12">
