@@ -87,15 +87,15 @@
                             <div class="top-account">
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    <a href="#" class="text-dark"> @User.Identity.Name خوش آمدید </a> 
-                                    <a href="/Account/SignOut" class="text-dark"> خروج </a>
+                                    <a href="#" class="text-dark" style="font-size:small"> @User.Identity.Name خوش آمدید </a> 
+                                    <a href="/Account/SignOut" class="text-dark" style="font-size:small"> | خروج |</a>
                                 }
                                 else
                                 {
                                     <a href="/Account/Login" class="text-dark"><i class="bi bi-person"></i></a>
                                     @*<a href="#" class="text-dark"><i class="bi bi-gem"></i></a>*@
                                 }
-                                <span> امروز: @DateTime.Now.ToShamsi() </span>
+                                <span style="font-size:small"> امروز: @DateTime.Now.ToShamsi() </span>
                             </div>
                         </div>
                     </div>
