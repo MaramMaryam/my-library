@@ -1,0 +1,7 @@
+﻿Build started...
+1>------ Build started: Project: my-library, Configuration: Debug Any CPU ------
+1>E:\myjob\nafis\New folder\my-library\my-library\Controllers\HomeController.cs(13,38,13,57): warning CS0169: The field '
+1>HomeController.pageGroupRepository' is never used
+1>  my-library -> E:\myjob\nafis\New folder\my-library\my-library\bin\my-library.dll
+========== Build: 1 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========
+========== Build started at 7:20 PM and took 05.162 seconds ==========

@@ -12,6 +12,7 @@ using DataLayer;
 
 namespace my_library.Areas.Admin.Controllers
 {
+    [Authorize]
     public class PageGroupsController : Controller
     {
         private IPageGroupRepository pageGroupRepository;

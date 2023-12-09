@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Security;
+using System.Web.Security;
 
 namespace my_library
 {
@@ -28,7 +30,8 @@ namespace my_library
             {
                 if (loginRepository.IsExitUser(login.UserName, login.Password))
                 {
-
+                    FormsAuthentication.SetAuthCookie(login.UserName, login.RememberMe);
+                    return Redirect("/");
                 }
                 else 
                 {

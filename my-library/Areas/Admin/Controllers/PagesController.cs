@@ -11,6 +11,8 @@ using DataLayer;
 
 namespace my_library.Areas.Admin.Controllers
 {
+    [Authorize]
+
     public class PagesController : Controller
     {
         private IPageRepository pageRepository;
