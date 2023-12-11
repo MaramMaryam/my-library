@@ -91,3 +91,5 @@ D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.adduserloan.resources
+D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addloancount.resources
+D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addrivalcount.resources

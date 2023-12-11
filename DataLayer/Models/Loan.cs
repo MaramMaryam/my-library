@@ -21,13 +21,13 @@ namespace DataLayer
         //[MaxLength(250)]
         //public int Code { get; set; }
 
-        [Display(Name = "تاریخ امانت")]
+        [Display(Name = "از")]
         [DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
-        public DateTime LoanDate { get; set; }
+        public DateTime LoanFrom { get; set; }
 
-        [Display(Name = "تاریخ برگشت")]
+        [Display(Name = "تا")]
         [DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
-        public DateTime RetunDate { get; set; }
+        public DateTime LoanUntill { get; set; }
         public virtual List<Page> Page { get; set; }
         public virtual PageGroup PageGroup { get; set; }
 

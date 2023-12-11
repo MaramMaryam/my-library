@@ -110,6 +110,14 @@
     <Compile Include="Migrations\202312110939041_add-user-loan.designer.cs">
       <DependentUpon>202312110939041_add-user-loan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312110957378_add-loancount.cs" />
+    <Compile Include="Migrations\202312110957378_add-loancount.designer.cs">
+      <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312111022055_add-rivalcount.cs" />
+    <Compile Include="Migrations\202312111022055_add-rivalcount.designer.cs">
+      <DependentUpon>202312111022055_add-rivalcount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\Loan.cs" />
@@ -122,10 +130,12 @@
     <Compile Include="Repositories\IPageCommentRepository.cs" />
     <Compile Include="Repositories\IPageGroupRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Sevices\LoginRepository.cs" />
     <Compile Include="Sevices\PageCommentRepository.cs" />
     <Compile Include="Sevices\PageGroupRepository.cs" />
     <Compile Include="Sevices\PageRepository.cs" />
+    <Compile Include="Sevices\UserRepository.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShowGroupsViewModel.cs" />
   </ItemGroup>
@@ -163,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312110939041_add-user-loan.resx">
       <DependentUpon>202312110939041_add-user-loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312110957378_add-loancount.resx">
+      <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312111022055_add-rivalcount.resx">
+      <DependentUpon>202312111022055_add-rivalcount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -63,6 +63,12 @@ namespace DataLayer
         [Display(Name = "کلمات کلیدی")]
         public string Tags { get; set; }
 
+        [Display(Name = "تعداد دفعاتی که امانت رفته")]
+        public int LoanCount { get; set; }
+
+        [Display(Name = "تعداد دفعات تمدید")]
+        public int revivalCount { get; set; }
+
         public virtual PageGroup PageGroup { get; set; }
         public virtual List<PageComment> PageComments { get; set; }
         public Page()

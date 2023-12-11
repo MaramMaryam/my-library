@@ -30,6 +30,9 @@ namespace DataLayer
         [MaxLength(350)]
         public string Tel { get; set; }
 
+        [Display(Name = "تعداد دفعاتی که امانت گرفته")]
+        public int LoanCount { get; set; }
+
         public virtual List<Page> Page { get; set; }
         public virtual PageGroup PageGroup { get; set; }
 
