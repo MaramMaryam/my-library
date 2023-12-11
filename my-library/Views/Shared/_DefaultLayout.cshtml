@@ -58,22 +58,27 @@
 
                                         @if (User.Identity.IsAuthenticated)
                                         {
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    مدیریت
-                                                </a>
-                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                    <li><a class="dropdown-item" href="/Admin/PageGroups/Index"> مدیریت گروه های کتاب </a></li>
-                                                    <li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                مدیریت
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li><a class="dropdown-item" href="/Admin/User/Index"> مدیریت کاربران </a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="/Admin/PageGroups/Index"> مدیریت گروه های کتاب </a></li>
+
+                                                <li><a class="dropdown-item" href="/Admin/Pages/Index"> مدیریت کتابها </a></li>
+                                                <li><a class="dropdown-item" href="/Admin/Loan/Index"> مدیریت امانات </a></li>
+                                                @*<li>
                                                         <hr class="dropdown-divider">
                                                     </li>
-                                                    <li><a class="dropdown-item" href="/Admin/Pages/Index"> مدیریت کتابها </a></li>
-                                                    @*<li>
-                                                            <hr class="dropdown-divider">
-                                                        </li>
-                                                        <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>*@
-                                                </ul>
-                                            </li>
+                                                    <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>*@
+                                            </ul>
+                                        </li>
+
+
                                         }
 
 
@@ -97,13 +102,13 @@
                             <div class="top-account">
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    <a href="#" class="text-dark" style="font-size:small"> @User.Identity.Name خوش آمدید </a>
-                                    <a href="/Account/SignOut" class="text-dark" style="font-size:small"> | خروج |</a>
+                                <a href="#" class="text-dark" style="font-size:small"> @User.Identity.Name خوش آمدید </a>
+                                <a href="/Account/SignOut" class="text-dark" style="font-size:small"> | خروج |</a>
                                 }
                                 else
                                 {
-                                    <a href="/Account/Login" class="text-dark"><i class="bi bi-person"></i></a>
-                                    @*<a href="#" class="text-dark"><i class="bi bi-gem"></i></a>*@
+                                <a href="/Account/Login" class="text-dark"><i class="bi bi-person"></i></a>
+                                @*<a href="#" class="text-dark"><i class="bi bi-gem"></i></a>*@
                                 }
                                 <span style="font-size:small"> امروز: @DateTime.Now.ToShamsi() </span>
                             </div>
