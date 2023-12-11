@@ -1,0 +1,111 @@
+﻿@model IEnumerable<DataLayer.Page>
+@{
+    ViewBag.Title = "ArchiveBooks";
+}
+
+<section class="mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap p-3 bg-white my-4 rounded">
+                    <nav>
+                        <ol class="d-flex">
+                            <li><a href="/">خانه</a></li>
+                            <li> "@Model.Count()" با عبارت تعداد "@ViewBag.Name" یافت شد </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @*<div class="col-12">
+                    <div class="title-box mb-2">
+                        <p class="m-0 p-0">دسته بندی : <span class="text-primary"> آرشیو کتابها </span></p>
+                        <span class="d-block"><a href="#">همه مطالب </a> <i class="bi bi-arrow-left position-relative"></i></span>
+                    </div>
+                </div>*@
+            @foreach (var item in Model)
+            {<div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                    <div class="blg-wrap bg-white pb-3">
+                        <figure class="position-relative">
+                            <img src="~/PageImages/@item.ImageName" alt="" class="w-100">
+                            <figcaption class="position-absolute w-100 h-100"><span class="blg-dt"> @item.CreateDate.ToShamsi() </span></figcaption>
+                        </figure>
+                        <div class="px-3 py-1 text-start">
+                            <span class="blg-cat-name d-inline-block bg-info py-1 px-2">مطالب روز</span>
+                        </div>
+                        <a href="/Books/@item.PageID">
+                            <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden"> @item.Title </h4>
+                        </a>
+                        <div class="post-type d-flex p-3 pb-0">
+                            <i class="bi bi-instagram d-inline-block text-info text-center"></i>
+                            <span> @item.PageGroup.GroupTitle </span>
+                        </div>
+                        <p class="p-4 overflow-hidden"> @item.ShortDescription </p>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 mb-5">
+            <div class="pagination-wrap">
+                <ul class="d-flex justify-content-center">
+                    <li><a href="#">..</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">..</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="title-box mb-3">
+                        <p class="m-0 p-0">آرشیو کتابها</p>
+                        <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
+                    </div>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                        <div class="blg-wrap bg-white pb-3">
+                            <figure class="position-relative">
+                                <img src="~/PageImages/@item.ImageName" alt="" class="w-100">
+                                <figcaption class="position-absolute w-100 h-100"><span class="blg-dt"> @item.CreateDate.ToShamsi() </span></figcaption>
+                            </figure>
+                            <div class="px-3 py-1 text-start">
+                                <span class="blg-cat-name d-inline-block bg-info py-1 px-2">مطالب روز</span>
+                            </div>
+                            <a href="#">
+                                <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden"> @item.Title </h4>
+                            </a>
+                            <div class="post-type d-flex p-3 pb-0">
+                                <i class="bi bi-instagram d-inline-block text-info text-center"></i>
+                                <span> @item.PageGroup.GroupTitle </span>
+                            </div>
+                            <p class="p-4 overflow-hidden">
+                                @item.ShortDescription
+                            </p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </section>*@
+
+
+

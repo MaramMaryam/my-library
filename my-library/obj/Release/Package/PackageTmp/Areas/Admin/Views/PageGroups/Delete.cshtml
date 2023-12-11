@@ -1,0 +1,39 @@
+﻿@model DataLayer.PageGroup
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>آیا حذف شود؟</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupImgName)
+            <img src="~/PageGroupImages/@Model.GroupImgName" class="img-thumbnail" style="max-width: 150px" />
+        </dt>
+
+        @*<dd>
+            @Html.DisplayFor(model => model.GroupImgName)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color text-end pt-2">
+            <input type="submit" value="حذف" class="btn btn-outline-danger" /> |
+            <button class="btn btn-outline-secondary" >
+            @Html.ActionLink("بازگشت", "/Index")
+            </button>
+        </div>
+    }
+</div>

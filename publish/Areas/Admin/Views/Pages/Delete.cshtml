@@ -1,0 +1,128 @@
+﻿@model DataLayer.Page
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>آیا از حذف این کتاب مطمئن هستید؟</h3>
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageGroup.GroupTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.ImageName)*@
+            <img src="~/PageImages/@Model.ImageName" class="img-thumbnail" style="max-width: 150px" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowInSlider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowInSlider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BorrowPersonID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BorrowPersonID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsBorrow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsBorrow)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BorrowedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BorrowedDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("بازگشت", "Index")
+        </div>
+    }
+</div>

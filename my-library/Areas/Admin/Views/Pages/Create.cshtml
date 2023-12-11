@@ -54,7 +54,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-12">
-                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextAreaFor(m => m.Text, new { @id = "Text", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -132,3 +133,18 @@
 @*<div>
         @Html.ActionLink("Back to List", "Index")
     </div>*@
+
+@section scripts {
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script src="/ckeditor/adapters/jquery.js"></script>
+
+    <script>
+        //  $(function () {
+        //    $('#Text').ckeditor();
+        //});
+      
+        //ckeditor .replace('Text');
+    </script>
+}
+
+
