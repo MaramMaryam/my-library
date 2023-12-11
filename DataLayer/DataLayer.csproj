@@ -106,11 +106,17 @@
     <Compile Include="Migrations\202312101708597_add_editor.designer.cs">
       <DependentUpon>202312101708597_add_editor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312110939041_add-user-loan.cs" />
+    <Compile Include="Migrations\202312110939041_add-user-loan.designer.cs">
+      <DependentUpon>202312110939041_add-user-loan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
+    <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
     <Compile Include="Models\PageGroup.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ILoginRepository.cs" />
     <Compile Include="Repositories\IPageCommentRepository.cs" />
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312101708597_add_editor.resx">
       <DependentUpon>202312101708597_add_editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312110939041_add-user-loan.resx">
+      <DependentUpon>202312110939041_add-user-loan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

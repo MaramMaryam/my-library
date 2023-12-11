@@ -90,3 +90,4 @@ D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileI
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
+D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.adduserloan.resources
