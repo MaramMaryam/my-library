@@ -118,26 +118,37 @@
     <Compile Include="Migrations\202312111022055_add-rivalcount.designer.cs">
       <DependentUpon>202312111022055_add-rivalcount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312111529434_aded-usrslan-mdl.cs" />
+    <Compile Include="Migrations\202312111529434_aded-usrslan-mdl.designer.cs">
+      <DependentUpon>202312111529434_aded-usrslan-mdl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
+    <Compile Include="Models\Authors.cs" />
     <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
     <Compile Include="Models\PageGroup.cs" />
+    <Compile Include="Models\Return.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ILoanRepository.cs" />
     <Compile Include="Repositories\ILoginRepository.cs" />
     <Compile Include="Repositories\IPageCommentRepository.cs" />
     <Compile Include="Repositories\IPageGroupRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Repositories\IReturnRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Sevices\LoanRepository.cs" />
     <Compile Include="Sevices\LoginRepository.cs" />
     <Compile Include="Sevices\PageCommentRepository.cs" />
     <Compile Include="Sevices\PageGroupRepository.cs" />
     <Compile Include="Sevices\PageRepository.cs" />
     <Compile Include="Sevices\UserRepository.cs" />
+    <Compile Include="ViewModels\LoanBookViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShowGroupsViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -179,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312111022055_add-rivalcount.resx">
       <DependentUpon>202312111022055_add-rivalcount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312111529434_aded-usrslan-mdl.resx">
+      <DependentUpon>202312111529434_aded-usrslan-mdl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

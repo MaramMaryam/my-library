@@ -93,3 +93,6 @@ D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.adduserloan.resources
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addloancount.resources
 D:\learning\new lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addrivalcount.resources
+E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.adduserloan.resources
+E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addloancount.resources
+E:\myjob\nafis\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addrivalcount.resources

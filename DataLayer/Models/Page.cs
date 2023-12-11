@@ -27,6 +27,10 @@ namespace DataLayer
         [Display(Name = "کد مولف")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         public int AuthorID { get; set; }
+        [Display(Name = "تعداد موجودی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        public int AvailableCount { get; set; }
+
         [Display(Name = "توضیح مختصر")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         [MaxLength(350)]
@@ -44,7 +48,7 @@ namespace DataLayer
         public string ImageName { get; set; }
         [Display(Name = "اسلایدر")]
         public bool ShowInSlider { get; set; }
-        [Display(Name = "تاریخ ایجاد")]
+        [Display(Name = "تاریخ انتشار")]
         [DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
         public DateTime CreateDate { get; set; }
         //public int BorrowCount { get; set; }
@@ -70,7 +74,12 @@ namespace DataLayer
         public int revivalCount { get; set; }
 
         public virtual PageGroup PageGroup { get; set; }
+        public virtual Authors Authors { get; set; }
+
         public virtual List<PageComment> PageComments { get; set; }
+        //public virtual List<User> User { get; set; }
+        public virtual List<Loan> Loan { get; set; }
+
         public Page()
         {
 

@@ -15,7 +15,7 @@ namespace DataLayer
         [Display(Name = "نام")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         [MaxLength(250)]
-        public string Name { get; set; }
+        public string FullName { get; set; }
 
         [Display(Name = "کد ملی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
@@ -30,10 +30,13 @@ namespace DataLayer
         [MaxLength(350)]
         public string Tel { get; set; }
 
-        [Display(Name = "تعداد دفعاتی که امانت گرفته")]
-        public int LoanCount { get; set; }
+
+        [Display(Name = "پست الکترونیک")]
+        [MaxLength(350)]
+        public string Email { get; set; }
 
         public virtual List<Page> Page { get; set; }
+        public virtual List<Loan> Loan { get; set; }
         public virtual PageGroup PageGroup { get; set; }
 
         public User()
