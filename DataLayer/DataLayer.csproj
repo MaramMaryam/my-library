@@ -114,9 +114,21 @@
     <Compile Include="Migrations\202312110957378_add-loancount.designer.cs">
       <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312111022055_add-rivalcount.cs" />
-    <Compile Include="Migrations\202312111022055_add-rivalcount.designer.cs">
-      <DependentUpon>202312111022055_add-rivalcount.cs</DependentUpon>
+    <Compile Include="Migrations\202312121905175_add-new-mg-int.cs" />
+    <Compile Include="Migrations\202312121905175_add-new-mg-int.designer.cs">
+      <DependentUpon>202312121905175_add-new-mg-int.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312121910531_add-change-lnpg.cs" />
+    <Compile Include="Migrations\202312121910531_add-change-lnpg.designer.cs">
+      <DependentUpon>202312121910531_add-change-lnpg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312121917071_add-return-mdl.cs" />
+    <Compile Include="Migrations\202312121917071_add-return-mdl.designer.cs">
+      <DependentUpon>202312121917071_add-return-mdl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312121924420_add-inctx.cs" />
+    <Compile Include="Migrations\202312121924420_add-inctx.designer.cs">
+      <DependentUpon>202312121924420_add-inctx.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
@@ -124,6 +136,7 @@
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
     <Compile Include="Models\PageGroup.cs" />
+    <Compile Include="Models\Return.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ILoginRepository.cs" />
@@ -177,8 +190,17 @@
     <EmbeddedResource Include="Migrations\202312110957378_add-loancount.resx">
       <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312111022055_add-rivalcount.resx">
-      <DependentUpon>202312111022055_add-rivalcount.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312121905175_add-new-mg-int.resx">
+      <DependentUpon>202312121905175_add-new-mg-int.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312121910531_add-change-lnpg.resx">
+      <DependentUpon>202312121910531_add-change-lnpg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312121917071_add-return-mdl.resx">
+      <DependentUpon>202312121917071_add-return-mdl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312121924420_add-inctx.resx">
+      <DependentUpon>202312121924420_add-inctx.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
