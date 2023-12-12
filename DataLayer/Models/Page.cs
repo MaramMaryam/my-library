@@ -77,8 +77,8 @@ namespace DataLayer
         public virtual Authors Authors { get; set; }
 
         public virtual List<PageComment> PageComments { get; set; }
-        //public virtual List<User> User { get; set; }
         public virtual List<Loan> Loan { get; set; }
+        public virtual List<User> User { get; set; }
 
         public Page()
         {
