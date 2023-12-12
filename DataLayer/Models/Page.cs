@@ -74,7 +74,7 @@ namespace DataLayer
         public int revivalCount { get; set; }
 
         public virtual PageGroup PageGroup { get; set; }
-        public virtual Authors Authors { get; set; }
+        //public virtual Authors Authors { get; set; }
 
         public virtual List<PageComment> PageComments { get; set; }
         public virtual List<Loan> Loan { get; set; }

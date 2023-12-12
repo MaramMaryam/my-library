@@ -122,9 +122,12 @@
     <Compile Include="Migrations\202312111529434_aded-usrslan-mdl.designer.cs">
       <DependentUpon>202312111529434_aded-usrslan-mdl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312121815531_add-loan-return.cs" />
+    <Compile Include="Migrations\202312121815531_add-loan-return.designer.cs">
+      <DependentUpon>202312121815531_add-loan-return.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
-    <Compile Include="Models\Authors.cs" />
     <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -195,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312111529434_aded-usrslan-mdl.resx">
       <DependentUpon>202312111529434_aded-usrslan-mdl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312121815531_add-loan-return.resx">
+      <DependentUpon>202312121815531_add-loan-return.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

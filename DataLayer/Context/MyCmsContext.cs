@@ -15,5 +15,6 @@ namespace DataLayer
         public DbSet<AdminLogin> AdminLogins { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Loan> Loan { get; set; }
+        public DbSet<Return> Return { get; set; }
     }
 }
