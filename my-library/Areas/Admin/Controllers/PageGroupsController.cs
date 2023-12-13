@@ -86,7 +86,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return PartialView(pageGroup);
+            return View(pageGroup);
         }
 
         // POST: Admin/PageGroups/Edit/5

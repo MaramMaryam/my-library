@@ -114,10 +114,6 @@
     <Compile Include="Migrations\202312110957378_add-loancount.designer.cs">
       <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312121905175_add-new-mg-int.cs" />
-    <Compile Include="Migrations\202312121905175_add-new-mg-int.designer.cs">
-      <DependentUpon>202312121905175_add-new-mg-int.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202312121910531_add-change-lnpg.cs" />
     <Compile Include="Migrations\202312121910531_add-change-lnpg.designer.cs">
       <DependentUpon>202312121910531_add-change-lnpg.cs</DependentUpon>
@@ -137,6 +133,14 @@
     <Compile Include="Migrations\202312130323043_add-change.cs" />
     <Compile Include="Migrations\202312130323043_add-change.designer.cs">
       <DependentUpon>202312130323043_add-change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312131037366_add-ne-itial.cs" />
+    <Compile Include="Migrations\202312131037366_add-ne-itial.designer.cs">
+      <DependentUpon>202312131037366_add-ne-itial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312131204594_add-viewmolelbook.cs" />
+    <Compile Include="Migrations\202312131204594_add-viewmolelbook.designer.cs">
+      <DependentUpon>202312131204594_add-viewmolelbook.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
@@ -158,6 +162,7 @@
     <Compile Include="Sevices\PageRepository.cs" />
     <Compile Include="Sevices\UserRepository.cs" />
     <Compile Include="ViewModels\BookLoanViewModel.cs" />
+    <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShowGroupsViewModel.cs" />
   </ItemGroup>
@@ -199,9 +204,6 @@
     <EmbeddedResource Include="Migrations\202312110957378_add-loancount.resx">
       <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312121905175_add-new-mg-int.resx">
-      <DependentUpon>202312121905175_add-new-mg-int.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312121910531_add-change-lnpg.resx">
       <DependentUpon>202312121910531_add-change-lnpg.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312130323043_add-change.resx">
       <DependentUpon>202312130323043_add-change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312131037366_add-ne-itial.resx">
+      <DependentUpon>202312131037366_add-ne-itial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312131204594_add-viewmolelbook.resx">
+      <DependentUpon>202312131204594_add-viewmolelbook.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
