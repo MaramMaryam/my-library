@@ -130,6 +130,14 @@
     <Compile Include="Migrations\202312121924420_add-inctx.designer.cs">
       <DependentUpon>202312121924420_add-inctx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312130312088_add-bookloan.cs" />
+    <Compile Include="Migrations\202312130312088_add-bookloan.designer.cs">
+      <DependentUpon>202312130312088_add-bookloan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312130323043_add-change.cs" />
+    <Compile Include="Migrations\202312130323043_add-change.designer.cs">
+      <DependentUpon>202312130323043_add-change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\Loan.cs" />
@@ -149,6 +157,7 @@
     <Compile Include="Sevices\PageGroupRepository.cs" />
     <Compile Include="Sevices\PageRepository.cs" />
     <Compile Include="Sevices\UserRepository.cs" />
+    <Compile Include="ViewModels\BookLoanViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShowGroupsViewModel.cs" />
   </ItemGroup>
@@ -201,6 +210,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312121924420_add-inctx.resx">
       <DependentUpon>202312121924420_add-inctx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312130312088_add-bookloan.resx">
+      <DependentUpon>202312130312088_add-bookloan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312130323043_add-change.resx">
+      <DependentUpon>202312130323043_add-change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
