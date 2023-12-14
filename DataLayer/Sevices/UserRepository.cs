@@ -7,24 +7,24 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private MyCmsContext db;
         public UserRepository(MyCmsContext context)
         {
             this.db = context;
         }
+
         public IEnumerable<User> GetAll()
         {
             return db.User;
         }
-
         public User GetById(int userId)
         {
             return db.User.Find(userId);
         }
 
-        public bool InserPage(User user)
+        public bool InserUser(User user)
         {
             try
             {
@@ -33,44 +33,33 @@ namespace DataLayer
             }
             catch (Exception) { return false; }
         }
-        public bool UpdatePage(User user)
+        public bool DeleteUser(User user)
         {
-            try
-            {
-                db.Entry(user).State = EntityState.Modified;
-                return true;
-            }
-            catch (Exception) { return false; }
-        }
-        public bool DeletePage(User user)
-        {
-            try
-            {
-                db.Entry(user).State = EntityState.Deleted;
-                return true;
-            }
-            catch (Exception) { return false; }
+            throw new NotImplementedException();
         }
 
-        public bool DeletePage(int userId)
+        public bool UpdateUser(User user)
         {
-            var user = GetById(userId);
-            DeletePage(user);
-            return true;
+            throw new NotImplementedException();
+
+        }
+        public bool DeleteUser(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<User> SearchUser(string search)
+        {
+            throw new NotImplementedException();
         }
 
         public void save()
         {
-            db.SaveChanges();
-        }
-        public IEnumerable<Page> SearchPage(string search)
-        {
-            return db.Pages.Where(p => p.Title.Contains(search) || p.ShortDescription.Contains(search) ||
-            p.Tags.Contains(search) || p.Text.Contains(search)).Distinct();
+            throw new NotImplementedException();
         }
         public void Dispose()
         {
-            db.Dispose();
+            throw new NotImplementedException();
         }
     }
 }

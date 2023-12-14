@@ -142,6 +142,10 @@
     <Compile Include="Migrations\202312131204594_add-viewmolelbook.designer.cs">
       <DependentUpon>202312131204594_add-viewmolelbook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312140720270_fix.cs" />
+    <Compile Include="Migrations\202312140720270_fix.designer.cs">
+      <DependentUpon>202312140720270_fix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\Loan.cs" />
@@ -224,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312131204594_add-viewmolelbook.resx">
       <DependentUpon>202312131204594_add-viewmolelbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312140720270_fix.resx">
+      <DependentUpon>202312140720270_fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

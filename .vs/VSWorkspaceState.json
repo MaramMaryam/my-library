@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DataLayer",
+    "\\DataLayer\\Migrations",
+    "\\my-library"
   ],
+  "SelectedNode": "\\DataLayer\\Migrations\\202312130323043_add-change.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -176,3 +176,4 @@ D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addneitial.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addviewmolelbook.resources
+D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resources
