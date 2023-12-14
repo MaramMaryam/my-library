@@ -33,16 +33,23 @@ namespace DataLayer
             }
             catch (Exception) { return false; }
         }
+
+        public bool UpdateUser(User user)
+        {
+            try
+            {
+                db.Entry(user).State = EntityState.Modified;
+                return true;
+            }
+            catch (Exception) { return false; }
+
+        }
+
         public bool DeleteUser(User user)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateUser(User user)
-        {
-            throw new NotImplementedException();
-
-        }
         public bool DeleteUser(int userId)
         {
             throw new NotImplementedException();

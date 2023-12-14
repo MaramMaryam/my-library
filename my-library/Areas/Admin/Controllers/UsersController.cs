@@ -24,7 +24,9 @@ namespace my_library.Areas.Admin.Controllers
         // GET: Admin/Users
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            //return View(db.Users.ToList());
+            return View(userRepository.GetAll());
+
         }
 
         // GET: Admin/Users/Details/5
@@ -76,7 +78,8 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+
+            User user = userRepository.GetById(id.Value);
             if (user == null)
             {
                 return HttpNotFound();
@@ -94,8 +97,10 @@ namespace my_library.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 user.CreateDate = DateTime.Now;
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
+                userRepository.UpdateUser(user);
+                userRepository.save();
+                //db.Entry(user).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(user);
