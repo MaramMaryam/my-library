@@ -36,7 +36,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            User user = userRepository.GetById(id.Value);
             if (user == null)
             {
                 return HttpNotFound();
@@ -60,7 +60,6 @@ namespace my_library.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 user.CreateDate = DateTime.Now;
-
                 userRepository.InserUser(user);
                 userRepository.save();
                 //db.Users.Add(user);
@@ -113,7 +112,7 @@ namespace my_library.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            User user = userRepository.GetById(id.Value);
             if (user == null)
             {
                 return HttpNotFound();
@@ -126,9 +125,11 @@ namespace my_library.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
+            //User user = db.Users.Find(id);
+            //db.Users.Remove(user);
+            //db.SaveChanges();
+            userRepository.DeleteUser(id);
+            userRepository.save();
             return RedirectToAction("Index");
         }
 

@@ -47,12 +47,19 @@ namespace DataLayer
 
         public bool DeleteUser(User user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.Entry(user).State = EntityState.Deleted;
+                return true;
+            }
+            catch (Exception) { return false; }
         }
 
         public bool DeleteUser(int userId)
         {
-            throw new NotImplementedException();
+            var user = GetById(userId);
+            DeleteUser(user);
+            return true;
         }
 
         public IEnumerable<User> SearchUser(string search)
@@ -66,7 +73,7 @@ namespace DataLayer
         }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            db.Dispose();
         }
     }
 }
