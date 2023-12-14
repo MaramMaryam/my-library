@@ -17,18 +17,18 @@ namespace DataLayer
 
         public IEnumerable<User> GetAll()
         {
-            return db.User;
+            return db.Users;
         }
         public User GetById(int userId)
         {
-            return db.User.Find(userId);
+            return db.Users.Find(userId);
         }
 
         public bool InserUser(User user)
         {
             try
             {
-                db.User.Add(user);
+                db.Users.Add(user);
                 return true;
             }
             catch (Exception) { return false; }
@@ -55,7 +55,7 @@ namespace DataLayer
 
         public void save()
         {
-            throw new NotImplementedException();
+            db.SaveChanges();
         }
         public void Dispose()
         {

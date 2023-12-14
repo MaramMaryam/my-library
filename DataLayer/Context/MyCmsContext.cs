@@ -13,7 +13,7 @@ namespace DataLayer
         public DbSet<Page> Pages { get; set; }
         public DbSet<PageComment> PageComments { get; set; }
         public DbSet<AdminLogin> AdminLogins { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Loan> Loan { get; set; }
         public DbSet<Return> Return { get; set; }
     }
