@@ -146,8 +146,13 @@
     <Compile Include="Migrations\202312160410348_delete-authid.designer.cs">
       <DependentUpon>202312160410348_delete-authid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312160812064_add-loan-books.cs" />
+    <Compile Include="Migrations\202312160812064_add-loan-books.designer.cs">
+      <DependentUpon>202312160812064_add-loan-books.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
+    <Compile Include="Models\BookLoan.cs" />
     <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
@@ -155,11 +160,13 @@
     <Compile Include="Models\Return.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IBookLoanRepository.cs" />
     <Compile Include="Repositories\ILoginRepository.cs" />
     <Compile Include="Repositories\IPageCommentRepository.cs" />
     <Compile Include="Repositories\IPageGroupRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Sevices\BookLoanRepository.cs" />
     <Compile Include="Sevices\LoginRepository.cs" />
     <Compile Include="Sevices\PageCommentRepository.cs" />
     <Compile Include="Sevices\PageGroupRepository.cs" />
@@ -231,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312160410348_delete-authid.resx">
       <DependentUpon>202312160410348_delete-authid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312160812064_add-loan-books.resx">
+      <DependentUpon>202312160812064_add-loan-books.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

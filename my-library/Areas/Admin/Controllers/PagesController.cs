@@ -17,11 +17,15 @@ namespace my_library.Areas.Admin.Controllers
     {
         private IPageRepository pageRepository;
         private IPageGroupRepository pageGroupRepository;
+        private IBookLoanRepository bookLoanRepository;
+
         private MyCmsContext db = new MyCmsContext();
         public PagesController()
         {
             pageRepository = new PageRepository(db);
             pageGroupRepository = new PageGroupRepository(db);
+            bookLoanRepository = new BookLoanRepository(db);
+
         }
         // GET: Admin/Pages
         public ActionResult Index()
@@ -160,6 +164,30 @@ namespace my_library.Areas.Admin.Controllers
             pageRepository.save();
             return RedirectToAction("Index");
         }
+
+        public ActionResult CreateLoan()
+        {
+            //ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateLoan([Bind(Include = "BookLoanID,PageID,GroupID,UserID," +
+            "LoanFrom,LoanUntill,ReturnedDate")] BookLoan bookLoan)
+        {
+            if (ModelState.IsValid)
+            {
+                bookLoan.LoanFrom = DateTime.Now;
+                bookLoanRepository.CreateLoan(bookLoan);
+                bookLoanRepository.save();
+                return RedirectToAction("Index");
+            }
+
+            //ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
+            return RedirectToAction("Index");
+        }
+
 
         protected override void Dispose(bool disposing)
         {

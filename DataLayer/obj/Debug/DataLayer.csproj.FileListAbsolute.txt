@@ -179,3 +179,4 @@ D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resource
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addtables.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.deleteauthid.resources
+E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addloanbooks.resources

@@ -36,7 +36,9 @@ namespace DataLayer
         public string Email { get; set; }
 
         public virtual List<Page> Page { get; set; }
-        public virtual List<Loan> Loan { get; set; }
+        public virtual List<BookLoan> BookLoan { get; set; }
+
+        //public virtual List<Loan> Loan { get; set; }
         //public virtual PageGroup PageGroup { get; set; }
 
         public User()

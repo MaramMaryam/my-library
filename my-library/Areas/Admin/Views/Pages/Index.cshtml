@@ -70,15 +70,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Author)
                 </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.AuthorID)
-                    </td>*@
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.ShortDescription)
-                    </td>*@
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Text)
-                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Visit)
                 </td>
@@ -90,20 +81,11 @@
                     @*@Html.DisplayFor(modelItem => item.CreateDate)*@
                     @item.CreateDate.ToShamsi()
                 </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.BorrowPersonID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsBorrow)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BorrowedDate)
-                </td>*@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.PageID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.PageID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.PageID })
-                    @Html.ActionLink("Loan", "Loan", new { id = item.PageID })
+                    @Html.ActionLink("CreateLoan", "CreateLoan", new { id = item.PageID })
                     @Html.ActionLink("Return", "Return", new { id = item.PageID })
                 </td>
             </tr>
