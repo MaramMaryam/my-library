@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public interface IBookLoanRepository:IDisposable
+    public interface IBookLoanRepository
     {
         IEnumerable<BookLoan> GetAll();
         bool CreateLoan(BookLoan loan);
         List<BookLoan> GetLoans(int userId);
-        void save();
+        //void save();
 
     }
 }

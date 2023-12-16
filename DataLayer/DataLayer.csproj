@@ -150,6 +150,22 @@
     <Compile Include="Migrations\202312160812064_add-loan-books.designer.cs">
       <DependentUpon>202312160812064_add-loan-books.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312161333491_fix-gid.cs" />
+    <Compile Include="Migrations\202312161333491_fix-gid.designer.cs">
+      <DependentUpon>202312161333491_fix-gid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312161412094_chang.cs" />
+    <Compile Include="Migrations\202312161412094_chang.designer.cs">
+      <DependentUpon>202312161412094_chang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312161439123_chg.cs" />
+    <Compile Include="Migrations\202312161439123_chg.designer.cs">
+      <DependentUpon>202312161439123_chg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312161511158_mk.cs" />
+    <Compile Include="Migrations\202312161511158_mk.designer.cs">
+      <DependentUpon>202312161511158_mk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\BookLoan.cs" />
@@ -241,6 +257,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312160812064_add-loan-books.resx">
       <DependentUpon>202312160812064_add-loan-books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161333491_fix-gid.resx">
+      <DependentUpon>202312161333491_fix-gid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161412094_chang.resx">
+      <DependentUpon>202312161412094_chang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161439123_chg.resx">
+      <DependentUpon>202312161439123_chg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161511158_mk.resx">
+      <DependentUpon>202312161511158_mk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

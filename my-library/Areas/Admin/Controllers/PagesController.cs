@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Xml.Linq;
 using DataLayer;
 
 namespace my_library.Areas.Admin.Controllers
@@ -18,6 +20,7 @@ namespace my_library.Areas.Admin.Controllers
         private IPageRepository pageRepository;
         private IPageGroupRepository pageGroupRepository;
         private IBookLoanRepository bookLoanRepository;
+        private IUserRepository userRepository;
 
         private MyCmsContext db = new MyCmsContext();
         public PagesController()
@@ -25,6 +28,7 @@ namespace my_library.Areas.Admin.Controllers
             pageRepository = new PageRepository(db);
             pageGroupRepository = new PageGroupRepository(db);
             bookLoanRepository = new BookLoanRepository(db);
+            userRepository = new UserRepository(db);
 
         }
         // GET: Admin/Pages
@@ -114,13 +118,13 @@ namespace my_library.Areas.Admin.Controllers
                 //db.Entry(page).State = EntityState.Modified;
                 //db.SaveChanges();
 
-                if(imgUpPage != null)
+                if (imgUpPage != null)
                 {
-                    if(page.ImageName != null)
+                    if (page.ImageName != null)
                     {
                         System.IO.File.Delete(Server.MapPath("/PageImages/" + page.ImageName));
                     }
-                    page.ImageName=Guid.NewGuid()+Path.GetExtension(imgUpPage.FileName);
+                    page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUpPage.FileName);
                     imgUpPage.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
                 }
 
@@ -156,7 +160,7 @@ namespace my_library.Areas.Admin.Controllers
             //db.Pages.Remove(page);
             //db.SaveChanges();
             var page = pageRepository.GetById(id);
-            if(page.ImageName != null)
+            if (page.ImageName != null)
             {
                 System.IO.File.Delete(Server.MapPath("/PageImages/" + page.ImageName));
             }
@@ -168,24 +172,49 @@ namespace my_library.Areas.Admin.Controllers
         public ActionResult CreateLoan()
         {
             //ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle");
+
+            ViewBag.PageID = new SelectList(pageRepository.GetAll(), "PageID", "Title");
+            ViewBag.UserID = new SelectList(userRepository.GetAll(), "UserID", "FullName");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateLoan([Bind(Include = "BookLoanID,PageID,GroupID,UserID," +
-            "LoanFrom,LoanUntill,ReturnedDate")] BookLoan bookLoan)
+        public ActionResult CreateLoan(BookLoan bookLoan,int userId, int pageId)
+            //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
+            //)] BookLoan bookLoan)
         {
+            //PageComment addcomment = new PageComment()
+            //{
+            //    CreateDate = DateTime.Now,
+            //    PageID = id,
+            //    Name = name,
+            //    Email = email,
+            //    Comment = comment
+            //};
             if (ModelState.IsValid)
             {
-                bookLoan.LoanFrom = DateTime.Now;
-                bookLoanRepository.CreateLoan(bookLoan);
-                bookLoanRepository.save();
+                BookLoan addLoan = new BookLoan()
+                {
+                    UserID = userId,
+                    PageID = pageId,
+                    //loan.GroupID = loans.GroupID;
+                    LoanFrom = DateTime.Now,
+                    LoanUntill = DateTime.Now.AddDays(7),
+                };
+                
+                bookLoanRepository.CreateLoan(addLoan);
+                //bookLoanRepository.save();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.PageID = new SelectList(db.Pages, "PageID", "Title", bookLoan.PageID);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
             //ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
-            return RedirectToAction("Index");
+
+            return View(bookLoan);
+            //return RedirectToAction("Index");
+
         }
 
 

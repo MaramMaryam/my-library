@@ -60,20 +60,6 @@ namespace my_library.Controllers
         //[Route("Books/{id}")]
         public ActionResult AddComment(int id, string name, string email, string comment)
         {
-            //if (string.IsNullOrEmpty(name))
-            //{
-            //    throw new ArgumentException($"'{nameof(name)}' cannot be null or empty.", nameof(name));
-            //}
-
-            //if (string.IsNullOrEmpty(email))
-            //{
-            //    throw new ArgumentException($"'{nameof(email)}' cannot be null or empty.", nameof(email));
-            //}
-
-            //if (string.IsNullOrEmpty(comment))
-            //{
-            //    throw new ArgumentException($"'{nameof(comment)}' cannot be null or empty.", nameof(comment));
-            //}
 
             PageComment addcomment = new PageComment()
             {

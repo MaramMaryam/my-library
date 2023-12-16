@@ -18,25 +18,20 @@ namespace DataLayer
         {
             return db.BookLoan;
         }
-        //public bool InserPage(Page page)
-        //{
-        //    try
-        //    {
-        //        db.Pages.Add(page);
-        //        return true;
-        //    }
-        //    catch (Exception) { return false; }
-        //}
         public bool CreateLoan(BookLoan loan)
         {
-            var loans = new BookLoan();
-            loan.UserID = loans.UserID;
-            loan.PageID = loans.PageID;
-            loan.LoanFrom = DateTime.Now;
-            loan.LoanUntill = DateTime.Now.AddDays(7);
+            //BookLoan loans = new BookLoan();
+
+            //loan.UserID = loans.UserID;
+            //loan.PageID = loans.PageID;
+            ////loan.GroupID = loans.GroupID;
+            //loan.LoanFrom = DateTime.Now;
+            //loan.LoanUntill = DateTime.Now.AddDays(7);
+
             try
             {
-                db.BookLoan.Add(loans);
+                db.BookLoan.Add(loan);
+                db.SaveChanges();
                 return true;
             }
             catch (Exception) { return false; }
@@ -46,14 +41,14 @@ namespace DataLayer
         {
             throw new NotImplementedException();
         }
-        public void save()
-        {
-            db.SaveChanges();
-        }
-        public void Dispose()
-        {
-            db.Dispose();
+        //public void save()
+        //{
+        //    db.SaveChanges();
+        //}
+        //public void Dispose()
+        //{
+        //    db.Dispose();
 
-        }
+        //}
     }
 }
