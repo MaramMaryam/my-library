@@ -134,17 +134,17 @@
     <Compile Include="Migrations\202312130323043_add-change.designer.cs">
       <DependentUpon>202312130323043_add-change.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312131037366_add-ne-itial.cs" />
-    <Compile Include="Migrations\202312131037366_add-ne-itial.designer.cs">
-      <DependentUpon>202312131037366_add-ne-itial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312131204594_add-viewmolelbook.cs" />
-    <Compile Include="Migrations\202312131204594_add-viewmolelbook.designer.cs">
-      <DependentUpon>202312131204594_add-viewmolelbook.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202312140720270_fix.cs" />
     <Compile Include="Migrations\202312140720270_fix.designer.cs">
       <DependentUpon>202312140720270_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312160347449_add-tables.cs" />
+    <Compile Include="Migrations\202312160347449_add-tables.designer.cs">
+      <DependentUpon>202312160347449_add-tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312160410348_delete-authid.cs" />
+    <Compile Include="Migrations\202312160410348_delete-authid.designer.cs">
+      <DependentUpon>202312160410348_delete-authid.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
@@ -223,14 +223,14 @@
     <EmbeddedResource Include="Migrations\202312130323043_add-change.resx">
       <DependentUpon>202312130323043_add-change.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312131037366_add-ne-itial.resx">
-      <DependentUpon>202312131037366_add-ne-itial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312131204594_add-viewmolelbook.resx">
-      <DependentUpon>202312131204594_add-viewmolelbook.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312140720270_fix.resx">
       <DependentUpon>202312140720270_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312160347449_add-tables.resx">
+      <DependentUpon>202312160347449_add-tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312160410348_delete-authid.resx">
+      <DependentUpon>202312160410348_delete-authid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

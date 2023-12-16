@@ -128,7 +128,6 @@ E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.cs
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.dll
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.pdb
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addnewmgint.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addchangelnpg.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturnmdl.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addinctx.resources
@@ -177,3 +176,6 @@ D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addneitial.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addviewmolelbook.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resources
+E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resources
+E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addtables.resources
+E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.deleteauthid.resources

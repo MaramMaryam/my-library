@@ -61,11 +61,6 @@ namespace DataLayer
             return true;
         }
 
-        public void save()
-        {
-            db.SaveChanges();
-        }
-
         public IEnumerable<Page> TopBooks(int take = 4)
         {
             return db.Pages.OrderByDescending(p => p.Visit).Take(take);
@@ -89,6 +84,10 @@ namespace DataLayer
         {
             return db.Pages.Where(p=>p.Title.Contains(search) || p.ShortDescription.Contains(search) || 
             p.Tags.Contains(search) || p.Text.Contains(search)).Distinct();
+        }
+        public void save()
+        {
+            db.SaveChanges();
         }
         public void Dispose()
         {

@@ -57,8 +57,8 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text,Tags,Visit,ImageName," +
-            "ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page, HttpPostedFileBase imgUpPage)
+        public ActionResult Create([Bind(Include = "PageID,GroupID,Title,Author,ShortDescription,Text,Tags,Visit,ImageName," +
+            "ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUpPage)
         {
             if (ModelState.IsValid)
             {
@@ -102,8 +102,8 @@ namespace my_library.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,Author,AuthorID,ShortDescription,Text,Tags," +
-            "Visit,ImageName,ShowInSlider,CreateDate,BorrowPersonID,IsBorrow,BorrowedDate")] Page page, HttpPostedFileBase imgUpPage)
+        public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,Author,ShortDescription,Text,Tags," +
+            "Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUpPage)
         {
             if (ModelState.IsValid)
             {

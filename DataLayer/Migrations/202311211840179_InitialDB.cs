@@ -31,16 +31,12 @@
                         GroupID = c.Int(nullable: false),
                         Title = c.String(nullable: false, maxLength: 250),
                         Author = c.String(nullable: false, maxLength: 250),
-                        AuthorID = c.Int(nullable: false),
                         ShortDescription = c.String(nullable: false, maxLength: 350),
                         Text = c.String(nullable: false),
                         Visit = c.Int(nullable: false),
                         ImageName = c.Int(nullable: false),
                         ShowInSlider = c.Boolean(nullable: false),
                         CreateDate = c.String(),
-                        BorrowPersonID = c.Int(nullable: false),
-                        IsBorrow = c.Boolean(nullable: false),
-                        BorrowedDate = c.String(),
                     })
                 .PrimaryKey(t => t.PageID)
                 .ForeignKey("dbo.PageGroups", t => t.GroupID, cascadeDelete: true)

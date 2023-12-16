@@ -22,9 +22,9 @@ namespace DataLayer
         public DateTime LoanFrom { get; set; }
 
         public DateTime LoanUntill { get; set; }
-        [Display(Name = "کد شخصی که کتاب را به امانت برده")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
-        public int BorrowPersonID { get; set; }
+        //[Display(Name = "کد شخصی که کتاب را به امانت برده")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        //public int BorrowPersonID { get; set; }
 
         //public DateTime IssuedOn { get; set; }
 
