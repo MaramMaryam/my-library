@@ -38,7 +38,11 @@ namespace DataLayer
         //[AllowHtml()]
         public string Text { get; set; }
         [Display(Name = "بازدید")]
-        public int Visit { get; set; }
+        public int Visit { get; set; } 
+        [Display(Name = "تعداد موجودی")]
+        public int? AvailableCount { get; set; }
+        [Display(Name = "تعداد امانت")]
+        public int? BorrowCount { get; set; }
         [Display(Name = "تصویر")]
         public string ImageName { get; set; }
         [Display(Name = "اسلایدر")]
@@ -53,6 +57,8 @@ namespace DataLayer
         public string Tags { get; set; }
 
         public virtual PageGroup PageGroup { get; set; }
+        public virtual List<BookLoan> bookLoans { get; set; }
+        public virtual BookLoan bookLoan { get; set; }
         //public virtual Authors Authors { get; set; }
 
         public virtual List<PageComment> PageComments { get; set; }

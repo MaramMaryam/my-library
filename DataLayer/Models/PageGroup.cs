@@ -22,9 +22,11 @@ namespace DataLayer
         public string GroupImgName { get; set; }
         //Navigation property
         public virtual List<Page> Pages { get; set; }
+        public virtual List<BookLoan> bookLoan { get; set; }
+
         public PageGroup()
         {
-            
+
         }
     }
 }

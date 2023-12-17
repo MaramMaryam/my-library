@@ -4,11 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>جزئیات</h2>
 
 <div>
-    <h4>Page</h4>
-    <hr />
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
@@ -35,12 +34,12 @@
         </dd>
 
         @*<dt>
-            @Html.DisplayNameFor(model => model.AuthorID)
-        </dt>
+                @Html.DisplayNameFor(model => model.AuthorID)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AuthorID)
-        </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.AuthorID)
+            </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.ShortDescription)
@@ -65,7 +64,13 @@
         <dd>
             @Html.DisplayFor(model => model.Visit)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableCount)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.AvailableCount)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ImageName)
         </dt>
@@ -91,28 +96,28 @@
         </dd>
 
         @*<dt>
-            @Html.DisplayNameFor(model => model.BorrowPersonID)
-        </dt>
+                @Html.DisplayNameFor(model => model.BorrowPersonID)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BorrowPersonID)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BorrowPersonID)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsBorrow)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.IsBorrow)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsBorrow)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.IsBorrow)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BorrowedDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.BorrowedDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BorrowedDate)
-        </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.BorrowedDate)
+            </dd>*@
 
     </dl>
 </div>

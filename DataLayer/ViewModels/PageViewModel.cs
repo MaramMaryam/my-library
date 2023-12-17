@@ -12,9 +12,9 @@ namespace DataLayer
         public int PageID { get; set; }
         public string Title { get; set; }
 
-        [Display(Name = "تعداد موجودی")]
-        //[Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
-        public int AvailableCount { get; set; }
+        //[Display(Name = "تعداد موجودی")]
+        ////[Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        //public int AvailableCount { get; set; }
         [Display(Name = "کد شخصی که کتاب را به امانت برده")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         public int BorrowPersonID { get; set; }

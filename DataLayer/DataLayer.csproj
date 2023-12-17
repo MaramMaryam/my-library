@@ -166,6 +166,34 @@
     <Compile Include="Migrations\202312161511158_mk.designer.cs">
       <DependentUpon>202312161511158_mk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312161657165_acl.cs" />
+    <Compile Include="Migrations\202312161657165_acl.designer.cs">
+      <DependentUpon>202312161657165_acl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312162047284_cnc.cs" />
+    <Compile Include="Migrations\202312162047284_cnc.designer.cs">
+      <DependentUpon>202312162047284_cnc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312162057308_ada.cs" />
+    <Compile Include="Migrations\202312162057308_ada.designer.cs">
+      <DependentUpon>202312162057308_ada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312162121050_rel.cs" />
+    <Compile Include="Migrations\202312162121050_rel.designer.cs">
+      <DependentUpon>202312162121050_rel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312170455215_a.cs" />
+    <Compile Include="Migrations\202312170455215_a.designer.cs">
+      <DependentUpon>202312170455215_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312170609177_pid.cs" />
+    <Compile Include="Migrations\202312170609177_pid.designer.cs">
+      <DependentUpon>202312170609177_pid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312170915285_d.cs" />
+    <Compile Include="Migrations\202312170915285_d.designer.cs">
+      <DependentUpon>202312170915285_d.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\BookLoan.cs" />
@@ -269,6 +297,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312161511158_mk.resx">
       <DependentUpon>202312161511158_mk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161657165_acl.resx">
+      <DependentUpon>202312161657165_acl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312162047284_cnc.resx">
+      <DependentUpon>202312162047284_cnc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312162057308_ada.resx">
+      <DependentUpon>202312162057308_ada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312162121050_rel.resx">
+      <DependentUpon>202312162121050_rel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312170455215_a.resx">
+      <DependentUpon>202312170455215_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312170609177_pid.resx">
+      <DependentUpon>202312170609177_pid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312170915285_d.resx">
+      <DependentUpon>202312170915285_d.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

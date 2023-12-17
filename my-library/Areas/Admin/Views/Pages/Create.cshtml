@@ -26,6 +26,20 @@
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AvailableCount, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.AvailableCount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AvailableCount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.BorrowCount, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.BorrowCount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BorrowCount, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-4" })
@@ -36,12 +50,12 @@
         </div>
 
         @*<div class="form-group">
-            @Html.LabelFor(model => model.AuthorID, htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-12">
-                @Html.EditorFor(model => model.AuthorID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AuthorID, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
+                @Html.LabelFor(model => model.AuthorID, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.AuthorID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AuthorID, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-4" })
@@ -97,30 +111,30 @@
 
 
         @*<div class="form-group">
-            @Html.LabelFor(model => model.BorrowPersonID, htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-12">
-                @Html.EditorFor(model => model.BorrowPersonID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BorrowPersonID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsBorrow, htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-12">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsBorrow)
-                    @Html.ValidationMessageFor(model => model.IsBorrow, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.BorrowPersonID, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.BorrowPersonID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BorrowPersonID, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BorrowedDate, htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-12">
-                @Html.EditorFor(model => model.BorrowedDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BorrowedDate, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsBorrow, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-12">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsBorrow)
+                        @Html.ValidationMessageFor(model => model.IsBorrow, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
-        </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BorrowedDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.BorrowedDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BorrowedDate, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
 
         <div class="form-group text-end pt-2">
             <div class="">
@@ -139,11 +153,11 @@
     <script src="/ckeditor/adapters/jquery.js"></script>
 
     <script>
-        //  $(function () {
-        //    $('#Text').ckeditor();
-        //});
-      
-        //ckeditor .replace('Text');
+                    //  $(function () {
+                    //    $('#Text').ckeditor();
+                    //});
+
+                    //ckeditor .replace('Text');
     </script>
 }
 

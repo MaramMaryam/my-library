@@ -23,18 +23,23 @@
             @Html.DisplayNameFor(model => model.Author)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.AuthorID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShortDescription)
-        </th>*@
+                @Html.DisplayNameFor(model => model.AuthorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>*@
         @*<th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Text)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Visit)
         </th>
-
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BorrowCount)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.ShowInSlider)
         </th>
@@ -42,14 +47,14 @@
             @Html.DisplayNameFor(model => model.CreateDate)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.BorrowPersonID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsBorrow)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BorrowedDate)
-        </th>*@
+                @Html.DisplayNameFor(model => model.BorrowPersonID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsBorrow)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BorrowedDate)
+            </th>*@
         <th></th>
     </tr>
 
@@ -73,7 +78,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Visit)
                 </td>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvailableCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BorrowCount)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ShowInSlider)
                 </td>
@@ -86,6 +96,8 @@
                     @Html.ActionLink("Details", "Details", new { id = item.PageID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.PageID })
                     @Html.ActionLink("CreateLoan", "CreateLoan", new { id = item.PageID })
+                    @*@Html.ActionLink("Create New Loan", "CreateLoan",
+                 new { controller = "Loan", bookId = 1234 })*@
                     @Html.ActionLink("Return", "Return", new { id = item.PageID })
                 </td>
             </tr>
