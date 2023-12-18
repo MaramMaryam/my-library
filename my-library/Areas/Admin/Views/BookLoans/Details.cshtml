@@ -1,0 +1,58 @@
+﻿@model DataLayer.BookLoan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookLoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PageGroups.GroupTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageGroups.GroupTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pages.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pages.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoanFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanUntill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoanUntill)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookLoanID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

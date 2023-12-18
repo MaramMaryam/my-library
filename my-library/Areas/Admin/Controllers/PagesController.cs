@@ -175,7 +175,8 @@ namespace my_library.Areas.Admin.Controllers
         public ActionResult CreateLoan(int id)
         {
             Page page = pageRepository.GetById(id);
-            ViewBag.PageID = page.PageID;
+            //ViewBag.PageID = new TextBox(page.PageID);
+            ViewBag.PageID = new SelectList(pageRepository.GetAll(), "PageID", "Title");
             ViewBag.UserID = new SelectList(userRepository.GetAll(), "UserID", "FullName");
             return View();
         }
@@ -183,18 +184,11 @@ namespace my_library.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Route("Admin/Pages/CreateLoan/{pageId}")]
-        public ActionResult CreateLoan([Bind(Include = "BookLoanID,UserID,PageID,LoanFrom,LoanUntill")] BookLoan bookLoan, int userId, int id)
+        public ActionResult CreateLoan(BookLoan bookLoan, int userId, int pageId)
         //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
         //)] BookLoan bookLoan)
         {
-            //var pageId = int.Parse(Request.Form["id"]);
-
-            //Page pages = db.Pages.Find(id);
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            Page pages = pageRepository.GetById(id);
+            Page pages = pageRepository.GetById(pageId);
 
             if (pages == null)
             {
@@ -203,28 +197,27 @@ namespace my_library.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                BookLoan addLoan = new BookLoan()
-                {
-                    UserID = userId,
-                    PageID = pages.PageID,
-                    //int.Parse(this.RouteData.Values["pageId"].ToString()),
-                    LoanFrom = DateTime.Now,
-                    LoanUntill = DateTime.Now.AddDays(7),
-                };
+                //BookLoan addLoan = new BookLoan()
+                //{
+                //    UserID = userId,
+                //    PageID = pages.PageID,
+                //    //GroupID = pages.GroupID,
+                //    LoanFrom = DateTime.Now,
+                //    LoanUntill = DateTime.Now.AddDays(7),
+                //};
                 pages.AvailableCount -= 1;
                 pages.BorrowCount += 1;
-                bookLoanRepository.CreateLoan(addLoan);
+                bookLoanRepository.CreateLoan(bookLoan);
+                //db.SaveChanges();
                 return RedirectToAction("/Index");
-                //return View(pageRepository.GetAll());
             }
-            //ViewBag.PageID = bookLoan.PageID;
-            ViewBag.PageID = pages.PageID;
+            ViewBag.PageID = new SelectList(db.Pages, "PageID", "Title", bookLoan.PageID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
             //ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
             //return View(page);
             //return View(bookLoan);
             //return RedirectToAction("/Index");
-            return View(bookLoan);
+            return View();
 
         }
 

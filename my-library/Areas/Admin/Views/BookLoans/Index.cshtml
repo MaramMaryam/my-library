@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DataLayer.BookLoan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PageGroups.GroupTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pages.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoanFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoanUntill)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageGroups.GroupTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pages.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoanFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoanUntill)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookLoanID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookLoanID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookLoanID })
+        </td>
+    </tr>
+}
+
+</table>
