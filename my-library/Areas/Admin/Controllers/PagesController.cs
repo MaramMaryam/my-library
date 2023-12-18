@@ -201,6 +201,7 @@ namespace my_library.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
+                //if(page.AvailableCount)
                 BookLoan addLoan = new BookLoan()
                 {
                     UserID = userId,

@@ -22,15 +22,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Author)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.AuthorID)
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableCount)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ShortDescription)
-        </th>*@
-        @*<th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>*@
+            @Html.DisplayNameFor(model => model.BorrowCount)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Visit)
         </th>
@@ -42,14 +39,14 @@
             @Html.DisplayNameFor(model => model.CreateDate)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.BorrowPersonID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsBorrow)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BorrowedDate)
-        </th>*@
+                @Html.DisplayNameFor(model => model.BorrowPersonID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsBorrow)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BorrowedDate)
+            </th>*@
         <th></th>
     </tr>
 
@@ -73,7 +70,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Visit)
                 </td>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvailableCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BorrowCount)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ShowInSlider)
                 </td>
