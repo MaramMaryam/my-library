@@ -10,6 +10,8 @@ namespace DataLayer
     {
         IEnumerable<BookLoan> GetAll();
         bool CreateLoan(BookLoan loan);
+        bool ReturnBook(BookLoan loan);
+            //(int bookId, DateTime? loanUntill);
         List<BookLoan> GetLoans(int userId);
         //void save();
 

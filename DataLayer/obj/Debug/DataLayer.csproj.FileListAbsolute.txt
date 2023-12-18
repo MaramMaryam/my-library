@@ -143,3 +143,4 @@ D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.rei.resource
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
+E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturn.resources

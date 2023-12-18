@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202312181537129_reinit.designer.cs">
       <DependentUpon>202312181537129_reinit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312182002298_add-return.cs" />
+    <Compile Include="Migrations\202312182002298_add-return.designer.cs">
+      <DependentUpon>202312182002298_add-return.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\BookLoan.cs" />
@@ -111,6 +115,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312181537129_reinit.resx">
       <DependentUpon>202312181537129_reinit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312182002298_add-return.resx">
+      <DependentUpon>202312182002298_add-return.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

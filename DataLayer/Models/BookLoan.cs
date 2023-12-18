@@ -21,20 +21,15 @@ namespace DataLayer
         [Display(Name = "نام عضو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         public int UserID { get; set; }
-        //public int LoanID { get; set; }
-        //public string BookName { get; set; }
-        //public string FullName { get; set; }
-        //[DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
-        //public DateTime? ReturnedDate { get; set; }
-        //[Display(Name = "تاریخ امانت")]
         //[DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
         public DateTime LoanFrom { get; set; }
         //[DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}")]
         [Display(Name = "تاریخ برگشت")]
         public DateTime? LoanUntill { get; set; }
+        [Display(Name = "تاریخ بازگشت")]
+        public DateTime? ReturnedOn { get; set; }
         public virtual List<User> User { get; set; }
         //public virtual List<Page> Pages { get; set; }
-
         public virtual Page Pages { get; set; }
         //[Display(Name = "کد شخصی که کتاب را به امانت برده")]
         //[Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
