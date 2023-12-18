@@ -1,0 +1,5 @@
+﻿Build started...
+1>------ Build started: Project: my-library, Configuration: Debug Any CPU ------
+1>  my-library -> E:\myjob\nafis\New folder\New folder\my-library\my-library\bin\my-library.dll
+========== Build: 1 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========
+========== Build started at 8:17 PM and took 00.577 seconds ==========

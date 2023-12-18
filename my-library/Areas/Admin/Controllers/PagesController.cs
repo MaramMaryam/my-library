@@ -171,11 +171,12 @@ namespace my_library.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult CreateLoan()
+        public ActionResult CreateLoan(int id)
         {
-            //Page page = pageRepository.GetById(pageId);
+            Page page = pageRepository.GetById(id);
             //ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle");
-            ViewBag.PageID = new SelectList(pageRepository.GetAll(), "PageID", "Title");
+            ViewBag.PageID = page.PageID;
+            //new SelectList(pageRepository.GetAll(), "PageID", "Title");
             //page.PageID;
             //new SelectList(pageRepository.GetAll(), "PageID", "Title");
             ViewBag.UserID = new SelectList(userRepository.GetAll(), "UserID", "FullName");
@@ -197,6 +198,7 @@ namespace my_library.Areas.Admin.Controllers
             //    Comment = comment
             //};
             Page page = pageRepository.GetById(pageId);
+
             if (ModelState.IsValid)
             {
                 BookLoan addLoan = new BookLoan()
@@ -207,18 +209,18 @@ namespace my_library.Areas.Admin.Controllers
                     LoanFrom = DateTime.Now,
                     LoanUntill = DateTime.Now.AddDays(7),
                 };
-
+                ViewBag.PageID = addLoan.PageID;
+                ViewBag.UserID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
                 bookLoanRepository.CreateLoan(addLoan);
                 page.AvailableCount -= 1;
                 page.BorrowCount += 1;
                 pageRepository.save();
                 return RedirectToAction("/Index");
             }
-
-            ViewBag.PageID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
+            //new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
             //bookLoan.PageID;
             //new SelectList(db.Pages, "PageID", "Title", bookLoan.PageID);
-            ViewBag.UserID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
+   
             //return View(bookLoan);
             return RedirectToAction("/Index");
 
