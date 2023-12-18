@@ -172,7 +172,6 @@ namespace my_library.Areas.Admin.Controllers
         public ActionResult CreateLoan()
         {
             //ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle");
-
             ViewBag.PageID = new SelectList(pageRepository.GetAll(), "PageID", "Title");
             ViewBag.UserID = new SelectList(userRepository.GetAll(), "UserID", "FullName");
             return View();
