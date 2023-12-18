@@ -201,7 +201,10 @@ namespace my_library.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                //if(page.AvailableCount)
+                if (page.AvailableCount == 0)
+                {
+                    return HttpNotFound();
+                }
                 BookLoan addLoan = new BookLoan()
                 {
                     UserID = userId,
@@ -221,7 +224,6 @@ namespace my_library.Areas.Admin.Controllers
             //new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
             //bookLoan.PageID;
             //new SelectList(db.Pages, "PageID", "Title", bookLoan.PageID);
-   
             //return View(bookLoan);
             return RedirectToAction("/Index");
 
