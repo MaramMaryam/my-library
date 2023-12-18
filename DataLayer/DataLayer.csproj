@@ -70,9 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyCmsContext.cs" />
-    <Compile Include="Migrations\202312181143520_rei.cs" />
-    <Compile Include="Migrations\202312181143520_rei.designer.cs">
-      <DependentUpon>202312181143520_rei.cs</DependentUpon>
+    <Compile Include="Migrations\202312181537129_reinit.cs" />
+    <Compile Include="Migrations\202312181537129_reinit.designer.cs">
+      <DependentUpon>202312181537129_reinit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
@@ -109,8 +109,8 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312181143520_rei.resx">
-      <DependentUpon>202312181143520_rei.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312181537129_reinit.resx">
+      <DependentUpon>202312181537129_reinit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-
+        <div>@ViewBag.PageID</div>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.PageID, htmlAttributes: new { @class = "control-label col-md-4" })

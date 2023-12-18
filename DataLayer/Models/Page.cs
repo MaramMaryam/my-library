@@ -39,6 +39,12 @@ namespace DataLayer
         public string Text { get; set; }
         [Display(Name = "بازدید")]
         public int Visit { get; set; }
+
+        [Display(Name = "تعداد موجودی")]
+        public int? AvailableCount { get; set; }
+
+        [Display(Name = "تعداد امانت")]
+        public int? BorrowCount { get; set; }
         [Display(Name = "تصویر")]
         public string ImageName { get; set; }
         [Display(Name = "اسلایدر")]
@@ -58,7 +64,7 @@ namespace DataLayer
         public virtual List<PageComment> PageComments { get; set; }
         //public virtual List<Loan> Loan { get; set; }
         public virtual List<User> User { get; set; }
-
+        public virtual List<BookLoan> bookLoans { get; set; }
         public Page()
         {
 

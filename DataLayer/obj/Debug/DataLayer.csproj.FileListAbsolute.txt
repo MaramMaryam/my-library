@@ -112,27 +112,10 @@ E:\myjob\nafis\New folder\New folder\my-library\DataLayer\bin\Debug\System.Web.W
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\bin\Debug\System.Web.WebPages.Razor.xml
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.InitialDB.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addimgpagegroup.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.chngetypeofdate.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.changenameofcomment.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.updateNaminpagecommmentmodel.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addTags.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.add_adminLogins.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.add_editor.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.adduserloan.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addloancount.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.dll
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.pdb
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addchangelnpg.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturnmdl.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addinctx.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addbookloan.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addchange.resources
 D:\learning\Lib\my-library\DataLayer\bin\Debug\DataLayer.dll.config
 D:\learning\Lib\my-library\DataLayer\bin\Debug\DataLayer.dll
 D:\learning\Lib\my-library\DataLayer\bin\Debug\DataLayer.pdb
@@ -156,13 +139,7 @@ D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInput
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addtables.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.deleteauthid.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addloanbooks.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fixgid.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.chang.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.chg.resources
-E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.mk.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.rei.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
+E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
+E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache

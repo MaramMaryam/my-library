@@ -66,12 +66,14 @@ namespace my_library.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PageID,GroupID,Title,Author,ShortDescription,Text,Tags,Visit,ImageName," +
-            "ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUpPage)
+            "ShowInSlider,CreateDate,AvailableCount,BorrowCount")] Page page, HttpPostedFileBase imgUpPage)
         {
             if (ModelState.IsValid)
             {
                 page.Visit = 0;
                 page.CreateDate = DateTime.Now;
+                page.AvailableCount = 1;
+                page.BorrowCount = 0;
 
                 if (imgUpPage != null)
                 {
@@ -111,7 +113,7 @@ namespace my_library.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PageID,GroupID,Title,Author,ShortDescription,Text,Tags," +
-            "Visit,ImageName,ShowInSlider,CreateDate")] Page page, HttpPostedFileBase imgUpPage)
+            "Visit,ImageName,ShowInSlider,CreateDate,AvailableCount,BorrowCount")] Page page, HttpPostedFileBase imgUpPage)
         {
             if (ModelState.IsValid)
             {
@@ -171,17 +173,20 @@ namespace my_library.Areas.Admin.Controllers
 
         public ActionResult CreateLoan()
         {
+            //Page page = pageRepository.GetById(pageId);
             //ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle");
             ViewBag.PageID = new SelectList(pageRepository.GetAll(), "PageID", "Title");
+            //page.PageID;
+            //new SelectList(pageRepository.GetAll(), "PageID", "Title");
             ViewBag.UserID = new SelectList(userRepository.GetAll(), "UserID", "FullName");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateLoan(BookLoan bookLoan,int userId, int pageId)
-            //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
-            //)] BookLoan bookLoan)
+        public ActionResult CreateLoan(BookLoan bookLoan, int userId, int pageId)
+        //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
+        //)] BookLoan bookLoan)
         {
             //PageComment addcomment = new PageComment()
             //{
@@ -191,32 +196,33 @@ namespace my_library.Areas.Admin.Controllers
             //    Email = email,
             //    Comment = comment
             //};
+            Page page = pageRepository.GetById(pageId);
             if (ModelState.IsValid)
             {
                 BookLoan addLoan = new BookLoan()
                 {
                     UserID = userId,
-                    PageID = pageId,
+                    PageID = page.PageID,
                     //loan.GroupID = loans.GroupID;
                     LoanFrom = DateTime.Now,
                     LoanUntill = DateTime.Now.AddDays(7),
                 };
-                
+
                 bookLoanRepository.CreateLoan(addLoan);
-                //bookLoanRepository.save();
-                return RedirectToAction("Index");
+                page.AvailableCount -= 1;
+                page.BorrowCount += 1;
+                pageRepository.save();
+                return RedirectToAction("/Index");
             }
 
-            ViewBag.PageID = new SelectList(db.Pages, "PageID", "Title", bookLoan.PageID);
+            ViewBag.PageID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
+            //bookLoan.PageID;
+            //new SelectList(db.Pages, "PageID", "Title", bookLoan.PageID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
-            //ViewBag.GroupID = new SelectList(db.PageGroups, "GroupID", "GroupTitle", page.GroupID);
-
-            return View(bookLoan);
-            //return RedirectToAction("Index");
+            //return View(bookLoan);
+            return RedirectToAction("/Index");
 
         }
-
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

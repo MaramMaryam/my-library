@@ -33,9 +33,9 @@ namespace DataLayer
         [Display(Name = "تاریخ برگشت")]
         public DateTime? LoanUntill { get; set; }
         public virtual List<User> User { get; set; }
-        public virtual List<Page> Pages { get; set; }
+        //public virtual List<Page> Pages { get; set; }
 
-
+        public virtual Page Pages { get; set; }
         //[Display(Name = "کد شخصی که کتاب را به امانت برده")]
         //[Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         //public int BorrowPersonID { get; set; }
