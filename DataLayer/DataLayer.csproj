@@ -70,101 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyCmsContext.cs" />
-    <Compile Include="Migrations\202311211840179_InitialDB.cs" />
-    <Compile Include="Migrations\202311211840179_InitialDB.designer.cs">
-      <DependentUpon>202311211840179_InitialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311240840190_re-init.cs" />
-    <Compile Include="Migrations\202311240840190_re-init.designer.cs">
-      <DependentUpon>202311240840190_re-init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311251705581_add-img-pagegroup.cs" />
-    <Compile Include="Migrations\202311251705581_add-img-pagegroup.designer.cs">
-      <DependentUpon>202311251705581_add-img-pagegroup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312050233544_chnge type of date.cs" />
-    <Compile Include="Migrations\202312050233544_chnge type of date.designer.cs">
-      <DependentUpon>202312050233544_chnge type of date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312080554031_change name of comment.cs" />
-    <Compile Include="Migrations\202312080554031_change name of comment.designer.cs">
-      <DependentUpon>202312080554031_change name of comment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312080747155_update Nam in pagecommment model.cs" />
-    <Compile Include="Migrations\202312080747155_update Nam in pagecommment model.designer.cs">
-      <DependentUpon>202312080747155_update Nam in pagecommment model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312080819432_add-Tags.cs" />
-    <Compile Include="Migrations\202312080819432_add-Tags.designer.cs">
-      <DependentUpon>202312080819432_add-Tags.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312090236378_add_adminLogins.cs" />
-    <Compile Include="Migrations\202312090236378_add_adminLogins.designer.cs">
-      <DependentUpon>202312090236378_add_adminLogins.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312101708597_add_editor.cs" />
-    <Compile Include="Migrations\202312101708597_add_editor.designer.cs">
-      <DependentUpon>202312101708597_add_editor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312110939041_add-user-loan.cs" />
-    <Compile Include="Migrations\202312110939041_add-user-loan.designer.cs">
-      <DependentUpon>202312110939041_add-user-loan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312110957378_add-loancount.cs" />
-    <Compile Include="Migrations\202312110957378_add-loancount.designer.cs">
-      <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312121910531_add-change-lnpg.cs" />
-    <Compile Include="Migrations\202312121910531_add-change-lnpg.designer.cs">
-      <DependentUpon>202312121910531_add-change-lnpg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312121917071_add-return-mdl.cs" />
-    <Compile Include="Migrations\202312121917071_add-return-mdl.designer.cs">
-      <DependentUpon>202312121917071_add-return-mdl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312121924420_add-inctx.cs" />
-    <Compile Include="Migrations\202312121924420_add-inctx.designer.cs">
-      <DependentUpon>202312121924420_add-inctx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312130312088_add-bookloan.cs" />
-    <Compile Include="Migrations\202312130312088_add-bookloan.designer.cs">
-      <DependentUpon>202312130312088_add-bookloan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312130323043_add-change.cs" />
-    <Compile Include="Migrations\202312130323043_add-change.designer.cs">
-      <DependentUpon>202312130323043_add-change.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312140720270_fix.cs" />
-    <Compile Include="Migrations\202312140720270_fix.designer.cs">
-      <DependentUpon>202312140720270_fix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312160347449_add-tables.cs" />
-    <Compile Include="Migrations\202312160347449_add-tables.designer.cs">
-      <DependentUpon>202312160347449_add-tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312160410348_delete-authid.cs" />
-    <Compile Include="Migrations\202312160410348_delete-authid.designer.cs">
-      <DependentUpon>202312160410348_delete-authid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312160812064_add-loan-books.cs" />
-    <Compile Include="Migrations\202312160812064_add-loan-books.designer.cs">
-      <DependentUpon>202312160812064_add-loan-books.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161333491_fix-gid.cs" />
-    <Compile Include="Migrations\202312161333491_fix-gid.designer.cs">
-      <DependentUpon>202312161333491_fix-gid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161412094_chang.cs" />
-    <Compile Include="Migrations\202312161412094_chang.designer.cs">
-      <DependentUpon>202312161412094_chang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161439123_chg.cs" />
-    <Compile Include="Migrations\202312161439123_chg.designer.cs">
-      <DependentUpon>202312161439123_chg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161511158_mk.cs" />
-    <Compile Include="Migrations\202312161511158_mk.designer.cs">
-      <DependentUpon>202312161511158_mk.cs</DependentUpon>
+    <Compile Include="Migrations\202312181143520_rei.cs" />
+    <Compile Include="Migrations\202312181143520_rei.designer.cs">
+      <DependentUpon>202312181143520_rei.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
@@ -198,81 +106,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311211840179_InitialDB.resx">
-      <DependentUpon>202311211840179_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311240840190_re-init.resx">
-      <DependentUpon>202311240840190_re-init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311251705581_add-img-pagegroup.resx">
-      <DependentUpon>202311251705581_add-img-pagegroup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312050233544_chnge type of date.resx">
-      <DependentUpon>202312050233544_chnge type of date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312080554031_change name of comment.resx">
-      <DependentUpon>202312080554031_change name of comment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312080747155_update Nam in pagecommment model.resx">
-      <DependentUpon>202312080747155_update Nam in pagecommment model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312080819432_add-Tags.resx">
-      <DependentUpon>202312080819432_add-Tags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312090236378_add_adminLogins.resx">
-      <DependentUpon>202312090236378_add_adminLogins.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312101708597_add_editor.resx">
-      <DependentUpon>202312101708597_add_editor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312110939041_add-user-loan.resx">
-      <DependentUpon>202312110939041_add-user-loan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312110957378_add-loancount.resx">
-      <DependentUpon>202312110957378_add-loancount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312121910531_add-change-lnpg.resx">
-      <DependentUpon>202312121910531_add-change-lnpg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312121917071_add-return-mdl.resx">
-      <DependentUpon>202312121917071_add-return-mdl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312121924420_add-inctx.resx">
-      <DependentUpon>202312121924420_add-inctx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312130312088_add-bookloan.resx">
-      <DependentUpon>202312130312088_add-bookloan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312130323043_add-change.resx">
-      <DependentUpon>202312130323043_add-change.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312140720270_fix.resx">
-      <DependentUpon>202312140720270_fix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312160347449_add-tables.resx">
-      <DependentUpon>202312160347449_add-tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312160410348_delete-authid.resx">
-      <DependentUpon>202312160410348_delete-authid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312160812064_add-loan-books.resx">
-      <DependentUpon>202312160812064_add-loan-books.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161333491_fix-gid.resx">
-      <DependentUpon>202312161333491_fix-gid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161412094_chang.resx">
-      <DependentUpon>202312161412094_chang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161439123_chg.resx">
-      <DependentUpon>202312161439123_chg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161511158_mk.resx">
-      <DependentUpon>202312161511158_mk.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Scripts\modernizr-2.8.3.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <EmbeddedResource Include="Migrations\202312181143520_rei.resx">
+      <DependentUpon>202312181143520_rei.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

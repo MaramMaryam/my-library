@@ -152,30 +152,10 @@ D:\learning\Lib\my-library\DataLayer\bin\Debug\System.Web.WebPages.xml
 D:\learning\Lib\my-library\DataLayer\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\learning\Lib\my-library\DataLayer\bin\Debug\System.Web.WebPages.Razor.xml
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.InitialDB.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addimgpagegroup.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.chngetypeofdate.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.changenameofcomment.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.updateNaminpagecommmentmodel.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addTags.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.add_adminLogins.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.add_editor.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.adduserloan.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addloancount.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addchangelnpg.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturnmdl.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addinctx.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addbookloan.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addchange.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addneitial.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addviewmolelbook.resources
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.fix.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addtables.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.deleteauthid.resources
@@ -184,3 +164,5 @@ E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Mi
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.chang.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.chg.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.mk.resources
+D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.rei.resources
+D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
