@@ -34,8 +34,9 @@ namespace DataLayer
         [Display(Name = "پست الکترونیک")]
         [MaxLength(350)]
         public string Email { get; set; }
+        public virtual List<Page> Pages { get; set; }
 
-        public virtual List<Page> Page { get; set; }
+        //public virtual List<Page> Page { get; set; }
         public virtual List<BookLoan> BookLoan { get; set; }
 
         //public virtual List<Loan> Loan { get; set; }

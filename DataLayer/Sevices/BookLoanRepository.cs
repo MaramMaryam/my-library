@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Runtime.Remoting.Contexts;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,10 +21,13 @@ namespace DataLayer
         {
             return db.BookLoan;
         }
+        public BookLoan GetById(int loanId)
+        {
+            return db.BookLoan.Find(loanId);
+        }
         public bool CreateLoan(BookLoan loan)
         {
             //BookLoan loans = new BookLoan();
-
             //loan.UserID = loans.UserID;
             //loan.PageID = loans.PageID;
             ////loan.GroupID = loans.GroupID;
@@ -41,27 +46,22 @@ namespace DataLayer
         {
             throw new NotImplementedException();
         }
+        public List<BookLoan> GetLoansBuUserId(int userId)
+        {
+            throw new NotImplementedException();
+        }
 
-        //public bool ReturnBook(int bookId, DateTime? loanUntill)
+        //public BookLoan GetLoansBuPageId(int pageId)
         //{
-        //    //public bool UpdatePage(Page page)
-        //    //{
-        //        try
-        //        {
-        //            db.Entry(page).State = EntityState.Modified;
-        //            return true;
-        //        }
-        //        catch (Exception) { return false; }
-        //    //}
-        //    try
-        //    {
-        //        db.BookLoan.Add(loan);
-        //        db.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception) { return false; }
-        //}
+        //    return (db.BookLoan.Where(c => c.PageID == pageId));
+        //    //return db.BookLoan.Find(pageId);
 
+        //}
+        public int GetLoansBuPageId(int pageId)
+        {
+            return db.BookLoan.Where(c => c.PageID == pageId)
+                              .Select(c => c.UserID).FirstOrDefault();
+        }
         public bool ReturnBook(BookLoan loan)
         {
             try
@@ -79,15 +79,21 @@ namespace DataLayer
             db.SaveChanges();
         }
 
-        //public bool ReturnBook(int userId, int pageId)
+
+
+        //public bool ReturnBook(BookLoan loan)
         //{
+        //    //var book = _context.Books.Find(bookId);
         //    try
         //    {
         //        db.Entry(loan).State = EntityState.Modified;
+        //        db.SaveChanges();
         //        return true;
         //    }
         //    catch (Exception) { return false; }
         //}
+
+
         //public void save()
         //{
         //    db.SaveChanges();

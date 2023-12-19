@@ -78,6 +78,14 @@
     <Compile Include="Migrations\202312182002298_add-return.designer.cs">
       <DependentUpon>202312182002298_add-return.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312190726405_aded-relation.cs" />
+    <Compile Include="Migrations\202312190726405_aded-relation.designer.cs">
+      <DependentUpon>202312190726405_aded-relation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312191020581_change-relation.cs" />
+    <Compile Include="Migrations\202312191020581_change-relation.designer.cs">
+      <DependentUpon>202312191020581_change-relation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\BookLoan.cs" />
@@ -118,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312182002298_add-return.resx">
       <DependentUpon>202312182002298_add-return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312190726405_aded-relation.resx">
+      <DependentUpon>202312190726405_aded-relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312191020581_change-relation.resx">
+      <DependentUpon>202312191020581_change-relation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

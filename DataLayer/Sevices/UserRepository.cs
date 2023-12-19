@@ -23,6 +23,10 @@ namespace DataLayer
         {
             return db.Users.Find(userId);
         }
+        public IEnumerable<User> GetUserByBooksId(int pageId)
+        {
+            return db.Users.Where(c => c.UserID == pageId);
+        }
 
         public bool InserUser(User user)
         {

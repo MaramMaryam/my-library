@@ -10,6 +10,8 @@ namespace DataLayer
     {
         IEnumerable<User> GetAll();
         User GetById(int userId);
+        IEnumerable<User> GetUserByBooksId(int pageId);
+
         bool InserUser(User user);
         bool UpdateUser(User user);
         bool DeleteUser(User user);

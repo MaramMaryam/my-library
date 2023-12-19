@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -189,14 +190,6 @@ namespace my_library.Areas.Admin.Controllers
         //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
         //)] BookLoan bookLoan)
         {
-            //PageComment addcomment = new PageComment()
-            //{
-            //    CreateDate = DateTime.Now,
-            //    PageID = id,
-            //    Name = name,
-            //    Email = email,
-            //    Comment = comment
-            //};
             Page page = pageRepository.GetById(pageId);
 
             if (ModelState.IsValid)
@@ -231,36 +224,36 @@ namespace my_library.Areas.Admin.Controllers
         public ActionResult ReturnBook(BookLoan returnbook, int id)
         {
             Page page = pageRepository.GetById(id);
-            User user = userRepository.GetById(id);
+            BookLoan bookloan = bookLoanRepository.GetById(page.PageID);
+            var b = bookLoanRepository.GetLoansBuPageId(page.PageID);
+
+
+            //if (page.PageID == bookloan.PageID)
+            //{
+            //    ViewBag.UserID = bookloan.UserID;
+            //    //ViewBag.BookLoanID = bookloan.BookLoanID;
+
+            //}
             //ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle");
             ViewBag.PageID = page.PageID;
-            ViewBag.UserID = user.UserID;
-            //ViewBag.UserID = returnbook.UserID;
-            //new SelectList(pageRepository.GetAll(), "PageID", "Title");
-            //new SelectList(pageRepository.GetAll(), "PageID", "Title");
-            //ViewBag.UserID = new SelectList(userRepository.GetAll(), "UserID", "FullName");
-            return PartialView();
+            ViewBag.UserID = b;
+            //if (bookloan.PageID == page.PageID)
+            //{
+            //    ViewBag.UserID = bookloan.UserID;
+            //    ViewBag.BookLoanID = bookloan.BookLoanID;
+
+            //}
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ReturnBook([Bind(Include = "PageID,UserID," +
-            "LoanFrom,LoanUntill,ReturnedOn")] BookLoan returnbook, int pageId , int userId)
-            //(BookLoan returnbook, int userId, int pageId)
-        //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
-        //)] BookLoan bookLoan)
+        public ActionResult ReturnBook([Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
+        )] BookLoan returnbook, int pageId,  int loanId)
         {
-            //PageComment addcomment = new PageComment()
-            //{
-            //    CreateDate = DateTime.Now,
-            //    PageID = id,
-            //    Name = name,
-            //    Email = email,
-            //    Comment = comment
-            //};
             Page page = pageRepository.GetById(pageId);
-            User user = userRepository.GetById(userId);
-
+            var bookLoans  = bookLoanRepository.GetAll();
+            var b = bookLoanRepository.GetLoansBuPageId(page.PageID);   
             if (ModelState.IsValid)
             {
                 if (page.AvailableCount != 0)
@@ -269,15 +262,22 @@ namespace my_library.Areas.Admin.Controllers
                 }
                 //BookLoan returnBook = new BookLoan()
                 //{
-                returnbook.UserID = user.UserID;
-                returnbook.PageID = page.PageID;
-                //loan.GroupID = loans.GroupID;
-                returnbook.LoanFrom = returnbook.LoanFrom;
-                returnbook.LoanUntill = returnbook.LoanUntill;
+                //returnbook.UserID = returnbook.UserID;
+                //returnbook.PageID = returnbook.PageID;
+                ////loan.GroupID = loans.GroupID;
+                //returnbook.LoanFrom = returnbook.LoanFrom;
+                //returnbook.LoanUntill = returnbook.LoanUntill;
                 returnbook.ReturnedOn = DateTime.Now;
                 //};
                 ViewBag.PageID = returnbook.PageID;
-                ViewBag.UserID = user.UserID;
+                ViewBag.UserID = b;
+                //if (bookloan.PageID == page.PageID)
+                //{
+                //    ViewBag.UserID = bookloan.UserID;
+                //    ViewBag.BookLoanID = bookloan.BookLoanID;
+
+                //}
+
                 //ViewBag.UserID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
                 bookLoanRepository.ReturnBook(returnbook);
                 page.AvailableCount += 1;

@@ -1,70 +1,47 @@
 ﻿@model DataLayer.BookLoan
 
-@using (Html.BeginForm())
+@{
+    ViewBag.Title = "Loan";
+}
+
+<h2>ReturnBook</h2>
+
+@using (Html.BeginForm("ReturnBook", "Pages", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
-    <h4>برگشت از امانت</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @*@Html.HiddenFor(model => model.BookLoanID)*@
-    @*@Html.HiddenFor(model => model.PageID)*@
-    @*@Html.EditorFor(model => model.User.)*@
+ 
+    @*@Html.EditorFor(model => model.BookLoanID)*@
 
-
-    <input type="hidden" value=@ViewBag.PageID id="PageID" name="PageID" />
+    <input type="text" value=@ViewBag.PageID id="PageID" name="PageID" />
     <input type="text" value=@ViewBag.UserID id="UserID" name="UserID" />
-    
-
-    @*<div class="form-group">
-            @Html.LabelFor(model => model.PageID, "PageID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+    @*<input type="text" value=@ViewBag.UserID id="UserID" name="UserID" />*@
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.PageID, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-12">
                 @Html.DropDownList("PageID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PageID, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
+
+
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserID, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-12">
+                @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LoanFrom, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LoanFrom, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LoanFrom, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LoanUntill, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LoanUntill, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LoanUntill, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ReturnedOn, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ReturnedOn, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ReturnedOn, "", new { @class = "text-danger" })
             </div>
         </div>*@
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+    <div class="form-group text-end pt-2">
+        <div class="">
+            <input type="submit" value="برگشت از امانت " class="btn btn-outline-info" />
         </div>
     </div>
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

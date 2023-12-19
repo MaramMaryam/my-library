@@ -60,10 +60,11 @@ namespace DataLayer
 
         public virtual PageGroup PageGroup { get; set; }
         //public virtual Authors Authors { get; set; }
+        public virtual User User { get; set; }
 
         public virtual List<PageComment> PageComments { get; set; }
         //public virtual List<Loan> Loan { get; set; }
-        public virtual List<User> User { get; set; }
+        public virtual List<User> Users { get; set; }
         public virtual List<BookLoan> bookLoans { get; set; }
         public Page()
         {

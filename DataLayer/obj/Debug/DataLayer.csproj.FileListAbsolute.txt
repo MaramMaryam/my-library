@@ -145,3 +145,5 @@ E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.cs
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturn.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturn.resources
+D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.adedrelation.resources
+D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.changerelation.resources
