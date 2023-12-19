@@ -13,7 +13,7 @@ namespace DataLayer
         bool ReturnBook(BookLoan loan);
             //(int bookId, DateTime? loanUntill);
         List<BookLoan> GetLoans(int userId);
-        //void save();
+        void save();
 
     }
 }

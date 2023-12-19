@@ -67,20 +67,36 @@ namespace DataLayer
             try
             {
                 db.Entry(loan).State = EntityState.Modified;
+                db.SaveChanges();
                 return true;
             }
             catch (Exception) { return false; }
             //}
         }
-    }
-    //public void save()
-    //{
-    //    db.SaveChanges();
-    //}
-    //public void Dispose()
-    //{
-    //    db.Dispose();
 
-    //}
+        public void save()
+        {
+            db.SaveChanges();
+        }
+
+        //public bool ReturnBook(int userId, int pageId)
+        //{
+        //    try
+        //    {
+        //        db.Entry(loan).State = EntityState.Modified;
+        //        return true;
+        //    }
+        //    catch (Exception) { return false; }
+        //}
+        //public void save()
+        //{
+        //    db.SaveChanges();
+        //}
+        //public void Dispose()
+        //{
+        //    db.Dispose();
+
+        //}
+    }
 }
 

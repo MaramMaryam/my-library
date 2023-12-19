@@ -228,13 +228,15 @@ namespace my_library.Areas.Admin.Controllers
             return RedirectToAction("/Index");
         }
 
-        public ActionResult ReturnBook()
+        public ActionResult ReturnBook(BookLoan returnbook, int id)
         {
-            //Page page = pageRepository.GetById(id);
+            Page page = pageRepository.GetById(id);
+            User user = userRepository.GetById(id);
             //ViewBag.GroupID = new SelectList(pageGroupRepository.GetAll(), "GroupID", "GroupTitle");
-            //ViewBag.PageID = page.PageID;
+            ViewBag.PageID = page.PageID;
+            ViewBag.UserID = user.UserID;
+            //ViewBag.UserID = returnbook.UserID;
             //new SelectList(pageRepository.GetAll(), "PageID", "Title");
-            //page.PageID;
             //new SelectList(pageRepository.GetAll(), "PageID", "Title");
             //ViewBag.UserID = new SelectList(userRepository.GetAll(), "UserID", "FullName");
             return PartialView();
@@ -242,7 +244,9 @@ namespace my_library.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ReturnBook(BookLoan returnbook, int userId, int pageId)
+        public ActionResult ReturnBook([Bind(Include = "PageID,UserID," +
+            "LoanFrom,LoanUntill,ReturnedOn")] BookLoan returnbook, int pageId , int userId)
+            //(BookLoan returnbook, int userId, int pageId)
         //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
         //)] BookLoan bookLoan)
         {
@@ -255,6 +259,7 @@ namespace my_library.Areas.Admin.Controllers
             //    Comment = comment
             //};
             Page page = pageRepository.GetById(pageId);
+            User user = userRepository.GetById(userId);
 
             if (ModelState.IsValid)
             {
@@ -264,19 +269,21 @@ namespace my_library.Areas.Admin.Controllers
                 }
                 //BookLoan returnBook = new BookLoan()
                 //{
-                returnbook.UserID = returnbook.UserID;
+                returnbook.UserID = user.UserID;
                 returnbook.PageID = page.PageID;
                 //loan.GroupID = loans.GroupID;
                 returnbook.LoanFrom = returnbook.LoanFrom;
                 returnbook.LoanUntill = returnbook.LoanUntill;
                 returnbook.ReturnedOn = DateTime.Now;
                 //};
-                //ViewBag.PageID = returnBook.PageID;
+                ViewBag.PageID = returnbook.PageID;
+                ViewBag.UserID = user.UserID;
                 //ViewBag.UserID = new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);
                 bookLoanRepository.ReturnBook(returnbook);
                 page.AvailableCount += 1;
                 page.BorrowCount -= 1;
                 pageRepository.save();
+                bookLoanRepository.save();
                 return RedirectToAction("/Index");
             }
             //new SelectList(db.Users, "UserID", "FullName", bookLoan.UserID);

@@ -139,8 +139,9 @@ D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInput
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.dll
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.pdb
-D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.rei.resources
 D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
 E:\myjob\nafis\New folder\New folder\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturn.resources
+D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.reinit.resources
+D:\learning\Lib\my-library\DataLayer\obj\Debug\DataLayer.Migrations.addreturn.resources
