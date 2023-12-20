@@ -185,7 +185,7 @@ namespace my_library.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateLoan(BookLoan bookLoan, int userId, int pageId)
+        public ActionResult CreateLoan([Bind(Include = "PageID,GroupID,LoanFrom,LoanUntill,ReturnedOn")] BookLoan bookLoan, int userId, int pageId)
         //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
         //)] BookLoan bookLoan)
         {
@@ -203,7 +203,7 @@ namespace my_library.Areas.Admin.Controllers
                     PageID = page.PageID,
                     //loan.GroupID = loans.GroupID;
                     LoanFrom = DateTime.Now,
-                    //ReturnedOn = DateTime.Now.AddDays(7),
+                    //ReturnedOn ="",
                     LoanUntill = DateTime.Now.AddDays(7),
                 };
                 ViewBag.PageID = addLoan.PageID;
@@ -230,7 +230,7 @@ namespace my_library.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ReturnBook(BookLoan bookloan, int pageId)
+        public ActionResult ReturnBook([Bind(Include = "PageID,GroupID,LoanFrom,LoanUntill,ReturnedOn")] BookLoan bookloan, int pageId)
         {
             Page page = pageRepository.GetById(pageId);
             var bookLoans = bookLoanRepository.GetAll();
@@ -239,14 +239,22 @@ namespace my_library.Areas.Admin.Controllers
             if (loan != null)
             {
                 db.Entry(loan).Reload();
+            }if (page != null)
+            {
+                db.Entry(page).Reload();
             }
             if (loan == null)
             {
                 // Not found, handle error  
                 return HttpNotFound();
+            }if (page == null)
+            {
+                // Not found, handle error  
+                return HttpNotFound();
             }
-
             db.Entry(loan).Reload();
+            db.Entry(page).Reload();
+
 
             if (ModelState.IsValid)
             {
@@ -271,10 +279,12 @@ namespace my_library.Areas.Admin.Controllers
                 //    ViewBag.BookLoanID = bookloan.BookLoanID;
                 //}                            
                 bookLoanRepository.ReturnBook(bookloan);
-                db.Entry(bookloan).Reload();  
+                db.Entry(bookloan).Reload();
                 page.AvailableCount += 1;
                 page.BorrowCount -= 1;
                 pageRepository.save();
+
+                db.Entry(page).Reload();
                 return RedirectToAction("/Index");
             }
 
