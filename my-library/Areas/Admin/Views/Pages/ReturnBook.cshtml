@@ -4,44 +4,45 @@
     ViewBag.Title = "Loan";
 }
 
-<h2>ReturnBook</h2>
+<h2>برگشت از امانت</h2>
 
 @using (Html.BeginForm("ReturnBook", "Pages", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
- 
-    @*@Html.EditorFor(model => model.BookLoanID)*@
+    <div class="form-horizontal">
 
-    <input type="text" value=@ViewBag.PageID id="PageID" name="PageID" />
-    <input type="text" value=@ViewBag.UserID id="UserID" name="UserID" />
-    @*<input type="text" value=@ViewBag.UserID id="UserID" name="UserID" />*@
-    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.PageID, htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-12">
-                @Html.DropDownList("PageID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PageID, "", new { @class = "text-danger" })
+        @*@Html.EditorFor(model => model.BookLoanID)*@
+
+        <input type="text" value=@ViewBag.PageID id="PageID" name="PageID" />
+        <input type="text" value=@ViewBag.UserID id="UserID" name="UserID" />   
+        <input type="datetime" value=@ViewBag.ReturnedOn id="ReturnedOn" name="ReturnedOn" />
+        @*<input type="text" value=@ViewBag.UserID id="UserID" name="UserID" />*@
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.PageID, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-12">
+                    @Html.DropDownList("PageID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PageID, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+
+
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-12">
+                    @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group text-end pt-2">
+            <div class="">
+                <input type="submit" value="برگشت از امانت " class="btn btn-outline-info" />
             </div>
-        </div>*@
-
-
-
-    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-12">
-                @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-    <div class="form-group text-end pt-2">
-        <div class="">
-            <input type="submit" value="برگشت از امانت " class="btn btn-outline-info" />
         </div>
     </div>
-</div>
 }
 

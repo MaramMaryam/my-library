@@ -86,6 +86,10 @@
     <Compile Include="Migrations\202312191020581_change-relation.designer.cs">
       <DependentUpon>202312191020581_change-relation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312201140464_booklon.cs" />
+    <Compile Include="Migrations\202312201140464_booklon.designer.cs">
+      <DependentUpon>202312201140464_booklon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\BookLoan.cs" />
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312191020581_change-relation.resx">
       <DependentUpon>202312191020581_change-relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312201140464_booklon.resx">
+      <DependentUpon>202312201140464_booklon.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

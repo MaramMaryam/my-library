@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookLoansController.cs" />
     <Compile Include="Areas\Admin\Controllers\PageGroupsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
@@ -1346,6 +1347,11 @@
     <Content Include="Areas\Admin\Views\Pages\CreateLoan.cshtml" />
     <Content Include="Areas\Admin\Views\Pages\.cshtml" />
     <Content Include="Areas\Admin\Views\Pages\ReturnBook.cshtml" />
+    <Content Include="Areas\Admin\Views\BookLoans\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BookLoans\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BookLoans\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BookLoans\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BookLoans\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

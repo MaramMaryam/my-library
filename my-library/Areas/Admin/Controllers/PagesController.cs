@@ -185,7 +185,7 @@ namespace my_library.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateLoan([Bind(Include = "PageID,GroupID,LoanFrom,LoanUntill,ReturnedOn")] BookLoan bookLoan, int userId, int pageId)
+        public ActionResult CreateLoan([Bind(Include = "BookLoanID,PageID,GroupID,LoanFrom,LoanUntill,ReturnedOn")] BookLoan bookLoan, int userId, int pageId)
         //[Bind(Include = "BookLoanID,PageID,UserID,LoanFrom,LoanUntill"
         //)] BookLoan bookLoan)
         {
@@ -217,6 +217,19 @@ namespace my_library.Areas.Admin.Controllers
             return RedirectToAction("/Index");
         }
 
+        //public ActionResult ReturnBook(int id)
+        //{
+        //    Page page = pageRepository.GetById(id);
+        //    BookLoan bookloan = bookLoanRepository.GetById(page.PageID);
+        //    var b = bookLoanRepository.GetLoansBuPageId(page.PageID);
+        //    ViewBag.PageID = page.PageID;
+        //    ViewBag.UserID = b;
+        //    ViewBag.ReturnedOn = DateTime.Now;
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult ReturnBook(int id)
         {
             Page page = pageRepository.GetById(id);
@@ -224,44 +237,46 @@ namespace my_library.Areas.Admin.Controllers
             var b = bookLoanRepository.GetLoansBuPageId(page.PageID);
             ViewBag.PageID = page.PageID;
             ViewBag.UserID = b;
-
+            ViewBag.ReturnedOn = DateTime.Now;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ReturnBook([Bind(Include = "PageID,GroupID,LoanFrom,LoanUntill,ReturnedOn")] BookLoan bookloan, int pageId)
+        public ActionResult ReturnBook(BookLoan bookloan, int pageId)
         {
             Page page = pageRepository.GetById(pageId);
             var bookLoans = bookLoanRepository.GetAll();
             BookLoan loan = bookLoanRepository.GetById(page.PageID);
             var b = bookLoanRepository.GetLoansBuPageId(page.PageID);
+            if (page.AvailableCount != 0 || page.BorrowCount == 0)
+            {
+                return HttpNotFound();
+            }
             if (loan != null)
             {
                 db.Entry(loan).Reload();
-            }if (page != null)
+            }
+            if (page != null)
             {
                 db.Entry(page).Reload();
             }
-            if (loan == null)
-            {
-                // Not found, handle error  
-                return HttpNotFound();
-            }if (page == null)
-            {
-                // Not found, handle error  
-                return HttpNotFound();
-            }
-            db.Entry(loan).Reload();
-            db.Entry(page).Reload();
-
+            //if (loan == null)
+            //{
+            //    // Not found, handle error  
+            //    return HttpNotFound();
+            //}
+            //if (page == null)
+            //{
+            //    // Not found, handle error  
+            //    return HttpNotFound();
+            //}
 
             if (ModelState.IsValid)
             {
-                if (page.AvailableCount != 0 || page.BorrowCount == 0)
-                {
-                    return HttpNotFound();
-                }
+
+                //db.Entry(loan).Reload();
+                //db.Entry(page).Reload();
                 //BookLoan returnbooks = new BookLoan()
                 //{
                 //    UserID = b,
@@ -270,9 +285,12 @@ namespace my_library.Areas.Admin.Controllers
                 //LoanFrom = DateTime.Now,
                 //    LoanUntill = DateTime.Now.AddDays(7),
                 //};
-                bookloan.ReturnedOn = DateTime.Now;
+
                 ViewBag.PageID = bookloan.PageID;
                 ViewBag.UserID = b;
+                ViewBag.ReturnedOn = DateTime.Now;
+
+                //bookloan.ReturnedOn = DateTime.Now;
                 //if (bookloan.PageID == page.PageID)
                 //{
                 //    ViewBag.UserID = bookloan.UserID;
@@ -283,13 +301,71 @@ namespace my_library.Areas.Admin.Controllers
                 page.AvailableCount += 1;
                 page.BorrowCount -= 1;
                 pageRepository.save();
-
-                db.Entry(page).Reload();
                 return RedirectToAction("/Index");
             }
 
             return RedirectToAction("/Index");
         }
+        //public ActionResult ReturnBook( BookLoan bookloan, int pageId)
+        //{
+        //    Page page = pageRepository.GetById(pageId);
+        //    var bookLoans = bookLoanRepository.GetAll();
+        //    BookLoan loan = bookLoanRepository.GetById(page.PageID);
+        //    var b = bookLoanRepository.GetLoansBuPageId(page.PageID);
+        //    if (loan != null)
+        //    {
+        //        db.Entry(loan).Reload();
+        //    }if (page != null)
+        //    {
+        //        db.Entry(page).Reload();
+        //    }
+        //    if (loan == null)
+        //    {
+        //        // Not found, handle error  
+        //        return HttpNotFound();
+        //    }if (page == null)
+        //    {
+        //        // Not found, handle error  
+        //        return HttpNotFound();
+        //    }
+        //    //db.Entry(loan).Reload();
+        //    //db.Entry(page).Reload();
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (page.AvailableCount != 0 || page.BorrowCount == 0)
+        //        {
+        //            return HttpNotFound();
+        //        }
+        //        //BookLoan returnbooks = new BookLoan()
+        //        //{
+        //        //    UserID = b,
+        //        //    PageID = page.PageID,
+        //        //    loan.GroupID = loans.GroupID;
+        //        //LoanFrom = DateTime.Now,
+        //        //    LoanUntill = DateTime.Now.AddDays(7),
+        //        //};
+        //        bookloan.ReturnedOn = DateTime.Now;
+        //        ViewBag.PageID = bookloan.PageID;
+        //        ViewBag.UserID = b;
+        //        ViewBag.ReturnedOn = DateTime.Now;
+        //        //if (bookloan.PageID == page.PageID)
+        //        //{
+        //        //    ViewBag.UserID = bookloan.UserID;
+        //        //    ViewBag.BookLoanID = bookloan.BookLoanID;
+        //        //}                            
+        //        bookLoanRepository.ReturnBook(bookloan);
+        //        //bookLoanRepository.save();
+
+        //        db.Entry(bookloan).Reload();
+
+        //        page.AvailableCount += 1;
+        //        page.BorrowCount -= 1;
+        //        pageRepository.save();
+        //        db.Entry(page).Reload();
+        //        return RedirectToAction("/Index");
+        //    }
+        //    return RedirectToAction("/Index");
+        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)
